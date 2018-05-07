@@ -8,9 +8,14 @@ export default class AppContainer extends Component {
     const { children } = this.props;
     return (
       <div className={styles.container}>
-        <SideMenu
-        
-        />
+        <div className={styles.sidebar}>
+          <div className={styles.sideHeader}>
+            Cherdinand
+          </div>
+          <SideMenu
+
+          />
+        </div>
         <div className={styles.content}>
           {
             children

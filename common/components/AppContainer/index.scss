@@ -2,3 +2,21 @@
   position: relative
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 256px;
+  .sideHeader {
+    height: 64px;
+    line-height: 64px;
+    background: #002140;
+    color: #fff;
+  }
+}
+
+.content {
+  margin-left: 256px;
+  padding: 20px;
+}

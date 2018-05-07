@@ -4,23 +4,16 @@ import styles from './index.scss';
 
 const { SubMenu, Item } = Menu;
 
-const styleConfig = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  height: "100%",
-  width: 300,
-};
+
 
 export default class SideMenu extends Component {
   state = {
     collapsed: false
   };
-  
+
   render() {
     return (
       <Menu
-        style={styleConfig}
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
