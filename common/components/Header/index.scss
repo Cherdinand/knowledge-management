@@ -1,0 +1,19 @@
+.header {
+  height: 64px;
+  line-height: 64px;
+  display: flex;
+  .sideHeader {
+    flex: 0 0 auto;
+    width: 256px;
+    background: #002140;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+  .navWrap {
+    flex: 1 0 auto;
+    // todo  min-width: ;
+    padding: 9px 20px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}

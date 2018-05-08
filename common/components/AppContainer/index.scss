@@ -1,5 +1,5 @@
 .container {
-  position: relative
+  position: relative;
 }
 
 .sidebar {
@@ -8,15 +8,25 @@
   left: 0;
   height: 100%;
   width: 256px;
+  background: #001529;
   .sideHeader {
     height: 64px;
     line-height: 64px;
     background: #002140;
     color: #fff;
+    border-bottom: 1px solid #fff;
+    text-align: center;
   }
 }
 
 .content {
+  // todo min-width: ;
   margin-left: 256px;
-  padding: 20px;
+  .navTab {
+    height: 64px;
+    padding: 9px 0px;
+  }
+  .mdView {
+    padding: 20px;
+  }
 }

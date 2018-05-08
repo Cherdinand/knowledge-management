@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const highlight = require('remark-highlight.js')
+const highlight = require('remark-highlight.js');
 const html = require('remark-html');
 
 module.exports = {

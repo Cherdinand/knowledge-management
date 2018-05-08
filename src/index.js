@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-
-import Class from 'markdown/class';
+import { BrowserRouter } from 'react-router-dom';
 
 import AppContainer from 'common/components/AppContainer';
 
@@ -12,9 +11,11 @@ import './index.scss';
 class App extends Component {
   render() {
     return (
-      <AppContainer>
-        children
-      </AppContainer>
+      <BrowserRouter>
+        <AppContainer>
+          children
+        </AppContainer>
+      </BrowserRouter>
     )
   }
 }
