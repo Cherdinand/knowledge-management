@@ -21,6 +21,7 @@ module.exports = {
   resolve: {
     alias: {
       common: path.resolve(__dirname, 'common'),
+      utils: path.resolve(__dirname, 'src/utils'),
       markdown: path.resolve(__dirname, 'markdown'), // 给一个路径使用别名代替，这样在引用的时候就可以省略../  如import Class from 'markdown/class';
     },
     

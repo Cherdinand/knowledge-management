@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import AppContainer from 'common/components/AppContainer';
 
@@ -12,9 +12,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <AppContainer>
-          children
-        </AppContainer>
+        <Switch>
+          <Redirect from='/' to="/es6"/>
+          <Route exact path="/es6" component={AppContainer} />
+          <Route exact path="/css" component={AppContainer} />
+        </Switch>
       </BrowserRouter>
     )
   }
