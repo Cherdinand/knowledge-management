@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const highlight = require('remark-highlight.js');
 const html = require('remark-html');
+var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname,'src/index.js'),
@@ -90,8 +91,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
       template: './public/index.html',
+      filename: path.resolve(__dirname, 'dist/index.html'),
+      alwaysWriteToDisk: true,
       favicon: './public/favicon.png'  // todo 好像只能用png格式的？
-    })
+    }),
+    new HtmlWebpackHarddiskPlugin()
   ],
 };
 

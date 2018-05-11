@@ -57,6 +57,29 @@
   version "0.7.0"
   resolved "http://registry.npm.taobao.org/@sindresorhus/is/download/@sindresorhus/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@types/node@*":
+  version "10.0.8"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-10.0.8.tgz#37b4d91d4e958e4c2ba0be2b86e7ed4ff19b0858"
+
+"@types/tapable@^0":
+  version "0.2.5"
+  resolved "http://registry.npm.taobao.org/@types/tapable/download/@types/tapable-0.2.5.tgz#2443fc12da514c81346b1a665675559cee21fa75"
+
+"@types/uglify-js@*":
+  version "3.0.2"
+  resolved "http://registry.npm.taobao.org/@types/uglify-js/download/@types/uglify-js-3.0.2.tgz#f30c75458d18e8ee885c792c04adcb78a13bc286"
+  dependencies:
+    source-map "^0.6.1"
+
+"@types/webpack@^3.0.5":
+  version "3.8.12"
+  resolved "http://registry.npm.taobao.org/@types/webpack/download/@types/webpack-3.8.12.tgz#c5db4f273fb8f2a4929db6c486e19e68c350e7ac"
+  dependencies:
+    "@types/node" "*"
+    "@types/tapable" "^0"
+    "@types/uglify-js" "*"
+    source-map "^0.6.0"
+
 abbrev@1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/abbrev/download/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -3322,6 +3345,13 @@ html-minifier@^3.2.3:
 html-void-elements@^1.0.0:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/html-void-elements/download/html-void-elements-1.0.3.tgz#956707dbecd10cf658c92c5d27fee763aa6aa982"
+
+html-webpack-harddisk-plugin@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/html-webpack-harddisk-plugin/download/html-webpack-harddisk-plugin-0.2.0.tgz#465414a534219b69c1fd8127b585f8d86897fb2d"
+  dependencies:
+    "@types/webpack" "^3.0.5"
+    mkdirp "^0.5.1"
 
 html-webpack-plugin@^3.2.0:
   version "3.2.0"
@@ -6895,7 +6925,7 @@ source-map@^0.4.2:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
+source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
