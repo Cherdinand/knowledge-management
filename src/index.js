@@ -13,9 +13,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Redirect from='/' to="/es6"/>
-          <Route exact path="/es6" component={AppContainer} />
-          <Route exact path="/css" component={AppContainer} />
+          <Route exact path='/' render={() => {
+            return <Redirect to="es6" />
+          }}/>
+          <Route path="/:moduleName" component={AppContainer} />
         </Switch>
       </BrowserRouter>
     )

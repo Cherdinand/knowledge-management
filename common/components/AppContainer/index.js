@@ -1,30 +1,18 @@
 import React, {Component} from 'react';
 import SideMenu from 'common/components/SideMenu';
 import NavTab from 'common/components/NavTab';
-import { withRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-// import Class, { meta } from 'markdown/class';
-// import Class, { meta } from 'markdown/class';
+import { RouterConfig } from '../../../src/router';
 
 import styles from './index.scss';
 import {Code, H3, InlineCode} from "../../../src/ui";
 
-@withRouter
-
 export default class AppContainer extends Component {
-  
-  componentWillMount(){
-    // console.log('props', this.props.location.pathname);
-    console.log('props', this.props.match.params.category);
-  }
-  
-  componentWillReceiveProps(nextProps){
-    // console.log('nextProps', nextProps.location.pathname);
-    console.log('nextProps', nextProps.match.params.category);
-  }
-  
   render() {
-    const { children } = this.props;
+    const { match } = this.props;
+    const { moduleName } = match.params;
+    
     return (
       <div className={styles.container}>
         
@@ -34,7 +22,7 @@ export default class AppContainer extends Component {
           </div>
           
           <SideMenu
-
+            moduleRouterConfig={RouterConfig[moduleName]}
           />
         </div>
         
@@ -44,10 +32,44 @@ export default class AppContainer extends Component {
           />
           
           <div className={styles.mdView}>
-            haizi
+            <Switch>
+              {
+                RouterConfig[moduleName].map((route) => {
+                  return <Route path={match.url + '/' + route.path} key={route.path} render={() => {
+                    const Component = route.component;
+                    return (
+                      <Component
+                        components={{
+                          h3: H3,
+                          code: Code,
+                          inlineCode: InlineCode
+                        }}
+                      />
+                    )
+                  }}/>
+                })
+              }
+  
+              {
+                RouterConfig[moduleName].map((route) => {
+                  if(route.redirectTo){
+                    return <Redirect key={route.path} to={match.url + '/' + route.path}/>
+                  }
+                })
+              }
+            </Switch>
           </div>
         </div>
       </div>
     )
   }
-}
+}/*
+component: (
+  <Async
+    components={{
+      h3: H3,
+      code: Code,
+      inlineCode: InlineCode
+    }}
+  />
+),*/

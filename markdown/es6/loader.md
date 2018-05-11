@@ -58,7 +58,7 @@ export default function(source) {
 };
 ```
 
-export const meta = {
+export const LoaderMeta = {
   anchors: [
     'loader链式调用'
   ]

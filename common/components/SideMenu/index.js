@@ -1,37 +1,66 @@
 import React, {Component} from 'react';
 import { Menu, Icon } from 'antd';
+import { withRouter } from 'react-router-dom';
+
 import styles from './index.scss';
 
 const { SubMenu, Item } = Menu;
 
-
-
+@withRouter
 export default class SideMenu extends Component {
+  changeRoute = ({key}) => {
+    const { location: { pathname }, match: { params: { moduleName }} } = this.props;
+    
+    // attention 如果pathname中有key字段，说明就在当前路由，不需要跳转，所以return
+    if(pathname.indexOf(key) !== -1){
+      return;
+    }
+    
+    this.props.history.push(`/${moduleName}/${key}`);
+  };
+  
   render() {
+    const { moduleRouterConfig } = this.props;
+    
+    const { pathname } = this.props.location;
+    
+    const firstRoute = pathname.split('/')[1];
+    
+    const secondRoute = pathname.split('/')[2];
+    
+    const openKeys = [].concat(secondRoute);
+    console.log('openKeys',openKeys);
+    
     return (
       <Menu
-        // openKeys
+        openKeys={openKeys}
         // selectedKeys
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
+        // defaultSelectedKeys={['1']}
         mode="inline"
         theme="dark"
         // inlineCollapsed 菜单是否收起呈缩略图，可以后面加此功能
       >
-        <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-          <Item key="5">Option 5</Item>
-          <Item key="6">Option 6</Item>
-          <Item key="7">Option 7</Item>
-          <Item key="8">Option 8</Item>
-        </SubMenu>
-        <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
-          <Item key="9">Option 9</Item>
-          <Item key="10">Option 10</Item>
-          <SubMenu key="sub3" title="Submenu">
-            <Item key="11">Option 11</Item>
-            <Item key="12">Option 12</Item>
-          </SubMenu>
-        </SubMenu>
+        {
+          moduleRouterConfig.map((route) => {
+            return (
+              <SubMenu
+                key={route.path}
+                title={<span><Icon type="mail" /><span>{route.menuName}</span></span>}
+                onTitleClick={this.changeRoute}
+              >
+                {
+                  route.anchors && route.anchors.map((anchor) => {
+                    return (
+                      <Item key={anchor}>
+                        <a href={`#/${firstRoute}/${secondRoute}/${anchor}`}>{anchor}</a>
+                      </Item>
+                    )
+                  })
+                }
+              </SubMenu>
+            )
+          })
+        }
       </Menu>
     )
   }

@@ -116,7 +116,7 @@ Promise的错误处理就是如果子Promise不做错误处理就会冒泡到Pro
 
 await命令后面的Promise对象，运行结果可能是rejected，所以最好把await命令放在try...catch代码块中。
 
-### async 函数的实现原理
+### async函数的实现原理
 
 async 函数的实现原理，就是将 Generator 函数和自动执行器，包装在一个函数里。
 
@@ -161,11 +161,11 @@ function spawn(genF) {
 }
 ```
 
-export const meta = {
+export const AsyncMeta = {
   anchors: [
     '基本介绍',
     'async函数的Promise属性',
     'await命令',
-    'async 函数的实现原理'
+    'async函数的实现原理'
   ]
 }

@@ -117,7 +117,7 @@ item-3 = 200px + 60px = 260px
 
 而 item-2 基准值取 auto 的时候，根据规则基准值使用值是主尺寸值即 100px，故这 100px 不会纳入剩余空间
 
-export const meta = {
+export const FlexMeta = {
   anchors: [
     '容器的属性',
     '项目的属性'
