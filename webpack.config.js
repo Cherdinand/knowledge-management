@@ -4,12 +4,15 @@ const remarkHighlight = require('remark-highlight.js');
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname,'src/index.js'),
+  context: process.cwd(),  // 设置入口文件的上下文为D:\knowledge-management，默认值为package.json文件所在目录
+  
+  entry: './src/index.js',  // 相对于context设置的目录查找
   
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: "/assets/", // string
+    path: path.resolve('./dist/assets'),  // 说明打包后的资源放在哪个目录下
+    filename: 'js/[name].js',             // 打包后的js文件的文件名
+    // chunkFilename: ""
+    publicPath: "/assets/",              // 此选项指定浏览器中引用的输出目录的公用URL。
   },
   
   devtool: 'eval-source-map',
@@ -19,7 +22,7 @@ module.exports = {
     publicPath: "/assets/", // string
     // contentBase: [path.join(__dirname, "public"), path.join(__dirname, "assets")],
     
-    contentBase: path.resolve(__dirname, 'dist'), // 会在设置的目录下创建本地服务器，然后使用目录下的index.html文件
+    contentBase: path.resolve(__dirname, 'dist/assets'), // 会在设置的目录下创建本地服务器，然后使用目录下的index.html文件
     inline: true,  // todo inline只能做到在更改代码的时候刷新整个页面，HMR可以做到不刷新页面，只刷新内容。所以后面还是要加上HMR，hot要搭配webpack插件使用
   },
   
@@ -91,7 +94,8 @@ module.exports = {
         {
           loader: 'url-loader',
           options: {
-            limit: 8192
+            limit: 8192,
+            name: 'images/[name].[ext]'  // 相对于output.path
           }
         }
       ]
@@ -101,12 +105,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
-      template: './public/index.html',
-      filename: path.resolve(__dirname, 'dist/index.html'),
+      favicon: './public/favicon.png',  // 相对于context设置的目录查找 todo 好像只能用png格式的？
+      template: './public/index.html',  // 相对于context设置的目录查找
+      filename: 'index.html',           // filename的路径是相对于 output.path
+      cache: true,
       alwaysWriteToDisk: true,
-      favicon: './public/favicon.png'  // todo 好像只能用png格式的？
-    }),
-    new HtmlWebpackHarddiskPlugin()
+    })/*,
+    new HtmlWebpackHarddiskPlugin()*/
   ],
 };
 

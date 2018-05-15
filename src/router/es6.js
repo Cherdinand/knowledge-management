@@ -1,5 +1,3 @@
-import React from 'react';
-
 import AsyncMd, { AsyncMeta } from 'markdown/es6/async.md';
 import Async from 'components/Async';
 

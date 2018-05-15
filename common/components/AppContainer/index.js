@@ -6,13 +6,13 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { RouterConfig } from 'router';
 
 import styles from './index.scss';
-import { Code, H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
+import { H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
 
 export default class AppContainer extends Component {
   render() {
     const { match } = this.props;
     const { moduleName } = match.params;
-
+  
     return (
       <div className={styles.container}>
         <div className={styles.sidebar}>
@@ -37,7 +37,6 @@ export default class AppContainer extends Component {
                       <Component
                         components={{
                           h3: H3,
-                          code: Code,
                           blockquote: Blockquote,
                           em: Em,
                           inlineCode: InlineCode

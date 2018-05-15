@@ -38,7 +38,7 @@ export default class SideMenu extends Component {
             return (
               <SubMenu
                 key={route.path}
-                title={<span><Icon type="mail" /><span>{route.menuName}</span></span>}
+                title={<span><Icon type="slack" /><span>{route.menuName}</span></span>}
                 onTitleClick={this.changeRoute}
               >
                 {

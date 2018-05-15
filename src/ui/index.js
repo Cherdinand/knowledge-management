@@ -14,8 +14,6 @@ const H3 = props => (
 
 const InlineCode = props => <code className={styles.inlineCode} {...props} />;
 
-const Code = props => <code {...props} />;
-
 const Blockquote = props => <blockquote className={styles.tip} {...props} />;
 
 const Em = props => <em className={styles.em} {...props} />;
@@ -23,7 +21,6 @@ const Em = props => <em className={styles.em} {...props} />;
 export {
   H3,
   InlineCode,
-  Code,
   Blockquote,
   Em,
 }

@@ -6,7 +6,8 @@ import AppContainer from 'common/components/AppContainer';
 
 import './markdown.scss';
 // import './css/arta.css';
-import './css/tomorrow.css';
+// import './css/tomorrow.css';
+import './css/brown-paper.css';
 
 class App extends Component {
   render() {

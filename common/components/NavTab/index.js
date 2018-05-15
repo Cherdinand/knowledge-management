@@ -28,6 +28,7 @@ export default class NavTab extends Component {
           <TabPane tab="ES6" key="es6" />
           <TabPane tab="Css" key="css" />
           <TabPane tab="React" key="react" />
+          <TabPane tab="Webpack" key="webpack" />
           <TabPane tab="Others" key="others" />
           <TabPane tab="CherComponents" key="cherComponents" />
           <TabPane tab="Framework" key="framework" />
