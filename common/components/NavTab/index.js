@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { Tabs } from 'antd';
 
 import styles from './index.scss';
-import AppContainer from "common/components/AppContainer";
 
 const { TabPane } = Tabs;
 
@@ -26,12 +25,12 @@ export default class NavTab extends Component {
           size="large"
           onTabClick={this.handleClick}
         >
-          {/*<TabPane tab="架构之路" key="frame" />*/}
           <TabPane tab="ES6" key="es6" />
           <TabPane tab="Css" key="css" />
           <TabPane tab="React" key="react" />
           <TabPane tab="Others" key="others" />
-          {/*<TabPane tab="CherComponents" key="cher-components" />*/}
+          <TabPane tab="CherComponents" key="cherComponents" />
+          <TabPane tab="Framework" key="framework" />
         </Tabs>
       </div>
     )

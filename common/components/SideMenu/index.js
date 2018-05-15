@@ -23,7 +23,7 @@ export default class SideMenu extends Component {
     const { moduleRouterConfig, location: { pathname, hash } } = this.props;
 
     const openKeys = [].concat(pathname.split('/')[2]);
-    const selectedKeys = [].concat(decodeURI(hash.substr(2)));
+    const selectedKeys = [].concat(decodeURI(hash.substr(1)));
 
     return (
       <Menu
@@ -45,7 +45,7 @@ export default class SideMenu extends Component {
                   route.anchors && route.anchors.map((anchor) => {
                     return (
                       <Item key={anchor}>
-                        <a href={`#/${anchor}`}>{anchor}</a>
+                        <a href={`#${anchor}`}>{anchor}</a>
                       </Item>
                     )
                   })

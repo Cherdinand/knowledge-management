@@ -1,12 +1,12 @@
-import 7React, {Component} from 'react';
+import React, {Component} from 'react';
 import SideMenu from 'common/components/SideMenu';
 import NavTab from 'common/components/NavTab';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { RouterConfig } from '../../../src/router';
+import { RouterConfig } from 'router';
 
 import styles from './index.scss';
-import {Code, H3, InlineCode} from "../../../src/ui";
+import { Code, H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
 
 export default class AppContainer extends Component {
   render() {
@@ -31,20 +31,25 @@ export default class AppContainer extends Component {
               {
                 RouterConfig[moduleName].map((route) => {
                   return <Route path={match.url + '/' + route.path} key={route.path} render={() => {
+                    const Container = route.container;
                     const Component = route.component;
-                    return (
+                    const componentJsx = Component && (
                       <Component
                         components={{
                           h3: H3,
                           code: Code,
+                          blockquote: Blockquote,
+                          em: Em,
                           inlineCode: InlineCode
                         }}
                       />
-                    )
+                    );
+                    
+                    return Container ? <Container>{componentJsx}</Container> : componentJsx;
                   }}/>
                 })
               }
-
+ 
               {
                 RouterConfig[moduleName].map((route) => {
                   if(route.redirectTo){

@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const highlight = require('remark-highlight.js');
-const html = require('remark-html');
+const remarkHighlight = require('remark-highlight.js');
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
@@ -27,7 +26,9 @@ module.exports = {
   resolve: {
     alias: {
       common: path.resolve(__dirname, 'common'),
-      utils: path.resolve(__dirname, 'src/utils'),
+      components: path.resolve(__dirname, 'src/components'),
+      cherComponents: path.resolve(__dirname, 'src/cherComponents'),
+      router: path.resolve(__dirname, 'src/router'),
       markdown: path.resolve(__dirname, 'markdown'), // 给一个路径使用别名代替，这样在引用的时候就可以省略../  如import Class from 'markdown/class';
     },
     
@@ -79,11 +80,21 @@ module.exports = {
         {
           loader: '@mdx-js/loader',
           options: {
-            // mdPlugins: [highlight,html]
+            mdPlugins: [remarkHighlight]
             // hastPlugins: [highlight,html]
           }
         }
       ],
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8192
+          }
+        }
+      ]
     }]
   },
   
