@@ -1,5 +1,5 @@
 ### knowledge-management
-a static web site using markdown...
+d a static web site using markdown...
 
 ### 使用规范
 
