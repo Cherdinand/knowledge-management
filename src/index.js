@@ -1,20 +1,24 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-
-import Class from 'markdown/class';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import AppContainer from 'common/components/AppContainer';
 
-import { H3, InlineCode, Code } from './ui';
-
-import './index.scss';
+import './markdown.scss';
+// import './css/arta.css';
+import './css/tomorrow.css';
 
 class App extends Component {
   render() {
     return (
-      <AppContainer>
-        children
-      </AppContainer>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' render={() => {
+            return <Redirect to="es6" />
+          }}/>
+          <Route path="/:moduleName" component={AppContainer} />
+        </Switch>
+      </BrowserRouter>
     )
   }
 }

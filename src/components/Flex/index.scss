@@ -1,0 +1,12 @@
+.btnWrap {
+  margin: 15px 0;
+  :global {
+    .ant-btn-primary {
+      margin-left: 15px;
+    }
+  }
+}
+
+.textShow {
+  line-height: 50px;
+}
