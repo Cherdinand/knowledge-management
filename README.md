@@ -7,8 +7,13 @@ a static web site using markdown...
  ### str    => h3 => anchor  use for title
  _str_      => em            use for sub title
  `str`      => inlineCode    use for emphysis
- > info:    => blockquote    use for self-comprehension or tips
- > warning: => blockquote    use for warning
+ > info     => blockquote    use for self-comprehension or tips
+ 
+ str
+ 
+ > warning  => blockquote    use for warning
+ 
+ str
 ```
 
 ### 目录结构

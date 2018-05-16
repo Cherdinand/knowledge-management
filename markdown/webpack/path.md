@@ -1,5 +1,5 @@
 ### context
-> info:
+> info
 
 > context 有什么实际作用？官方文档的解释是使得你的配置独立于工程目录 「This makes your configuration independent from CWD (current working directory)」。怎么理解？举个例子，在分离开发生产配置文件时候，一般把 webpack.config 放到 build 文件夹下，此时 entry 却不用考虑相对于 build 目录来配置，仍然要相对于 context 来配置，这也就是所谓的独立于工程目录。
 
@@ -7,7 +7,7 @@ context是webpack编译时的基础目录，entry、html入口、loader解析时
 
 其默认值就是webpack运行所在的目录，也就是package.json所在目录
 
-> warning:
+> warning
 
 > 需要注意的是，output 的配置项和 context 没有关系，但是有些插件的配置项和 context 有关，后面会说明。
 
@@ -42,7 +42,7 @@ output: {
 
 _publicPath_
 
-> info:
+> info
 
 > ouput.publicPath会对打包后所有静态资源（img、font、js、css）的url引用添加公共路径，作用于开发环境（webpack-dev-server里打包后的文件保存在内存中也受ouput.publicPath的影响）和生产环境。
 
