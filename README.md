@@ -4,10 +4,11 @@ a static web site using markdown...
 ### 使用规范
 
 ```js
- ### str => h3 => anchor  use for title
- _str_   => em            use for sub title
- `str`   => inlineCode    use for emphysis
- > str   => blockquote    use for self-comprehension
+ ### str    => h3 => anchor  use for title
+ _str_      => em            use for sub title
+ `str`      => inlineCode    use for emphysis
+ > info:    => blockquote    use for self-comprehension or tips
+ > warning: => blockquote    use for warning
 ```
 
 ### 目录结构
