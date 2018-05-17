@@ -1,5 +1,5 @@
 ### knowledge-management
-xinxin a static web site using markdown...
+a static web site using markdown...
 
 ### 使用规范
 
