@@ -5,8 +5,6 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AppContainer from 'common/components/AppContainer';
 
 import './markdown.scss';
-// import './css/arta.css';
-import './css/tomorrow.css';
 
 class App extends Component {
   render() {

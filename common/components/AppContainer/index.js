@@ -2,21 +2,27 @@ import React, {Component} from 'react';
 import SideMenu from 'common/components/SideMenu';
 import NavTab from 'common/components/NavTab';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { BackTop } from 'antd';
+
+import Logo from './images/logo.png';
 
 import { RouterConfig } from 'router';
 
 import styles from './index.scss';
-import { Code, H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
+import { H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
 
 export default class AppContainer extends Component {
   render() {
     const { match } = this.props;
     const { moduleName } = match.params;
-
+  
     return (
       <div className={styles.container}>
         <div className={styles.sidebar}>
-          <div className={styles.sideHeader}>Cherdinand</div>
+          <div className={styles.sideHeader}>
+            <img className={styles.img} src={Logo} alt=""/>
+            <span className={styles.title}>Cherdinand</span>
+          </div>
 
           <SideMenu
             moduleRouterConfig={RouterConfig[moduleName]}
@@ -37,7 +43,6 @@ export default class AppContainer extends Component {
                       <Component
                         components={{
                           h3: H3,
-                          code: Code,
                           blockquote: Blockquote,
                           em: Em,
                           inlineCode: InlineCode
@@ -58,6 +63,7 @@ export default class AppContainer extends Component {
                 })
               }
             </Switch>
+            <BackTop />
           </div>
         </div>
       </div>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import NiceArticleMd, { NiceArticleMeta } from 'markdown/framework/niceArticle.md';
 
 /***

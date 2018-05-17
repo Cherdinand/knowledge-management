@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ReactRouter4Md, { ReactRouter4Meta } from 'markdown/react/react-router4.md';
 import ContextMd, { ContextMeta } from 'markdown/react/context.md';
 

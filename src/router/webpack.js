@@ -1,5 +1,4 @@
-import FlexMd, { FlexMeta } from 'markdown/css/flex.md';
-import Flex from 'components/Flex';
+import Path, { PathMeta } from 'markdown/webpack/path.md';
 
 /***
  * path          匹配的路由
@@ -11,12 +10,11 @@ import Flex from 'components/Flex';
  ***/
 
 export default {
-  css: [{
-    path: 'flex',
-    menuName: "Flex",
-    anchors: FlexMeta.anchors,
-    container: Flex,
-    component: FlexMd,
+  webpack: [{
+    path: 'path',
+    menuName: "Path",
+    component: Path,
+    anchors: PathMeta.anchors,
     redirectTo: true,
   }],
 };

@@ -1,16 +1,30 @@
-.tip {
-  background-color: #DCF2FD;
-  color: #618ca0;
+.tips {
   border-left: none;
   border-radius: 3px;
   padding: 0.75em 1em;
+  p {
+    margin-top: 0;
+  }
+
+  p:nth-of-type(1){
+    display: none;
+  }
+}
+
+.info {
+  color: #83AFE5;
+  background-color: #DCF2FD;
+}
+
+.warning {
+  background-color: #fbedb7;
+  color: #6A7D89;
 }
 
 .inlineCode {
   border: none;
   color: #DF8C8C;
   background-color: #fff;
-  font-family: Helvetica, arial, sans-serif;
   white-space: pre-wrap;
 }
 

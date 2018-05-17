@@ -1,5 +1,3 @@
-import React from 'react';
-
 import _201805Md, { _201805Meta } from 'markdown/others/2018-05.md';
 
 /***

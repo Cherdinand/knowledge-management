@@ -1,0 +1,13 @@
+.tabsWrap {
+  :global {
+    .ant-tabs-tab {
+      font-family: 'Poiret One', Microsoft Jhenghei;
+      font-weight: bold;
+      color: #675151;
+    }
+    .ant-tabs-nav .ant-tabs-tab-active {
+      color: #1890ff;
+      font-weight: 500;
+    }
+  }
+}
