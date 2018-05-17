@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
+import classnames from 'classnames';
 
 import { Tabs } from 'antd';
 
@@ -19,7 +20,7 @@ export default class NavTab extends Component {
     const { className, match: { params: { moduleName } } } = this.props;
 
     return (
-      <div className={className}>
+      <div className={classnames(styles.tabsWrap,className)}>
         <Tabs
           defaultActiveKey={moduleName}
           size="large"

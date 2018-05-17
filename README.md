@@ -1,5 +1,5 @@
 ### knowledge-management
-a static web site using markdown...
+xinxin a static web site using markdown...
 
 ### 使用规范
 
@@ -14,6 +14,8 @@ a static web site using markdown...
  > warning  => blockquote    use for warning
  
  str
+ 
+ **str**   => em             use for emphysis in info or warning
 ```
 
 ### 目录结构
@@ -26,7 +28,6 @@ a static web site using markdown...
 - src
   - components          除markdown显示还需要其他功能（如console，css的playground）的container
   - cherComponents      cherComponent这种不需要markdown显示的container
-  - css                 markdown的code区域的主题css
   - ui                  mdx中markdown的自定义ui展示
   - router              路由配置
 ```

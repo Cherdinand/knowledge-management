@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import SideMenu from 'common/components/SideMenu';
 import NavTab from 'common/components/NavTab';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { BackTop } from 'antd';
+
+import Logo from './images/logo.png';
 
 import { RouterConfig } from 'router';
 
@@ -16,7 +19,10 @@ export default class AppContainer extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.sidebar}>
-          <div className={styles.sideHeader}>Cherdinand</div>
+          <div className={styles.sideHeader}>
+            <img className={styles.img} src={Logo} alt=""/>
+            <span className={styles.title}>Cherdinand</span>
+          </div>
 
           <SideMenu
             moduleRouterConfig={RouterConfig[moduleName]}
@@ -57,6 +63,7 @@ export default class AppContainer extends Component {
                 })
               }
             </Switch>
+            <BackTop />
           </div>
         </div>
       </div>

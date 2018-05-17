@@ -10,7 +10,7 @@ module.exports = {
   entry: './src/index.js',  // 相对于context设置的目录查找
   
   output: {
-    path: path.resolve('./dist/assets/'),  // 说明打包后的资源放在哪个目录下
+    path: path.resolve('./dist/assets/'),  // 所有打包后的静态资源资源放在哪个目录下
     filename: 'js/[name].js',             // js 打包后js的文件放在哪个目录下面  [name].js 打包后的js文件的文件名
     // chunkFilename: ""
     publicPath: "/assets/",              // 此选项指定浏览器中引用的输出目录的公用URL。
@@ -107,7 +107,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
-      favicon: './public/favicon.png',  // 相对于context设置的目录查找 todo 好像只能用png格式的？
+      favicon: './public/favicon.ico',  // 相对于context设置的目录查找 todo 好像只能用png格式的？
       template: './public/index.html',  // 相对于context设置的目录查找
       filename: 'index.html',           // filename的路径是相对于 output.path
       // alwaysWriteToDisk: true,
@@ -205,7 +205,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
       template: './public/index.html',
-      favicon: './public/favicon.png'  // todo 好像只能用png格式的？
+      favicon: './public/favicon.ico'  // todo 好像只能用png格式的？
     })
   ],
 };*/

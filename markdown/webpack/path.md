@@ -1,3 +1,11 @@
+### 基本准则
+
+> info
+
+> 凡是跟入口相关的属性都是相对于context的，如entry、html-webpack-plugin的template
+
+> 而凡是跟出口相关的属性都是相对于output.path的，如ouput.filename、url-loader的options.name、html-webpack-plugin的filename。这些表示输出后的文件都会被放置到output.path中
+
 ### context
 > info
 
@@ -27,7 +35,11 @@ entry: {
 ### output 
 _path_
 
-打包文件输出的目录，建议配置为绝对路径（相对路径不会报错），默认值和context的默认值一样，都是process.cwd()。
+> info
+
+> 所有打包后的静态资源资源放在哪个目录下，**说明js、css、img、font等文件的输出路径都是相对于output.path**
+
+> 建议配置为绝对路径（相对路径不会报错），默认值和context的默认值一样，都是process.cwd()。
 
 除了常规的配置方式，还可以在path中用使用 [hash] 模板，比如配置：
 
@@ -48,7 +60,7 @@ _publicPath_
 
 > This option tells it where on your server to load that bundle from.
 
-> 静态资源最终访问路径 = output.publicPath + 资源loader或插件等配置路径
+> **静态资源最终访问路径 = output.publicPath + 资源loader或插件等配置路径**
 
 举例说明：
 ```js
@@ -86,7 +98,9 @@ output: {
 }
 ```
 
-warning: 一般情况下publicPath应该以'/'结尾，而其他loader或插件的配置不要以'/'开头
+> warning
+ 
+> 一般情况下publicPath应该以'/'结尾，而其他loader或插件的配置不要以'/'开头
 
 ### webpack-dev-server
 
@@ -94,15 +108,17 @@ _publicPath_
 
 这里的publicPath仅作用于开发环境，因此不会出现配置http地址的情况
 
-webpack-dev-server 打包的内容是放在内存中，通过express匹配请求路径，然后读取对应的资源输出。这些资源对外的根目录就是publicPath，可以理解为和 outpu.path 的功能一样，将所有资源放在此目录下，在浏览器可以直接访问此目录下的资源。
+> info
+
+> webpack-dev-server 打包的内容是放在内存中，通过express匹配请求路径，然后读取对应的资源输出。这些资源对外的根目录就是publicPath，可以理解为和 outpu.path 的功能一样，将所有资源放在此目录下，在浏览器可以直接访问此目录下的资源。
  
-`webpack-dev-server使用的是内存中的打包文件，并不是webpack命令打包后的路径（output.path）。`
+> webpack-dev-server使用的是内存中的打包文件，并不是webpack命令打包后的路径（output.path）。
 
-`当你不配置devServer下的publicPath时，其会默认将包打到output.publicPath的路径下。`
+> 当你不配置devServer下的publicPath时，其会默认将包打到output.publicPath的路径下。
 
-`当你配置了devServer下的publicPath时，才会将包打开你指定的路径下。`
+> 当你配置了devServer下的publicPath时，才会将包打开你指定的路径下。
 
-`所以一般情况下都要保证devServer中的publicPath与output.publicPath保持一致。`
+> 所以一般情况下都要保证devServer中的publicPath与output.publicPath保持一致。
 
 _devServer.publicPath & devServer.contentBase_
 
@@ -145,6 +161,7 @@ https://www.jianshu.com/p/cbe81be10d78
 
 export const PathMeta = {
   anchors: [
+    '基本准则',
     'context',
     'output',
     'webpack-dev-server',

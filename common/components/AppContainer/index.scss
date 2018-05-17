@@ -16,6 +16,17 @@
     color: #fff;
     border-bottom: 1px solid #fff;
     text-align: center;
+    vertical-align: middle;
+    .img {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+    }
+    .title {
+      font-size: 26px;
+      vertical-align: middle;
+      font-family: "Poiret One";
+    }
   }
 }
 
@@ -27,6 +38,7 @@
     padding: 9px 0;
   }
   .mdView {
+    min-width: 1200px;
     padding: 20px;
   }
 }

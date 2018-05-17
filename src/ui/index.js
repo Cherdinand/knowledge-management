@@ -2,7 +2,6 @@ import React from 'react';
 import { Icon } from 'antd';
 import classnames from 'classnames';
 
-
 import styles from './index.scss';
 
 const H3 = props => (
@@ -17,7 +16,6 @@ const H3 = props => (
 const InlineCode = props => <code className={styles.inlineCode} {...props} />;
 
 const Blockquote = props => {
-  
   let type = props.children[1].props.children;
   
   return (
