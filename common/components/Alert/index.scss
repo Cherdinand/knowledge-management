@@ -2,6 +2,10 @@
   margin-bottom: 15px;
 }
 
+:global(.ant-alert) {
+  font-family: "Nixie One", Microsoft JhengHei;
+}
+
 .warning {
   color: #DF8C8C;
 }
