@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
+import Home from 'common/components/Home';
 import AppContainer from 'common/components/AppContainer';
 
 import './markdown.scss';
@@ -11,9 +12,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' render={() => {
+         {/* <Route exact path='/' render={() => {
             return <Redirect to="es6" />
-          }}/>
+          }}/>*/}
+          <Route exact path='/' component={Home}/>
           <Route path="/:moduleName" component={AppContainer} />
         </Switch>
       </BrowserRouter>

@@ -45,7 +45,7 @@ export default class SideMenu extends Component {
                   route.anchors && route.anchors.map((anchor) => {
                     return (
                       <Item key={anchor}>
-                        <a href={`#${anchor}`}>{anchor}</a>
+                        <a className={styles.textOverflow} href={`#${anchor}`}>{anchor}</a>
                       </Item>
                     )
                   })

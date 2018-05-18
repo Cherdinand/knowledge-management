@@ -15,6 +15,12 @@ $grays-gray4: #899BA6;
 $grays-gray5: #C5D4DD;
 $grays-gray6: #E6EEF3;
 
+:global {
+  #root {
+    height: 100%;
+  }
+}
+
 // 代码高亮
 :global {
   .hljs-tag {
