@@ -5,6 +5,7 @@ import OthersRouter from './others';
 import ReactRouter from './react';
 import CherComponentsRouter from './cherComponents';
 import WebpackRouter from './webpack';
+import MoviesRouter from './movies';
 
 export const RouterConfig = {
   ...Es6Router,
@@ -14,4 +15,5 @@ export const RouterConfig = {
   ...OthersRouter,
   ...CherComponentsRouter,
   ...FrameworkRouter,
+  ...MoviesRouter,
 };

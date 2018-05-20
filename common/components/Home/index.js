@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 import styles from './index.scss';
 
 export default class Home extends Component {
-  
+
   render() {
     // https://www.cnblogs.com/zx-admin/p/7030978.html
     return (
@@ -13,7 +13,7 @@ export default class Home extends Component {
           {
             "particles": {
               "number": {
-                "value": 40,
+                "value": 10,
                 "density": {
                   "enable": true,
                   "value_area": 800
@@ -38,18 +38,18 @@ export default class Home extends Component {
                 }
               },
               "opacity": {
-                "value": 0.5,
-                "random": false,
+                "value": .5,
+                "random": true,
                 "anim": {
-                  "enable": false,
+                  "enable": true,
                   "speed": 1,
                   "opacity_min": 0.1,
                   "sync": false
                 }
               },
               "size": {
-                "value": 3,
-                "random": true,
+                "value": 2,
+                "random": false,
                 "anim": {
                   "enable": false,
                   "speed": 40,
@@ -66,12 +66,12 @@ export default class Home extends Component {
               },
               "move": {
                 "enable": true,
-                "speed": 6,
+                "speed": 3,
                 "direction": "none",
                 "random": false,
                 "straight": false,
                 "out_mode": "out",
-                "bounce": false,
+                "bounce": true,
                 "attract": {
                   "enable": false,
                   "rotateX": 600,
