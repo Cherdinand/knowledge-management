@@ -1,7 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const remarkHighlight = require('remark-highlight.js');
-var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -24,7 +26,8 @@ module.exports = {
     },
     publicPath: "/assets/",
     // contentBase: path.resolve(__dirname, 'dist/assets'), // 会在设置的目录下创建本地服务器，然后使用目录下的index.html文件
-    inline: true  // todo inline只能做到在更改代码的时候刷新整个页面，HMR可以做到不刷新页面，只刷新内容。所以后面还是要加上HMR，hot要搭配webpack插件使用
+    hot: true,
+    //inline: true  // todo inline只能做到在更改代码的时候刷新整个页面，HMR可以做到不刷新页面，只刷新内容。所以后面还是要加上HMR，hot要搭配webpack插件使用
   },
 
   resolve: {
@@ -110,7 +113,8 @@ module.exports = {
       template: './public/index.html',  // 相对于context设置的目录查找
       filename: 'index.html',           // filename的路径是相对于 output.path
       // alwaysWriteToDisk: true,
-    })/*,
-    new HtmlWebpackHarddiskPlugin()*/
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
 };

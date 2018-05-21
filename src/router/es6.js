@@ -17,6 +17,7 @@ import LoaderMd, { LoaderMeta } from 'markdown/es6/loader.md';
  * redirectTo    需要redirect的路由
  ***/
 
+
 export default {
   es6: [{
     path: 'async',

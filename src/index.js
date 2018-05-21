@@ -7,23 +7,14 @@ import AppContainer from 'common/components/AppContainer';
 
 import './markdown.scss';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-         {/* <Route exact path='/' render={() => {
-            return <Redirect to="es6" />
-          }}/>*/}
-          <Route exact path='/' component={Home}/>
-          <Route path="/:moduleName" component={AppContainer} />
-        </Switch>
-      </BrowserRouter>
-    )
-  }
-}
+import { setConfig } from 'react-hot-loader'
+setConfig({ logLevel: 'debug' })
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+const render = (Component) => {
+  ReactDOM.render(
+    <Component />,
+    document.getElementById('root')
+  );
+};
+
+render(AppContainer);

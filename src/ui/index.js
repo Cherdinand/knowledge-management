@@ -5,9 +5,9 @@ import classnames from 'classnames';
 import styles from './index.scss';
 
 const H3 = props => (
-  <h3 id={`${props.children}`}>
+  <h3 id={`${props.children}`} className={styles.titleWrap}>
     <a className={styles.anchors} href={`#${props.children}`}>
-      {props.children}
+      <span className={styles.name}>{props.children}</span>
       <Icon className={styles.link} type="link" />
     </a>
   </h3>

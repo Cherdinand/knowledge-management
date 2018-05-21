@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 256px;
+  background: #001529;
+  .sideHeader {
+    height: 64px;
+    line-height: 64px;
+    background: #002140;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    .img {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+    }
+    .title {
+      font-size: 26px;
+      vertical-align: middle;
+      font-family: "Poiret One";
+    }
+  }
+}
+
+.content {
+  // todo min-width: ;
+  margin-left: 256px;
+  .navTab {
+    height: 64px;
+    padding: 9px 0;
+  }
+  .mdView {
+    min-width: 1200px;
+    padding: 20px;
+  }
+}
+
