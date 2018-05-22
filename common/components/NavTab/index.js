@@ -10,13 +10,13 @@ const { TabPane } = Tabs;
 
 @withRouter
 export default class NavTab extends Component {
-  
+
   handleClick = (key) => {
     this.props.history.push(`/${key}`);
   };
-  
+
   render() {
-    // xinxin 这里通过withRouter传进来的match对象是由src/index.js 里<Route path="/:moduleName" component={AppContainer} />传进来的
+    // xinxin 这里通过withRouter传进来的match对象是由src/index.js 里<Route path="/:moduleName" component={BasicLayout} />传进来的
     const { className, match: { params: { moduleName } } } = this.props;
 
     return (
@@ -33,6 +33,7 @@ export default class NavTab extends Component {
           <TabPane tab="Others" key="others" />
           <TabPane tab="CherComponents" key="cherComponents" />
           <TabPane tab="Framework" key="framework" />
+          <TabPane tab="Movies" key="movies" />
         </Tabs>
       </div>
     )

@@ -1,5 +1,5 @@
 ### knowledge-management
-xinxin a static web site using markdown...
+a static web site using markdown... NEW
 
 ### 使用规范
 
@@ -16,6 +16,9 @@ xinxin a static web site using markdown...
  str
  
  **str**   => em             use for emphysis in info or warning
+ 
+ import location from '../images/location.png';
+ <img src={location} alt="location" title="location拆解图"/>   直接使用img标签在md中插入图片
 ```
 
 ### 目录结构

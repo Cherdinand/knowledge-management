@@ -11,11 +11,11 @@ import { RouterConfig } from 'router';
 import styles from './index.scss';
 import { H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
 
-export default class AppContainer extends Component {
+export default class BasicLayout extends Component {
   render() {
     const { match } = this.props;
     const { moduleName } = match.params;
-  
+    
     return (
       <div className={styles.container}>
         <div className={styles.sidebar}>
@@ -23,15 +23,15 @@ export default class AppContainer extends Component {
             <img className={styles.img} src={Logo} alt=""/>
             <span className={styles.title}>Cherdinand</span>
           </div>
-
+          
           <SideMenu
             moduleRouterConfig={RouterConfig[moduleName]}
           />
         </div>
-
+        
         <div className={styles.content}>
           <NavTab className={styles.navTab}/>
-
+          
           <div className={styles.mdView}>
             <Switch>
               {
@@ -54,7 +54,7 @@ export default class AppContainer extends Component {
                   }}/>
                 })
               }
- 
+              
               {
                 RouterConfig[moduleName].map((route) => {
                   if(route.redirectTo){

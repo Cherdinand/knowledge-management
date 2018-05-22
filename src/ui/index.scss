@@ -33,26 +33,45 @@
   font-size: 15px;
 }
 
+.titleWrap {
+  position: relative;
+  padding-left: 10px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 15px;
+    background: #40a9ff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+}
+
 .anchors {
   color: rgba(0, 0, 0, 0.85);
-  vertical-align: middle;
+  transition: color 0.5s ease-out;
+  .name {
+    vertical-align: middle;
+  }
+
   .link {
     transition: transform 0.5s ease-out;
+    margin-left: 10px;
+    vertical-align: middle;
+    &:hover {
+      color: #2086d7;
+    }
   }
+
   &:hover {
+    transition: color 0.5s ease-out;
     .link {
       transition: transform 0.5s ease-out;
       transform: rotate(225deg);
     }
   }
 
-  :global {
-    .anticon-link {
-      margin-left: 10px;
-      vertical-align: middle;
-      &:hover {
-        color: #2086d7;
-      }
-    }
-  }
 }
