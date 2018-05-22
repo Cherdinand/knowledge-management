@@ -17,8 +17,8 @@ a static web site using markdown... NEW
  
  **str**   => em             use for emphysis in info or warning
  
- import Location from '../images/location.png';
- <img src={Location} alt="Location" title="Location拆解图"/>   直接使用img标签在md中插入图片
+ import location from '../images/location.png';
+ <img src={location} alt="location" title="location拆解图"/>   直接使用img标签在md中插入图片
 ```
 
 ### 目录结构
