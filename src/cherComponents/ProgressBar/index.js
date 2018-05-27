@@ -39,24 +39,25 @@ export default class ProgressBar extends Component {
       currentProgress: ++this.state.currentProgress
     })
   };
-
   render() {
     const { currentProgress, totalProgress } = this.state;
-    
+
     return (
       <div>
         <Alert
           message="基于progressbar.js写的一个react组件，可以用于自定义一条闭合曲线的svg的progressbar，此svg只能由一个path生成。"
           type="info"
         />
-        
+
         <CustomProgressBar
           options={options}
           currentProgress={currentProgress}
           totalProgress={totalProgress}
           svgElement={svgElement}
         />
-        
+
+
+
         <button onClick={this.animate}>动画</button>
       </div>
     )

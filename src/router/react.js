@@ -1,6 +1,8 @@
 import ReactRouter4Md, { ReactRouter4Meta } from 'markdown/react/react-router4.md';
 import ContextMd, { ContextMeta } from 'markdown/react/context.md';
 
+import ReactReduxMd, { ReactReduxMeta } from "markdown/react/深入浅出React和Redux.md";
+
 /***
  * path          匹配的路由
  * menuName      菜单栏（二级路由）显示的菜单名字
@@ -22,5 +24,10 @@ export default {
     menuName: "Context",
     anchors: ContextMeta.anchors,
     component: ContextMd,
+  },{
+    path: 'react-redux-book',
+    menuName: "深入浅出React和Redux",
+    anchors: ReactReduxMeta.anchors,
+    component: ReactReduxMd,
   }],
 };
