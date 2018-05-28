@@ -1,7 +1,11 @@
-loader就是一个export出来的function，这个函数接受的参数是源文件的字符串，返回经过“翻译”后的字符串。  
-这个过程可以是异步的。  
-在函数内部，可以通过this获得loader API上的内容。  
-调用this.callback()之后需要return undefined ， 也可以直接return this.callback() 因为this.callback()返回的就是undefined。  
+loader就是一个export出来的function，这个函数接受的参数是源文件的字符串，返回经过“翻译”后的字符串。
+
+这个过程可以是异步的。
+
+在函数内部，可以通过this获得loader API上的内容。
+
+调用this.callback()之后需要return undefined ， 也可以直接return this.callback() 因为this.callback()返回的就是undefined。
+
 异步loader如下：
 ``` js
 module.exports = function(content) {
@@ -14,10 +18,13 @@ module.exports = function(content) {
 ```
 
 ### loader链式调用
-当链式调用多个 loader 的时候，请记住它们会以相反的顺序执行。取决于数组写法格式，从右向左或者从下向上执行。  
+当链式调用多个 loader 的时候，请记住它们会以相反的顺序执行。取决于数组写法格式，从右向左或者从下向上执行。
+ 
 1. 最后的 loader 最早调用，将会传入原始资源内容。
-1. 第一个 loader 最后调用，期望值是传出 JavaScript 和 source map（可选）。
-1. 中间的 loader 执行时，会传入前一个 loader 传出的结果。
+
+2. 第一个 loader 最后调用，期望值是传出 JavaScript 和 source map（可选）。
+
+3. 中间的 loader 执行时，会传入前一个 loader 传出的结果。
 
 ``` js 
 {

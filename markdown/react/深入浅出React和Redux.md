@@ -1,5 +1,8 @@
+import flux from 'markdown/images/flux.png';
+import mvc from 'markdown/images/mvc.png';
+
 ```angular2html
-// todo JSX是在哪里被解析成DOM tree的？ ReactDOM.1render()?
+// todo JSX是在哪里被解析成DOM tree的？ ReactDOM.render()?
 ```
 
 ### 第一章
@@ -32,8 +35,78 @@ _onclick & onClick_
 
 当props的类型不是字符串类型的时候，在JSX中必须用花括号{}把props值包住，所以style的值有两层花括号，外层花括号表示是JSX的语法，内层花括号表示这是一个对象常量。
 
-
 `组件是绝不应该去修改传入的props对象值的。`因为当一个父组件包含多个子组件，然后把一个JS对象作为props值传给同时传给多个子组件，`注意这里子组件对于这个值为JS对象的props都存在对象引用。`而在某个子组件里改变了这个对象的内部值，那么由于对象引用的关系，导致所有子组件拿到的props值都发生了变化，就有可能会产生bug，这也是immutable的作用。
+
+一个React组件至少需要包含一个render()，因为React组件继承的父类React.Component类对除render之外的生命周期函数都有默认实现。
+
+_componentWillMount_
+
+这个时候没有任何渲染出来的结果，即使调用this.setState修改状态也不会引发重新绘制。也就是说，所有可以在这个componentWillMount中做的事情，都可以提前到constructor中间去做。
+
+_componentDidMount_
+
+render函数被调用完之后，componentDidMount函数并不是会被立刻调用，componentDidMount被调用的时候，render函数返回的东西已经引发了渲染，组件已经被“装载”到了DOM树上。`这也是在componentDidMount生命周期中可以获取到DOM节点的原因。`
+
+componentWilIMount和componentDidMount这对兄弟函数还有一个区别，就是componentWillMount可以在服务器端被调用，也可以在浏览器端被调用；`而component-DidMount只能在浏览器端被调用，在服务器端使用React 的时候不会被调用。`
+
+_componentWillReceiveProps(`nextProps`)_
+
+只要是父组件的render函数被调用，在render函数里面被谊染的子组件就会经历更新过程，不管父组件传给子组件的props有没有改变，都会触发子组件的componentWillReceiveProps函数。
+
+> warning
+
+> 通过this.setState方法触发的更新过程不会调用这个函数，这是因为这个函数适合根据新的props值（也就是参数nextProps）来计算出是不是要调用this.setState更新内部状态state。如果this.setState的调用导致componentWillReceiveProps再一次被调用，那就是一个死循环了。
+
+> 由于不管父组件传给子组件的props 有没有改变，都会触发子组件的componentWillReceiveProps函数。所以这个函数有必要把传入参数nextProps 和this.props 作必要对比。nextProps 代表的是这一次渲染传入的props 值， this.props 代表的上一次渲染时的props 值，只有两者有变化的时候才有必要调用this.setState 更新内部状态。
+
+_shouldComponentUpdate(`nextProps, nextState`)_
+
+nextProps代表的是这一次渲染传入的props值，nextState代表的是这一次渲染传入的state值，this.props代表的上一次渲染时的props值，this.state代表的上一次渲染时的state值。
+
+_componentWillUpdate(`nextProps, nextState`)_
+
+nextProps代表的是这一次渲染传入的props值，nextState代表的是这一次渲染传入的state值，this.props代表的上一次渲染时的props值，this.state代表的上一次渲染时的state值。
+
+_componentDidUpdate(`prevProps, prevState`)_
+
+因为componentDidUpdate已经完成了re-render，所以prevProps代表的也是这一次渲染传入的props值，prevState代表的也是这一次渲染传入的state值，
+
+### 第三章
+
+_MVC_
+
+<img src={mvc} alt="MVC" title="MVC框架"/>
+
+MVC最大的问题就是无法禁绝View和Model之间的直接对话。
+
+_Flux_
+
+<img src={flux} alt="Flux" title="Flux的单向数据流"/>
+
+Flux 的基本原则是“单向数据流”。
+
+如果非要把Flux和MVC做一个结构对比，那么，Flux的Dispatcher相当于MVC的Controller，Flux的Store相当于MVC的Model，Flux的View当然就对应MVC的View了，至于多出来的这个Action，可以理解为对应给MVC框架的用户请求。
+
+1. Dispatcher ，处理动作分发，维持Store 之间的依赖关系；
+
+2. Store ，负责存储数据和处理数据相关逻辑；
+
+3. Action ，驱动Dispatcher 的JavaScript 对象；
+
+4. View ，视图部分，负责显示用户界面。
+
+_Redux_
+
+Flux 的基本原则是“单向数据流”， Redux 在此基础上强调三个基本原则：
+
+1. 唯一数据源（ Single Source of Truth);
+
+2. 保持状态只读（ State is read-only);
+
+3. 数据改变只能通过纯函数完成（ Changes are made with pure functions ） 。
+
+### 第四章
+
 
 
 
@@ -43,5 +116,7 @@ export const ReactReduxMeta = {
   anchors: [
     '第一章',
     '第二章',
+    '第三章',
+    '第四章',
   ]
-}
+} 

@@ -56,8 +56,6 @@ export default class ProgressBar extends Component {
           svgElement={svgElement}
         />
 
-
-
         <button onClick={this.animate}>动画</button>
       </div>
     )

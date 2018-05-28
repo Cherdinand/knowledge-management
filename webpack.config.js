@@ -106,7 +106,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
-      favicon: './public/favicon.ico',  // 相对于context设置的目录查找 todo 好像只能用png格式的？
+      favicon: './public/favicon.ico',  // 相对于context设置的目录查找
       template: './public/index.html',  // 相对于context设置的目录查找
       filename: 'index.html',           // filename的路径是相对于 output.path
     }),

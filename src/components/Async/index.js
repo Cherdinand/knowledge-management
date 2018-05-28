@@ -25,7 +25,6 @@ export default class AsyncAwait extends Component {
     });
   }
   
-  
   render() {
     return (
       <div>
@@ -33,7 +32,6 @@ export default class AsyncAwait extends Component {
           message="结合Container的代码打开控制台看看输出！"
           type="warning"
         />
-        
         {
           this.props.children
         }

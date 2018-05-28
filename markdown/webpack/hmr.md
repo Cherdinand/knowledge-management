@@ -105,12 +105,15 @@ _previousHash_
 _websocket_
 
 webpack-dev-server通过websocket与浏览器间通信。
+
 <img src={websocket} alt="websocket" title="websocket"/>
 
 _浏览器通过ws中获取的hash值来加载对应的变更文件_
+
 <img src={hot} alt="hot" title="hot"/>
 
 _webpack编译过程_
+
 <img src={compilation} alt="compilation" title="compilation"/>
 
 
