@@ -1,4 +1,4 @@
-import NiceArticleMd, { NiceArticleMeta } from 'markdown/framework/niceArticle.md';
+import { NiceArticleMd, NiceArticleMeta } from 'markdown/framework';
 
 /***
  * path          匹配的路由

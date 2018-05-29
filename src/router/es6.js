@@ -1,10 +1,14 @@
-import AsyncMd, { AsyncMeta } from 'markdown/es6/async.md';
 import Async from 'components/Async';
-
-import ClassMd, { ClassMeta } from 'markdown/es6/class.md';
-
-import DecoratorMd, { DecoratorMeta } from 'markdown/es6/decorator.md';
 import Decorator from 'components/Decorator';
+
+import {
+  DecoratorMd,
+  DecoratorMeta,
+  AsyncMd,
+  AsyncMeta,
+  ClassMd,
+  ClassMeta
+} from 'markdown/es6';
 
 /***
  * path          匹配的路由
@@ -14,7 +18,6 @@ import Decorator from 'components/Decorator';
  * component     mdx component
  * redirectTo    需要redirect的路由
  ***/
-
 
 export default {
   es6: [{

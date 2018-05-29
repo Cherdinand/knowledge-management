@@ -1,7 +1,11 @@
-import ReactRouter4Md, { ReactRouter4Meta } from 'markdown/react/react-router4.md';
-import ContextMd, { ContextMeta } from 'markdown/react/context.md';
-
-import ReactReduxMd, { ReactReduxMeta } from "markdown/react/深入浅出React和Redux.md";
+import {
+  ReactRouter4Md,
+  ReactRouter4Meta,
+  ContextMd,
+  ContextMeta,
+  ReactReduxMd,
+  ReactReduxMeta,
+} from 'markdown/react';
 
 /***
  * path          匹配的路由

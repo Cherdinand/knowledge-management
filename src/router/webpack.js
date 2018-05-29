@@ -1,8 +1,11 @@
-import Path, { PathMeta } from 'markdown/webpack/path.md';
-
-import LoaderMd, { LoaderMeta } from 'markdown/webpack/loader.md';
-
-import HmrMd, { HmrMeta } from 'markdown/webpack/hmr.md';
+import {
+  Path,
+  PathMeta,
+  LoaderMd,
+  LoaderMeta,
+  HmrMd,
+  HmrMeta,
+} from 'markdown/webpack';
 
 /***
  * path          匹配的路由

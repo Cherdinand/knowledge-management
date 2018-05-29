@@ -1,4 +1,4 @@
-import _201805Md, { _201805Meta } from 'markdown/others/2018-05.md';
+import { _201805Md, _201805Meta } from 'markdown/others';
 
 /***
  * path          匹配的路由

@@ -23,6 +23,8 @@ module.exports = {
       ]
     },
     publicPath: "/assets/",
+    host: "0.0.0.0",
+    port: 8080,
     hot: true,
     // contentBase: path.resolve(__dirname, 'dist/assets'), // 会在设置的目录下创建本地服务器，然后使用目录下的index.html文件
   },

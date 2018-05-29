@@ -87,11 +87,11 @@ Flux 的基本原则是“单向数据流”。
 
 如果非要把Flux和MVC做一个结构对比，那么，Flux的Dispatcher相当于MVC的Controller，Flux的Store相当于MVC的Model，Flux的View当然就对应MVC的View了，至于多出来的这个Action，可以理解为对应给MVC框架的用户请求。
 
-1. Dispatcher ，处理动作分发，维持Store 之间的依赖关系；
+1. Dispatcher ，处理动作分发，维持Store 之间的依赖关系。
 
-2. Store ，负责存储数据和处理数据相关逻辑；
+2. Store ，负责存储数据和处理数据相关逻辑。
 
-3. Action ，驱动Dispatcher 的JavaScript 对象；
+3. Action ，驱动Dispatcher 的JavaScript 对象。
 
 4. View ，视图部分，负责显示用户界面。
 
@@ -99,15 +99,42 @@ _Redux_
 
 Flux 的基本原则是“单向数据流”， Redux 在此基础上强调三个基本原则：
 
-1. 唯一数据源（ Single Source of Truth);
+1. 唯一数据源（ Single Source of Truth)。
 
-2. 保持状态只读（ State is read-only);
+2. 保持状态只读（ State is read-only)。
 
 3. 数据改变只能通过纯函数完成（ Changes are made with pure functions ） 。
 
 ### 第四章
 
+_代码文件的组织方式_
 
+1. 按角色组织。把所有相同功能的文件放在同一个文件夹中。如本项目代码中所有markdown文件都放在/markdown文件夹中。
+
+2. 按功能组织。把专门负责某个模块的功能的文件放在同一个文件夹中。如一个组件中包含的sass文件只服务于当前组件，或者redux中把一个模块的action、reducer、view、reselect等放在同一个文件夹中。
+
+不同功能模块之间的依赖关系应该简单而且清晰，也就是所谓的保持模块之间`低耦合性`。
+
+一个模块应该把自己的功能封装得很好，让外界不要太依赖与自己内部的结构，这样不会因为内部的变化而影响外部模块的功能，这就是所谓`高内聚性`。
+
+依赖模块的两种方式：
+```js
+// 第一种方式
+export {
+  name: "xinxin",
+  age: 11
+}
+import { name, age } from 'path'; 
+
+// 第二种方式 default
+export default {
+  name: "xinxin",
+  age: 11
+}
+
+import obj from 'path';
+const { name, age } = obj
+```
 
 
 
