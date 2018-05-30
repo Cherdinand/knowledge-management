@@ -5,6 +5,8 @@ import {
   FlexMeta,
   RemMd,
   RemMeta,
+  AbbrMd,
+  AbbrMeta,
 } from 'markdown/css';
 
 /***
@@ -29,5 +31,10 @@ export default {
     menuName: "Rem",
     anchors: RemMeta.anchors,
     component: RemMd,
+  },{
+    path: 'abbr',
+    menuName: "Abbr",
+    anchors: AbbrMeta.anchors,
+    component: AbbrMd,
   }],
 };

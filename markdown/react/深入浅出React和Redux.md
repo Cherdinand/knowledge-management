@@ -5,6 +5,13 @@ import mvc from 'markdown/images/mvc.png';
 // todo JSX是在哪里被解析成DOM tree的？ ReactDOM.render()?
 ```
 
+### 布偶猫贴吧关于判断猫舍的视频
+
+http://m.bilibili.com/video/av12198097.html?bsource=weibo
+
+background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];
+
+
 ### 第一章
 
 React只支持IE8及以上版本的浏览器。
@@ -135,6 +142,14 @@ export default {
 import obj from 'path';
 const { name, age } = obj
 ```
+
+_三款Chrome 扩展包_
+
+1. React Devtools ，可以检视React组件的树形结构。
+
+2. Redux Devtools ，可以检视Redux数据流，可以将Store状态跳跃到任何一个历史状态，也就是所谓的“时间旅行”功能。
+
+3. React Perf ，可以发现React组件渲染的性能问题。
 
 
 

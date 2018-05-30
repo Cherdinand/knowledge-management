@@ -1,4 +1,9 @@
-import { _201805Md, _201805Meta } from 'markdown/others';
+import {
+  _201805Md,
+  _201805Meta,
+  WeChatMd,
+  WeChatMeta,
+} from 'markdown/others';
 
 /***
  * path          匹配的路由
@@ -16,5 +21,10 @@ export default {
     component: _201805Md,
     anchors: _201805Meta.anchors,
     redirectTo: true,
+  },{
+    path: 'wechat',
+    menuName: "微信小程序",
+    component: WeChatMd,
+    anchors: WeChatMeta.anchors,
   }],
 };
