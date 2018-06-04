@@ -45,7 +45,7 @@ css像素 = （元素宽 / 稿宽） * 逻辑像素
 
 然后我们开始用rem来做适配。
 
-逻辑像素部分我们用lib-flexible库来做到自动给<html>添加font-size。[Google](https://github.com/amfe/lib-flexible "lib-flexible")库内部的代码是默认将逻辑像素分为10rem的，也就是说对375逻辑像素的屏幕，会设置font-size: 37.5px，即1rem = 37.5px。
+逻辑像素部分我们用lib-flexible库来做到自动给<html>添加font-size。lib-flexible库内部的代码是默认将逻辑像素分为10rem的，也就是说对375逻辑像素的屏幕，会设置font-size: 37.5px，即1rem = 37.5px。
 
 那么公式变为： 
 
@@ -61,7 +61,7 @@ css像素 = （元素宽 / （稿宽 / 10）） * （逻辑像素 / 10）
 
 而稿宽 / 10所得的值就是我们将元素宽转变为rem的时候的基准值。
 
-我们将元素宽转变为rem的时候使用了postcss-plugin-px2rem，这是postcss-loader里的一个插件，可以将我们在css写的css通过loader转换成rem，这样我们就可以用设计稿的测量到的元素尺寸来直接进行开发。
+我们将元素宽转变为rem的时候使用了postcss-plugin-px2rem，这是postcss-loader里的一个插件，可以将我们在css写的css通过loader转换成rem，这样我们就可以用设计稿的测量到的元素尺寸（元素宽：300）来直接进行开发。
 
 对于前面的例子：
 

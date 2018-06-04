@@ -28,3 +28,4 @@ export default {
     anchors: WeChatMeta.anchors,
   }],
 };
+
