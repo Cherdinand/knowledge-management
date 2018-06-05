@@ -16,7 +16,7 @@ background: [background-color] [background-image] [background-repeat] [backgroun
 
 React只支持IE8及以上版本的浏览器。
 
-`在使用JSX的范围内必须要有React。`在使用JSX的代码文件中，即使代码中没有直接使用React，也一定要导入这个React，这是因为JSX最终会被转译成以来与React的表达式。
+`在使用JSX的范围内必须要有React。`在使用JSX的代码文件中，即使代码中没有直接使用React，也一定要导入这个React，这是因为JSX最终会被转译成依赖于React的表达式。
 
 在JSX中，React判断一个元素是HTML元素还是React组件的原则就是看第一个字母是否大写，`这也是React组件首字母必须大写的原因。`
 
@@ -48,13 +48,13 @@ _onclick & onClick_
 
 _componentWillMount_
 
-这个时候没有任何渲染出来的结果，即使调用this.setState修改状态也不会引发重新绘制。也就是说，所有可以在这个componentWillMount中做的事情，都可以提前到constructor中间去做。
+这个时候没有任何渲染出来的结果，即使调用this.setState修改状态也不会引发重新绘制。也就是说，所有可以在这个componentWillMount中做的事情，都可以提前到constructor里去做。
 
 _componentDidMount_
 
 render函数被调用完之后，componentDidMount函数并不是会被立刻调用，componentDidMount被调用的时候，render函数返回的东西已经引发了渲染，组件已经被“装载”到了DOM树上。`这也是在componentDidMount生命周期中可以获取到DOM节点的原因。`
 
-componentWilIMount和componentDidMount这对兄弟函数还有一个区别，就是componentWillMount可以在服务器端被调用，也可以在浏览器端被调用；`而component-DidMount只能在浏览器端被调用，在服务器端使用React 的时候不会被调用。`
+componentWilIMount和componentDidMount这对兄弟函数还有一个区别，就是componentWillMount可以在服务器端被调用，也可以在浏览器端被调用；`而componentDidMount只能在浏览器端被调用，在服务器端使用React 的时候不会被调用。因为在服务器端不存在组件被挂载到DOM tree的可能。`
 
 _componentWillReceiveProps(`nextProps`)_
 
@@ -78,7 +78,7 @@ _componentDidUpdate(`prevProps, prevState`)_
 
 因为componentDidUpdate已经完成了re-render，所以prevProps代表的也是这一次渲染传入的props值，prevState代表的也是这一次渲染传入的state值，
 
-### 第三章
+### 第三章--从Flux到Redux
 
 _MVC_
 
@@ -112,7 +112,7 @@ Flux 的基本原则是“单向数据流”， Redux 在此基础上强调三�
 
 3. 数据改变只能通过纯函数完成（ Changes are made with pure functions ） 。
 
-### 第四章
+### 第四章--模块化
 
 _代码文件的组织方式_
 
@@ -151,14 +151,90 @@ _三款Chrome 扩展包_
 
 3. React Perf ，可以发现React组件渲染的性能问题。
 
+### 第五章--性能优化
 
+在装载过程中， React 通过render 方法在内存中产生了一个树形的结构，树上每一个节点代表一个React 组件或者原生的DOM 元素，这个树形结构就是所谓的Virtual DOM 。
 
+在更新过程中， React 依然通过render 方法获得一个新的树形结构Virtual DOM。
+
+然后，React通过对比原有的Virtual DOM 和新生成的Virtual DOM，找出两者的不同之处，根据不同来修改DOM 树，这样只需做最小的必要改动。这个“找不同”的过程就叫做Reconciliation （调和） 。
+
+其实React 的Reconciliation 算法并不复杂，当React 要对比两个Virtual DOM 的树形结构的时候，从根节点开始递归往下比对，在树形结构上，每个节点都可以看作一个这个节点以下部分子树的根节点。所以其实这个对比算法可以从Virtual DOM 上任何一个节点开始执行。
+
+_reselect库的工作原理_
+
+`只要相关状态没有改变，那就直接使用上一次的缓存结果。这样就可以避免一次重复计算的过程`
+
+reselect 认为一个选择器的工作可以分为两个部分，把一个计算过程分为两个步骤：
+
+1. 从输入参数state 抽取第一层结果，将这第一层结果和之前抽取的第一层结果做比较，如果发现完全相同，就没有必要进行第二部分运算了，选择器直接把之前第二部分的运算结果返回就可以了。注意，这一部分做的“比较”，就是JavaScript 的＝＝＝操作符比较，如果第一层结果是对象的话，只有是同一对象才会被认为是相同。
+
+2. 根据第一层结果计算出选择器需要返回的最终结果。
+
+_关系型数据库_
+
+关系型数据库的强项能是保持一致，但是应用需要的数据形式往往是多个表join 之后的结果，而join的过程往往耗时而且在分布式系统中难以应用。
+
+_范式化_
+
+范式化就是遵照关系型数据库的设计原则，减少冗余数据。
+
+_反范式化_
+
+反范式化是利用数据冗余来换取读写效率，因为关系型数据库的强项虽然是保持一致，但是应用需要的数据形式往往是多个表join 之后的结果，而join的过程往往耗时而且在分布式系统中难以应用。
+
+假设我们给Todo 应用做一个更大的改进，增加一个Type 的概念，可以把某个Todoltem 归为某一个Type ，而且一个Type 有特有的名称和颜色信息，在界面上，用户可以看到Todoltem 显示为自己所属Type 对应的颜色， Todoltem 和Type 当然是多对多的关系。
+
+```js
+反范式化的state设计会是类似下面的对象：
+
+{
+  id: 1,              
+  text: "待办事项1",   
+  completed: false,  
+  type: {            
+    name: "紧急",     
+    color: "red"     
+  }
+}
+
+这样我们在使用的时候可以很轻松的获取到其特有的名称和颜色信息，但是如果我们要对某种类型的名称和颜色进行修改时，不得不遍历所有Todoltem 数据来完成改变。
+
+反范式化数据结构的特点就是读取容易，修改比较麻烦。
+```
+
+```js
+范式化的state设计会是类似下面的对象：
+
+{
+  id: 1,              
+  text: "待办事项1",   
+  completed: false,  
+  typeId: 1,
+}
+
+由于state给到我的数据只有typeId，并没有特有的名称和颜色信息，所以就需要开发者编写一个对应规则，例如：
+
+{
+  id: 1,       
+  name: "紧急", 
+  color: "red",
+}
+
+通过这样的操作来让某个typeId对应其特有的名称和颜色信息。
+
+这种范式化的state设计在使用的时候需要做一个类似关系型数据库的join 操作（较为繁琐），但是如果我们要对某种类型的名称和颜色进行修改时，却非常简单，只需要修改typeId即可。
+```
+
+对比反范式方式和范式方式的优劣，不难看出范式方式更合理。因为虽然join 数据需要花费计算时间，但是应用了reselect 之后，大部分情况下都会命中缓存，实际上也就没有花费很多计算时间了。
 
 export const ReactReduxMeta = {
   anchors: [
+    '布偶猫贴吧关于判断猫舍的视频',
     '第一章',
     '第二章',
-    '第三章',
-    '第四章',
+    '第三章--从Flux到Redux',
+    '第四章--模块化',
+    '第五章--性能优化',
   ]
 } 
