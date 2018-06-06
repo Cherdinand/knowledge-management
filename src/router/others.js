@@ -29,3 +29,36 @@ export default {
   }],
 };
 
+
+
+
+/*
+const hoc = (name,color) => {
+  return (Component) => {
+    class WrappedComponent extends React.Component {
+      render(){
+        return (
+          <div>
+            <Component />
+          </div>
+        )
+      }
+    }
+    
+    return WrappedComponent;
+  }
+}
+
+const hoc = (name,color) => {
+  return (Component) => {
+    const WrappedComponent = (props) => {
+      return (
+        <div>
+          <Component />
+        </div>
+      )
+    }
+    
+    return WrappedComponent;
+  }
+}*/

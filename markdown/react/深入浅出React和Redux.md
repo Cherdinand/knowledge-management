@@ -171,6 +171,28 @@ reselect 认为一个选择器的工作可以分为两个部分，把一个计�
 
 2. 根据第一层结果计算出选择器需要返回的最终结果。
 
+```js
+reselect的记忆功能实际上就是利用闭包，我们把问题简单化，让createSelector就固定接受3个参数，代码差不多就是下面这样。这只是最简单的实现方式。
+
+const createSelector = (selector1, selector2, resultSelector) {
+  let selectorCache1,  // selector1的结果记忆
+      selectorCache2,  // selector2的结果记忆
+      resultCache;     // resultSelector的结果记忆
+  return (state) => {
+     const subState1 = selector1(state);
+     const subState2 = selector2(state);
+
+     if (selectorCache1 === subState1 && selectorCache2 === subState2) {
+       return resultCache;
+     }
+     selectorCache1 = subState1;
+     selectorCache2 = subState2;     
+     resultCache = resultSelector(selectorCache1, selectorCache2);
+     return resultCache;
+  };
+}
+```
+
 _关系型数据库_
 
 关系型数据库的强项能是保持一致，但是应用需要的数据形式往往是多个表join 之后的结果，而join的过程往往耗时而且在分布式系统中难以应用。
@@ -228,6 +250,186 @@ _反范式化_
 
 对比反范式方式和范式方式的优劣，不难看出范式方式更合理。因为虽然join 数据需要花费计算时间，但是应用了reselect 之后，大部分情况下都会命中缓存，实际上也就没有花费很多计算时间了。
 
+### 第六章--高阶组件
+
+当多个组件都需要某个功能，但这个功能和界面并没有关系的时候，是不能直接抽取成一个新的组件的。然而如果将这个功能的逻辑代码在各个组件里实现的话，又会造成很多重复代码，这当然不是我们想看到的，这个时候就可以使用高阶组件。
+
+> info
+
+> 实际上：函数返回的结果才应该叫“高阶组件”，而这个函数本身应该叫做“高阶组件工厂函数”，这样的定义会比较严谨。但是我们一般说的高阶组件其实就是这个函数。
+
+根据返回的新组件和传人组件参数的关系，高阶组件的实现方式可以分为两大类：
+
+1. 代理方式的高阶组件。
+
+2. 继承方式的高阶组件。
+
+_代理方式的高阶组件_
+
+代理方式的高阶组件的特点是返回的新组件类直接继承自React.Component 类。新组件扮演的角色是传入参数组件的一个“代理”，在新组件的render 函数中，把被包裹组件渲染出来，除了高阶组件自己要做的工作，其余功能全都转手给了被包裹的组件。
+
+```js
+操作props，我们完全可以利用高阶函数来增删改传入组件的props。
+
+const addProps = (newProps) => {
+  return (Component) => {
+    class WrappedComponent extends React.Component {
+      render(){
+        return <Component {...this.props} {...newProps}/>
+      }
+    }
+    return WrappedComponent;
+  }
+}
+```
+
+```js
+访问ref
+
+const manipulateRef = (Component) => {
+  class WrappedComponent extends React.Component {
+    componentDidMount(){
+      console.log('component', this.component);
+    }
+    render(){
+      const  { user, ...otherProps } = this.props;
+      return <Component ref={ele => this.component = ele} {...otherProps}/>
+    }
+  }
+  return WrappedComponent;
+}
+```
+
+```js
+抽取状态。
+在傻瓜组件和容器组件的关系中，通常让傻瓜组件不要管理自己的状态，只要做一个无状态的组件就好，所有状态的管理都交给外面的容器组件，这个模式就是“抽取状态” 。
+而在高阶组件中，高阶组件就相当于父组件，被包裹的组件就相当于子组件。也就是可以利用高阶组件来管理我们组件的state状态。
+
+以下是模拟react-redux中connect函数的实现，这里只实现了部分功能。
+
+const connect = (mapStateToProps, mapDispatchToProps) => {
+  return (Component) => {
+    class WrappedComponent extends React.Component {
+      componentDidMount(){
+        this.context.store.subscribe(this.reRender)  // 调用store的订阅，这样在redux中的store发生变化的时候，都会触发reRender函数
+      }
+      componentWillMount(){
+        this.context.store.unsubscribe(this.reRender)
+      }
+      reRender = () => {
+        this.setState({})  // 触发重新渲染
+      }
+      render(){
+        const { store } = this.context;
+        const newProps = {
+          ...this.props,
+          ...mapStateToProps(store.getState()),
+          ...mapDispatchToProps(store.dispatch)
+        }
+        return <Component {...newProps}/>
+      }
+    }
+    // 因为Provider向子辈组件传递了store为context，这里我们可以获取到this.context.store
+    WrappedComponent.contextTypes = { 
+      store: React.PropTypes.object
+    }
+    return WrappedComponent;
+  }
+}
+```
+
+_继承方式的高阶组件_
+
+继承方式的高阶组件采用继承关系关联作为参数的组件和返回的组件，假如传入的组件参数是WrappedComponent ，那么返回的组件就直接继承自WrappedComponent 。
+
+```js
+操作props。
+
+需要注意，在代理方式下WrappedComponent 经历了一个完整的生命周期，但在继承方式下super.render 只是一个生命周期中的一个函数而已。
+在代理方式下产生的新组件和参数组件是两个不同的组件，一次渲染，两个组件都要经历各自的生命周期，在继承方式下两者合二为一，只有一个生命周期。
+
+const addProps = (newProps) => {
+  return (WrappedComponent) => {
+    class Component extends WrappedComponent {
+      render(){
+        const elements = super.render(); // 因为是类继承关系，super作为对象在普通函数中使用的时候指向父类的prototype，所以可以直接调用父类的render函数。
+        const props = {...this.props, ...newProps };
+        return React.cloneElement(elements, props, elements.props.children);
+      }
+    }
+    return Component;
+  }
+}
+
+虽然这样可行，但是过程实在非常复杂，唯一用得上的场景就是高阶组件需要根据参数组件Wrapped Component 渲染结果来决定如何修改props 。
+```
+
+_以函数为子组件_
+
+缘由：高阶组件的缺点就是对原组件的props 有了固化的要求。也就是说，能不能把一个高阶组件作用于某个组件X ，要先看一下这个组件X 是不是能够接受高阶组件传过来的props ，如果组件X 并不支持这些props ，或者对这些props 的命名有不同，或者使用方式不是预期的方式，那也就没有办法应用这个高阶组件。`通俗来讲就是高阶组件传了个名为a的props给子组件，那么子组件就必须使用a才能用到高阶组件的功能，如果用的是b，就没有效果。`而以函数为子组件就是为了克服高阶组件的这种局限而生的。
+
+```js
+class CountDown extends React.Component {
+  constructor() {
+    super(...arguments);
+    this.state = {count: this.props.startCount};
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.count !== this.state.count;
+  }
+  componentDidMount() {
+    this.intervalHandle = setInterval(() => {
+      const newCount = this.state.count - 1;
+      if (newCount >= 0) {
+        this.setState({count: newCount});
+      } else {
+        window.clearInterval(this.intervalHandle);
+        this.intervalHandle = null;
+      }
+    }, 1000);
+  }
+  componentWillUnmount() {
+    if (this.intervalHandle) {
+      window.clearInterval(this.intervalHandle);
+      this.intervalHandle = null;
+    }
+  }
+  render() {
+    return this.props.children(this.state.count);
+  }
+}
+CountDown.propTypes = {
+  children: React.PropTypes.func.isRequired,
+  startCount: React.PropTypes.number.isRequired
+}
+
+一个简单的倒计时，当count为0的时候显示新年快乐
+<CountDown startCount={lO)>
+  {
+    (count) => <div>{count > 0 ? count ： ’ 新年快乐’}</div>
+  }
+</CountDown>
+
+把倒计时的数字直接交给Bomb组件
+<CountDown startCount={lO)>
+  {
+    (count) => <Bomb countdown={count} />
+  }
+</CountDown>
+```
+从CountDown 的例子中我们看出一点端倪，这种“以函数为子组件”的模式非常适合于制作动画，类似CountDown 这样的例子决定动画每一帧什么时候绘制，给制的时候是什么样的数据，作为子组件的函数只要专注于使用参数来渲染就可以了。
+
+
+
+
+
+
+
+
+
+
+
+
 export const ReactReduxMeta = {
   anchors: [
     '布偶猫贴吧关于判断猫舍的视频',
@@ -236,5 +438,6 @@ export const ReactReduxMeta = {
     '第三章--从Flux到Redux',
     '第四章--模块化',
     '第五章--性能优化',
+    '第六章--高阶组件',
   ]
 } 
