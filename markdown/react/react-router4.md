@@ -2,7 +2,7 @@
 
 ### location
 ``` js
-http://www.example.com/my-projects/one?extra=false#trending
+http:\/\/www.example.com/my-projects/one?extra=false#trending
 
 location = {
   protocol: "http:",

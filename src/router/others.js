@@ -1,6 +1,8 @@
 import {
   _201805Md,
   _201805Meta,
+  _201806Md,
+  _201806Meta,
   WeChatMd,
   WeChatMeta,
 } from 'markdown/others';
@@ -22,43 +24,14 @@ export default {
     anchors: _201805Meta.anchors,
     redirectTo: true,
   },{
+    path: '2018-06',
+    menuName: "2018-06",
+    component: _201806Md,
+    anchors: _201806Meta.anchors,
+  },{
     path: 'wechat',
     menuName: "微信小程序",
     component: WeChatMd,
     anchors: WeChatMeta.anchors,
   }],
 };
-
-
-
-
-/*
-const hoc = (name,color) => {
-  return (Component) => {
-    class WrappedComponent extends React.Component {
-      render(){
-        return (
-          <div>
-            <Component />
-          </div>
-        )
-      }
-    }
-    
-    return WrappedComponent;
-  }
-}
-
-const hoc = (name,color) => {
-  return (Component) => {
-    const WrappedComponent = (props) => {
-      return (
-        <div>
-          <Component />
-        </div>
-      )
-    }
-    
-    return WrappedComponent;
-  }
-}*/

@@ -31,7 +31,7 @@ export default class SideMenu extends Component {
         selectedKeys={selectedKeys}
         mode="inline"
         theme="dark"
-        // inlineCollapsed 菜单是否收起呈缩略图，可以后面加此功能
+        // inlineCollapsed // 菜单是否收起呈缩略图，可以后面加此功能
       >
         {
           moduleRouterConfig.map((route) => {

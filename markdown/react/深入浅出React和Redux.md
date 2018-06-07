@@ -1,5 +1,7 @@
 import flux from 'markdown/images/flux.png';
 import mvc from 'markdown/images/mvc.png';
+import middleware from 'markdown/images/middleware.png';
+import MiddlewarePipe from 'markdown/images/middleware-pipe.png';
 
 ```angular2html
 // todo JSX是在哪里被解析成DOM tree的？ ReactDOM.render()?
@@ -8,9 +10,6 @@ import mvc from 'markdown/images/mvc.png';
 ### 布偶猫贴吧关于判断猫舍的视频
 
 http://m.bilibili.com/video/av12198097.html?bsource=weibo
-
-background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];
-
 
 ### 第一章
 
@@ -419,9 +418,37 @@ CountDown.propTypes = {
 ```
 从CountDown 的例子中我们看出一点端倪，这种“以函数为子组件”的模式非常适合于制作动画，类似CountDown 这样的例子决定动画每一帧什么时候绘制，给制的时候是什么样的数据，作为子组件的函数只要专注于使用参数来渲染就可以了。
 
+### 第九章--扩展Redux
+
+扩展Redux的途径有两条：
+
+1. 中间件。
+
+2. Store Enhancer。
+
+_中间件middleware_
+
+`一个action在被dispatch之后，会先经过中间件，才到达reducer。`
+
+<img src={MiddlewarePipe} alt="MiddlewarePipe" title="MiddlewarePipe"/>
+
+中间件的特点是：
+
+1. 中间件是独立的函数。意思是每个中间件能够独立地完成某个特定功能而不需要依赖于其他中间件。
+
+2. 中间件可以组合使用。
+
+3. 中间件有一个统一的接口。所以中间件才可以组合使用。
+
+<img src={middleware} alt="middleware" title="middleware"/>
 
 
 
+
+
+
+
+_Store Enhancer_
 
 
 
@@ -439,5 +466,6 @@ export const ReactReduxMeta = {
     '第四章--模块化',
     '第五章--性能优化',
     '第六章--高阶组件',
+    '第九章--扩展Redux',
   ]
-} 
+}
