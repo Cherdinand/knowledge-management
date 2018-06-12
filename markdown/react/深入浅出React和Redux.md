@@ -2,6 +2,7 @@ import flux from 'markdown/images/flux.png';
 import mvc from 'markdown/images/mvc.png';
 import middleware from 'markdown/images/middleware.png';
 import MiddlewarePipe from 'markdown/images/middleware-pipe.png';
+import MiddlewareAction from 'markdown/images/middleware-action.jpg';
 
 ```angular2html
 // todo JSX是在哪里被解析成DOM tree的？ ReactDOM.render()?
@@ -442,11 +443,60 @@ _中间件middleware_
 
 <img src={middleware} alt="middleware" title="middleware"/>
 
+```js
+一个中间件函数：
+function middleware{{dispatch, getState)) {
+  return function {next) {
+    return function {action) {
+      // 对action进行操作
+      // 1. 调用dispatch 派发出一个新action 对象；
+      // 2. 调用getState 获得当前Redux Store 上的状态；
+      // 3. 调用next 告诉Redux 当前中间件工作完毕，让Redux 调用下一个中间件；
+      // 4. 访问action 对象action 上的所有数据。
+      return next(action); // 调用下一个中间件对action进行下一步的操作
+    }
+  }
+}
 
+or
 
+const middleware = ({dispatch, getState}) => (next) => (action) => {
+  // 对action进行操作
+  retur next(action)
+}
+```
 
+`applyMiddleware (...middlewares)，返回一个新的函数，新的函数实际上是Store Enhancer。`
 
+所以我们可以以Store Enhancer的方式使用中间件，createStore函数的第三个参数就是Store Enhancer。
 
+```js
+import {createStore, applyMiddleware, compose} from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunkMiddleware from 'redux-thunk';
+const store = createStore(
+  rootReducer,
+  {},
+  compose(
+    applyMiddleware(thunkMiddleware),
+    composeWithDevTools()
+  )
+);
+```
+
+> warning
+
+> 一定要把applyMiddlware 的结果作为compose 的第一个参数，也就是要放在所有其他Store Enhancer 之前应用。这是因为增强器的顺序也就是它们处理action 对象的顺序， applyMiddleware 配合reduxthunk或者其他中间件要处理异步action 对象。如果不是优先把他们摆在前面的话，异步action 对象在被它们处理之前就会被其他Store Enhancer 处理，无法理解异步对象的增强器就会出错。
+
+_中间件内处理action的原理_
+
+<img src={MiddlewareAction} alt="MiddlewareAction" title="MiddlewareAction"/>
+
+如图所示：调用next(action)就会让下一个中间件来处理action，而调用dispatch(action)的话就会从最外层中间件重新处理action对象。
+
+> info
+
+> 所以，一般我们在异步处理的时候会处理特殊的action对象，最后dispatch(一个redux认识的action对象)，让这个action对象重新接受所有中间件的处理。
 
 _Store Enhancer_
 
