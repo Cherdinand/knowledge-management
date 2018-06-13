@@ -1,4 +1,9 @@
-import { _201805Md, _201805Meta } from 'markdown/movies';
+import {
+  _201805Md,
+  _201805Meta,
+  _201806Md,
+  _201806Meta,
+} from 'markdown/movies';
 
 /***
  * path          匹配的路由
@@ -16,5 +21,10 @@ export default {
     component: _201805Md,
     anchors: _201805Meta.anchors,
     redirectTo: true,
+  }, {
+    path: '2018-06',
+    menuName: "2018-06",
+    component: _201806Md,
+    anchors: _201806Meta.anchors,
   }],
 };

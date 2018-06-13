@@ -500,7 +500,27 @@ _中间件内处理action的原理_
 
 _Store Enhancer_
 
+中间件只能对dispatch方法起作用，其实就是对action对象的操作。但是Store Enhancer是对整个store对象的增强，enhancer函数可以修改dispatch，replaceReducer，getState，subscribe，也可以新增函数api挂在store对象上。
 
+`虽然enhancer函数可以做很多修改，但是无论怎么修改，最后还是要用到store对象上原有提供的四个api。`
+
+```js
+每次dispatch之前先打印出action的enhancer：
+export default () => {
+  return (createStore) => (reducer, initialState, enhancer) => {
+    const store = createStore(reducer, initialState, enhancer);
+    const originDispatch = store.dispatch;  // 保存原有的dispatch函数
+    
+    store.dispatch = (action) => {
+      console.log('dispatch action', action);  //  这一部分是对dispatch函数的修改内容
+      originDispatch(action);  // 最终调用原有的dispatch函数
+    }
+    
+    return store;
+  }
+}
+增强器通常都使用这样的模式，将store 上某个函数的引用存下来，给这个函数一个新的实现，但是在完成增强功能之后，还是要调用原有的函数，保持原有的功能。
+```
 
 
 
