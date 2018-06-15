@@ -1,9 +1,3 @@
-import flux from 'markdown/images/flux.png';
-import mvc from 'markdown/images/mvc.png';
-import middleware from 'markdown/images/middleware.png';
-import MiddlewarePipe from 'markdown/images/middleware-pipe.png';
-import MiddlewareAction from 'markdown/images/middleware-action.jpg';
-
 ```angular2html
 // todo JSX是在哪里被解析成DOM tree的？ ReactDOM.render()?
 ```
@@ -82,13 +76,13 @@ _componentDidUpdate(`prevProps, prevState`)_
 
 _MVC_
 
-<img src={mvc} alt="MVC" title="MVC框架"/>
+![MVC框架](mvc.png)
 
 MVC最大的问题就是无法禁绝View和Model之间的直接对话。
 
 _Flux_
 
-<img src={flux} alt="Flux" title="Flux的单向数据流"/>
+![Flux的单向数据流](flux.png)
 
 Flux 的基本原则是“单向数据流”。
 
@@ -431,7 +425,7 @@ _中间件middleware_
 
 `一个action在被dispatch之后，会先经过中间件，才到达reducer。`
 
-<img src={MiddlewarePipe} alt="MiddlewarePipe" title="MiddlewarePipe"/>
+![MiddlewarePipe](middleware-pipe.png)
 
 中间件的特点是：
 
@@ -441,7 +435,7 @@ _中间件middleware_
 
 3. 中间件有一个统一的接口。所以中间件才可以组合使用。
 
-<img src={middleware} alt="middleware" title="middleware"/>
+![middleware](middleware.png)
 
 ```js
 一个中间件函数：
@@ -490,7 +484,7 @@ const store = createStore(
 
 _中间件内处理action的原理_
 
-<img src={MiddlewareAction} alt="MiddlewareAction" title="MiddlewareAction"/>
+![MiddlewareAction](middleware-action.jpg)
 
 如图所示：调用next(action)就会让下一个中间件来处理action，而调用dispatch(action)的话就会从最外层中间件重新处理action对象。
 

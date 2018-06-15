@@ -7,7 +7,9 @@ import {
   AsyncMd,
   AsyncMeta,
   ClassMd,
-  ClassMeta
+  ClassMeta,
+  PrototypeMd,
+  PrototypeMeta,
 } from 'markdown/es6';
 
 /***
@@ -38,5 +40,10 @@ export default {
     anchors: DecoratorMeta.anchors,
     container: Decorator,
     component: DecoratorMd,
+  },{
+    path: 'prototype',
+    menuName: "Prototype",
+    anchors: PrototypeMeta.anchors,
+    component: PrototypeMd,
   }]
 };

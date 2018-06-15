@@ -1,7 +1,3 @@
-import compilation from 'markdown/images/compilation.png';
-import hot from 'markdown/images/hot.png';
-import websocket from 'markdown/images/websocket.png';
-
 ### 版本
 ```js
 "webpack": "~4.6.0",
@@ -106,16 +102,15 @@ _websocket_
 
 webpack-dev-server通过websocket与浏览器间通信。
 
-<img src={websocket} alt="websocket" title="websocket"/>
+![websocket](websocket.png)
 
 _浏览器通过ws中获取的hash值来加载对应的变更文件_
 
-<img src={hot} alt="hot" title="hot"/>
+![hot](hot.png)
 
 _webpack编译过程_
 
-<img src={compilation} alt="compilation" title="compilation"/>
-
+![compilation](compilation.png)
 
 export const HmrMeta = {
   anchors: [

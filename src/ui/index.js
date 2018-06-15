@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from 'antd';
 import classnames from 'classnames';
+import ImageZoom from 'react-medium-image-zoom';
 
 import styles from './index.scss';
 
@@ -23,6 +24,22 @@ const Blockquote = props => {
   )
 };
 
+const Img = props => {
+  console.log('props', props);
+  const { src, alt, title } = props;
+  
+  return (
+    <ImageZoom
+      image={{
+        src: `/assets/images/${src}`,
+        alt,
+        className: 'img',
+        style: { width: title }
+      }}
+    />
+  )
+};
+
 const Em = props => <em className={styles.em} {...props} />;
 
 export {
@@ -30,4 +47,5 @@ export {
   InlineCode,
   Blockquote,
   Em,
+  Img,
 }

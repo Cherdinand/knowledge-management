@@ -16,6 +16,7 @@
     "progressbar.js": "^1.0.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-medium-image-zoom": "^3.0.12",
     "react-particles-js": "^2.1.3",
     "react-router-dom": "^4.2.2",
     "remark-highlight.js": "^5.0.0"
@@ -28,6 +29,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",

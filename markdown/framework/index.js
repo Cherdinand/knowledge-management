@@ -1,6 +1,1 @@
-import NiceArticleMd, { NiceArticleMeta } from './niceArticle.md';
-
-export {
-  NiceArticleMd,
-  NiceArticleMeta,
-}
+export NiceArticleMd, { NiceArticleMeta } from './niceArticle.md';

@@ -209,7 +209,7 @@ let b = new B();
 ```
 上面代码中，super.x赋值为3，这时等同于对this.x赋值为3。而当读取super.x的时候，读的是A.prototype.x，所以返回undefined。
 
-### prototype & proto
+### prototype & \_\_proto\_\_
 ``` js
 class B {
     static fk(){

@@ -1,5 +1,3 @@
-import frame from 'markdown/images/frame.jpg';
-
 ### 一名前端架构师的成长之路
 
 本人也是coding很多年，虽然很失败，但也总算有点失败的心得，不过我在中国，大多数程序员都是像我一样，在一直走着弯路。如果想成为一个架构师，就必须走正确的路，否则离目标越来越远，正在辛苦工作的程序员们，你们有没有下面几种感觉？
@@ -124,8 +122,7 @@ _选择五：前端——高级前端——其他行业，创业等等_
   
 ### 前端技术框架图  
 
-<img src={frame} alt="frame" title="frame"/>
-
+![frame](frame.jpg)
   
 export const NiceArticleMeta = {
   anchors: [

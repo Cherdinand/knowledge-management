@@ -1,12 +1,4 @@
-import DecoratorMd, { DecoratorMeta } from './decorator.md';
-import AsyncMd, { AsyncMeta } from './async.md';
-import ClassMd, { ClassMeta } from './class.md';
-
-export {
-  DecoratorMd,
-  DecoratorMeta,
-  AsyncMd,
-  AsyncMeta,
-  ClassMd,
-  ClassMeta
-}
+export DecoratorMd, { DecoratorMeta } from './decorator.md';
+export AsyncMd, { AsyncMeta } from './async.md';
+export ClassMd, { ClassMeta } from './class.md';
+export PrototypeMd, { PrototypeMeta } from './prototype.md';
