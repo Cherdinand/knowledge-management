@@ -9,7 +9,7 @@ import Logo from './images/logo.png';
 import { RouterConfig } from 'router';
 
 import styles from './index.scss';
-import { H3, InlineCode, Blockquote, Em, Img } from "../../../src/ui/index";
+import { H3, InlineCode, Blockquote, Em, Img, A } from "../../../src/ui/index";
 
 export default class BasicLayout extends Component {
   render() {
@@ -46,6 +46,7 @@ export default class BasicLayout extends Component {
                           blockquote: Blockquote,
                           em: Em,
                           img: Img,
+                          a: A,
                           inlineCode: InlineCode,
                         }}
                       />

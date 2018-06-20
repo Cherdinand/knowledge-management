@@ -1,5 +1,6 @@
 import Async from 'components/Async';
 import Decorator from 'components/Decorator';
+import Prototype from 'components/Prototype';
 
 import {
   DecoratorMd,
@@ -10,6 +11,8 @@ import {
   ClassMeta,
   PrototypeMd,
   PrototypeMeta,
+  ContextMd,
+  ContextMeta,
 } from 'markdown/es6';
 
 /***
@@ -44,6 +47,12 @@ export default {
     path: 'prototype',
     menuName: "Prototype",
     anchors: PrototypeMeta.anchors,
+    container: Prototype,
     component: PrototypeMd,
+  },{
+    path: 'context',
+    menuName: "Context",
+    anchors: ContextMeta.anchors,
+    component: ContextMd,
   }]
 };

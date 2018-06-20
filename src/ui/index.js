@@ -25,7 +25,6 @@ const Blockquote = props => {
 };
 
 const Img = props => {
-  console.log('props', props);
   const { src, alt, title } = props;
   
   return (
@@ -40,6 +39,8 @@ const Img = props => {
   )
 };
 
+const A = ({href, children}) => <a href={href} style={{fontSize: 16}}>{children}<Icon type="export" /></a>;
+
 const Em = props => <em className={styles.em} {...props} />;
 
 export {
@@ -48,4 +49,5 @@ export {
   Blockquote,
   Em,
   Img,
+  A,
 }

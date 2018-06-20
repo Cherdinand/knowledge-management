@@ -155,9 +155,9 @@ new HtmlWebpackPlugin({
 })
 ```
 
-http://www.qinshenxue.com/article/20170315092242.html
+[详解Webpack2的那些路径](http://www.qinshenxue.com/article/20170315092242.html)
 
-https://www.jianshu.com/p/cbe81be10d78
+[Webpack-publicPath](https://www.jianshu.com/p/cbe81be10d78)
 
 export const PathMeta = {
   anchors: [

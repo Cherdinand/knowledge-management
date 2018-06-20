@@ -231,9 +231,11 @@ console.log(Z.__proto__ === B.prototype)  //构造函数B的 .prototype 是实�
 ### new() 三步
 ``` js 
 var B = new A(); 
-var B={};  
-B.__proto__ = A.prototype; 
-A.call(B);  
+
+new()三步
+var B={};    // 创建一个空对象，并且将this变量引用该对象，属性和方法被加入到空对象中
+B.__proto__ = A.prototype;  // 同时还继承了该构造函数的原型
+A.call(B);     // 返回新创建的对象，并将实例对象指向新创建的对象
 ```
 
 export const ClassMeta = {

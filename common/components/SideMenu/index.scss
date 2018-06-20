@@ -5,3 +5,9 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+:global {
+  .ant-menu {
+    font-family: 'Josefin Slab', Microsoft Jhenghei;
+  }
+}

@@ -4,7 +4,7 @@
 
 ### 布偶猫贴吧关于判断猫舍的视频
 
-http://m.bilibili.com/video/av12198097.html?bsource=weibo
+[布偶猫贴吧关于判断猫舍的视频](http://m.bilibili.com/video/av12198097.html?bsource=weibo)
 
 ### 第一章
 

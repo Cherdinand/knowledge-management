@@ -17,6 +17,10 @@ b instanceof Array  // true
 b instanceof Object  // true
 ```
 
+### constructor
+
+当函数创建的时候默认就为prototype新建一个constructor指向自己。
+
 ### prototype & proto
 
 下文所有的proto指的就是\_\_proto\_\_。
@@ -106,9 +110,12 @@ Cat.__proto__ === Animal
 
 ![原型链](prototype2.png "600px")
 
+[javascript 类属性、类方法、类实例、实例属性、实例方法、prototype、proto测试与小结](http://www.cnblogs.com/mrsunny/archive/2011/05/09/2041185.html)
+
 export const PrototypeMeta = {
   anchors: [
     'typeof & instanceof',
+    'constructor',
     'prototype & proto',
   ]
 }
