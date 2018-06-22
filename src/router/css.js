@@ -7,6 +7,8 @@ import {
   RemMeta,
   AbbrMd,
   AbbrMeta,
+  CssMd,
+  CssMeta,
 } from 'markdown/css';
 
 /***
@@ -20,12 +22,17 @@ import {
 
 export default {
   css: [{
+    path: 'css',
+    menuName: "Css",
+    anchors: CssMeta.anchors,
+    component: CssMd,
+    redirectTo: true,
+  },{
     path: 'flex',
     menuName: "Flex",
     anchors: FlexMeta.anchors,
     container: Flex,
     component: FlexMd,
-    redirectTo: true,
   },{
     path: 'rem',
     menuName: "Rem",

@@ -11,6 +11,9 @@ export prototype from './prototype.png';
 export prototype2 from './prototype2.png';
 export websocket from './websocket.png';
 export scope from './scope.png';
+export CssWithHtml from './CssWithHtml.png';
+export StyleSource from './StyleSource.png';
+export UserStyle from './UserStyle.png';
 
 // jpg
 export CnpmPrivate from './CnpmPrivate.jpg';

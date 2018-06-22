@@ -95,7 +95,7 @@ module.exports = {
         {
           loader: 'url-loader',
           options: {
-            limit: 8192,
+            limit: 1024,
             name: 'images/[name].[ext]'  // 相对于output.path
           }
         }
