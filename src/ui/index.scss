@@ -6,17 +6,17 @@
     margin-top: 0;
   }
 
-  p:nth-of-type(1){
+  p:first-child{
     display: none;
   }
 }
 
-.info {
+blockquote[type="info"] {
   color: #83AFE5;
   background-color: #DCF2FD;
 }
 
-.warning {
+blockquote[type="warning"] {
   background-color: #fbedb7;
   color: #6A7D89;
 }

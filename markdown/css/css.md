@@ -20,11 +20,80 @@ _第二层是用户样式表_
 
 ![用户样式表](UserStyle.png)
 
+### 浏览器默认样式 
+
+`浏览器加载了html之后只为一件东西——dom树，`浏览器把html变为dom树结构，就完成了对html的结构化。至于后来对视图的渲染，p是block、br换行，那是整合了css之后的事情。而浏览器整合css又是另一个路线，和解析html是分开的。这里的“css”就包含了浏览器默认样式。
+
+`浏览器将载入的html变为dom树，但是此时没有任何显示样式。所以显示的样式，都是css定义的，浏览器只会通过css来渲染视图样式。`
+
+_display: list-item_
+
+我们在使用display时，常用的值一般是：inline/block/inline-block，用不到list-item。display: list-item是列表ul、ol中li的显示方式。
+
+_display: table_
+
+在仅仅考虑容器尺寸，不考虑内容区别的前提下，div和table容器的区别是什么？
+
+答案是——div宽度和父容器相同，table宽度根据内容而定——即table具有“包裹性”。
+
+### 选择器
+
+1. 选择一个祖先的所有子孙节点，例如 div p{…}
+
+1. 选择一个父元素的所有直属节点，例如 div > p{…}
+
+1. 匹配紧随span元素之后的第一个同级a元素，例如 span + a{…}
+
+1. 匹配紧随span元素之后的所有同级a元素，例如 span ~ a{…}
+
+如果让你在各个列表项li添加一个下底线，之前我都是向所有的li添加一个border-bottom，然后再把最后一个li的border-bottom设为none；但是现在我们可以如下设置：
+
+```js
+<ul>
+  <li className={styles.lii}>1</li>
+  <li className={styles.lii}>2</li>
+  <li className={styles.lii}>3</li>
+</ul>
+
+.lii ~ .lii {
+  border-top: 1px solid red;
+}
+```
+
+_UI伪类_
+
+```js
+a:hover {}
+a:active {}
+a:link {}
+a:visited {}
+input:focus {}
+```
+
+_结构化伪类_
+
+```js
+a:nth-child(2) {}  // 匹配其父元素下面的第二个元素且第二个标签类型为a元素的元素（必须是父元素下的第二个元素）
+a:first-child {}
+a:last-child {}
+a:nth-of-type(2) {} // 匹配其父元素下面的第二个标签类型为a的元素（不一定是父元素下的第二个元素）
+a:first-of-type {}
+a:last-of-type {}
+```
+
+_伪元素_
+
+```js
+a:before {}
+a:after {}
+```
 
 export const CssMeta = {
   anchors: [
     '浏览器解析Html和Css',
     '样式的来源',
+    '浏览器默认样式',
+    '选择器',
   ]
 }
 

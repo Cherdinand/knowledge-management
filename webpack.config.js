@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'eval-source-map',
   context: process.cwd(),  // 设置入口文件的上下文为D:\knowledge-management，默认值为package.json文件所在目录
   
-  entry: './src/index.js', // 相对于context设置的目录查找
+  entry: ['babel-polyfill', './src/index.js'], // 相对于context设置的目录查找
   
   output: {
     path: path.resolve('./dist/assets/'),  // 所有打包后的静态资源资源放在哪个目录下
@@ -93,9 +93,8 @@ module.exports = {
       test: /\.(png|jpg|gif)$/,
       use: [
         {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
-            limit: 1024,
             name: 'images/[name].[ext]'  // 相对于output.path
           }
         }

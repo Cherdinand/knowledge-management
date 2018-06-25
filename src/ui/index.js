@@ -20,7 +20,7 @@ const Blockquote = props => {
   const type = props.children[1].props.children;
   
   return (
-    <blockquote className={classnames(styles.tips, {[styles.info]: type === "info", [styles.warning]: type === "warning"})} {...props} />
+    <blockquote className={styles.tips} type={type} {...props} />
   )
 };
 

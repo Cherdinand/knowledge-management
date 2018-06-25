@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Alert from 'common/components/Alert';
 
+
 export default class AsyncAwait extends Component {
   componentWillMount(){
     this.hiking().then(r => {
