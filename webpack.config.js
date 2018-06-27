@@ -35,6 +35,7 @@ module.exports = {
       components: path.resolve(__dirname, 'src/components'),
       cherComponents: path.resolve(__dirname, 'src/cherComponents'),
       router: path.resolve(__dirname, 'src/router'),
+      utils: path.resolve(__dirname, 'src/utils'),
       markdown: path.resolve(__dirname, 'markdown'), // 给一个路径使用别名代替，这样在引用的时候就可以省略../  如import Class from 'markdown/class';
     },
     

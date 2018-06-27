@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CustomProgressBar from './components/CustomProgressBar';
 import Alert from 'common/components/Alert';
+import { Button } from 'antd'; 
 
 const containerStyle = {
   width: '200px',
@@ -56,7 +57,7 @@ export default class ProgressBar extends Component {
           svgElement={svgElement}
         />
 
-        <button onClick={this.animate}>动画</button>
+        <Button type="primary" onClick={this.animate}>动画</Button>
       </div>
     )
   }
