@@ -56,7 +56,7 @@ _componentWillReceiveProps(`nextProps`)_
 
 > warning
 
-> 通过this.setState方法触发的更新过程不会调用这个函数，这是因为这个函数适合根据新的props值（也就是参数nextProps）来计算出是不是要调用this.setState更新内部状态state。如果this.setState的调用导致componentWillReceiveProps再一次被调用，那就是一个死循环了。
+> 通过this.setState方法触发的更新过程不会调用`当前组件`的这个函数（但是其子孙组件是会调用其生命周期的componentWillReceiveProps，因为其父组件的render函数被调用了），这是因为这个函数适合根据新的props值（也就是参数nextProps）来计算出是不是要调用this.setState更新内部状态state。如果this.setState的调用导致componentWillReceiveProps再一次被调用，那就是一个死循环了。
 
 > 由于不管父组件传给子组件的props 有没有改变，都会触发子组件的componentWillReceiveProps函数。所以这个函数有必要把传入参数nextProps 和this.props 作必要对比。nextProps 代表的是这一次渲染传入的props 值， this.props 代表的上一次渲染时的props 值，只有两者有变化的时候才有必要调用this.setState 更新内部状态。
 
@@ -425,7 +425,7 @@ _中间件middleware_
 
 `一个action在被dispatch之后，会先经过中间件，才到达reducer。`
 
-![MiddlewarePipe](middleware-pipe.png)
+![MiddlewarePipe](MiddlewarePipe.png)
 
 中间件的特点是：
 
@@ -484,7 +484,7 @@ const store = createStore(
 
 _中间件内处理action的原理_
 
-![MiddlewareAction](middleware-action.jpg)
+![MiddlewareAction](MiddlewareAction.jpg)
 
 如图所示：调用next(action)就会让下一个中间件来处理action，而调用dispatch(action)的话就会从最外层中间件重新处理action对象。
 
