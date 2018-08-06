@@ -27,3 +27,5 @@ export InvisibleGuest from './movies/InvisibleGuest.png';
 export UncoolKiller from './movies/UncoolKiller.jpg';
 export Xixili from './movies/Xixili.jpg';
 export MadMax from './movies/MadMax.jpg';
+export Skyscraper from './movies/Skyscraper.png';
+export MedicineGod from './movies/MedicineGod.png';

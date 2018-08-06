@@ -5,6 +5,8 @@ import {
   ContextMeta,
   ReactReduxMd,
   ReactReduxMeta,
+  ReactMd,
+  ReactMeta,
 } from 'markdown/react';
 
 /***
@@ -33,5 +35,10 @@ export default {
     menuName: "深入浅出React和Redux",
     anchors: ReactReduxMeta.anchors,
     component: ReactReduxMd,
+  },{
+    path: 'react1',
+    menuName: "React",
+    anchors: ReactMeta.anchors,
+    component: ReactMd,
   }],
 };

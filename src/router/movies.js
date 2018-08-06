@@ -3,6 +3,8 @@ import {
   _201805Meta,
   _201806Md,
   _201806Meta,
+  _201808Md,
+  _201808Meta,
 } from 'markdown/movies';
 
 /***
@@ -26,5 +28,10 @@ export default {
     menuName: "2018-06",
     component: _201806Md,
     anchors: _201806Meta.anchors,
+  }, {
+    path: '2018-08',
+    menuName: "2018-08",
+    component: _201808Md,
+    anchors: _201808Meta.anchors,
   }],
 };
