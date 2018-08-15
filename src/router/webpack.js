@@ -5,8 +5,8 @@ import {
   LoaderMeta,
   HmrMd,
   HmrMeta,
-  PackageJsonMd,
-  PackageJsonMeta,
+  NpmMd,
+  NpmMeta,
 } from 'markdown/webpack';
 
 /***
@@ -36,9 +36,9 @@ export default {
     anchors: HmrMeta.anchors,
     component: HmrMd,
   },{
-    path: 'package-json',
-    menuName: "PackageJson",
-    anchors: PackageJsonMeta.anchors,
-    component: PackageJsonMd,
+    path: 'npm',
+    menuName: "Npm",
+    anchors: NpmMeta.anchors,
+    component: NpmMd,
   }],
 };

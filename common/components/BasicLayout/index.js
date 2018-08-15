@@ -18,6 +18,7 @@ export default class BasicLayout extends Component {
     
     return (
       <div className={styles.container}>
+        
         <div className={styles.sidebar}>
           <div className={styles.sideHeader}>
             <img className={styles.img} src={Logo} alt=""/>
@@ -27,6 +28,7 @@ export default class BasicLayout extends Component {
           <SideMenu
             moduleRouterConfig={RouterConfig[moduleName]}
           />
+          
         </div>
         
         <div className={styles.content}>

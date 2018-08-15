@@ -6,7 +6,6 @@
 ```
 
 ### 使用步骤
-### 使用步骤
 1、Add react-hot-loader/babel to your .babelrc:
 
 ``` js

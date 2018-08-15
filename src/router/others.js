@@ -3,8 +3,8 @@ import {
   _201805Meta,
   _201806Md,
   _201806Meta,
-  WeChatMd,
-  WeChatMeta,
+  _201808Md,
+  _201808Meta,
 } from 'markdown/others';
 
 /***
@@ -29,10 +29,10 @@ export default {
     component: _201806Md,
     anchors: _201806Meta.anchors,
   },{
-    path: 'wechat',
-    menuName: "微信小程序",
-    component: WeChatMd,
-    anchors: WeChatMeta.anchors,
+    path: '2018-08',
+    menuName: "2018-08",
+    component: _201808Md,
+    anchors: _201808Meta.anchors,
   }],
 };
 
