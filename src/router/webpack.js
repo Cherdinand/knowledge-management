@@ -7,6 +7,8 @@ import {
   HmrMeta,
   NpmMd,
   NpmMeta,
+  YuanLiMd,
+  YuanLiMeta,
 } from 'markdown/webpack';
 
 /***
@@ -40,5 +42,10 @@ export default {
     menuName: "Npm",
     anchors: NpmMeta.anchors,
     component: NpmMd,
+  },{
+    path: 'yuanli',
+    menuName: "原理",
+    anchors: YuanLiMeta.anchors,
+    component: YuanLiMd,
   }],
 };

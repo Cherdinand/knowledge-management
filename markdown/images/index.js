@@ -30,3 +30,5 @@ export MadMax from './movies/MadMax.jpg';
 export Skyscraper from './movies/Skyscraper.png';
 export MedicineGod from './movies/MedicineGod.png';
 export Xihongshishoufu from './movies/Xihongshishoufu.png';
+export Kuaibawogedaizou from './movies/Kuaibawogedaizou.png';
+export Xinwulongyuan from './movies/Xinwulongyuan.png';

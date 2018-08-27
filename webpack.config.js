@@ -102,7 +102,6 @@ module.exports = {
       ]
     }]
   },
-  
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
