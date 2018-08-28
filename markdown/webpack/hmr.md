@@ -1,5 +1,5 @@
 ### 版本
-```js
+``` js
 "webpack": "~4.6.0",
 "webpack-dev-server": "^3.1.4",
 "react-hot-loader": "^4.2.0",
@@ -18,7 +18,7 @@
 
 2、Mark your root component as hot-exported:
 
-```js
+``` js
 import { hot } from 'react-hot-loader'
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
@@ -52,7 +52,7 @@ export default class App extends Component {
 
 3、Run Webpack with Hot Module Replacement:
 
-```js
+``` js
 // webpack.confi.js
 
 devServer: {
@@ -65,7 +65,7 @@ plugins: [
 
 or 
 
-```js
+``` js
 // package.json
 
 "scripts": {

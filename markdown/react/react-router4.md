@@ -34,7 +34,7 @@ location = {
 当pathname匹配到对应的path的正则的时候，会创建一个match对象，也就是我们经常用的this.props.match。
 
 注意：根据实践结果看，`当对某个组件使用withRouter的时候，这个match对象是由其ancestor Route组件传入的。`
-```js
+``` js
 match = {
   url: "/es6",           // 当前匹配到的location.pathname
   path: "/:moduleName",  // 当前匹配的Route组件的path的值
@@ -50,7 +50,7 @@ match = {
 用Switch组件来包裹Route组件，Switch组件会遍历Route组件并且只渲染match到的第一个Route组件
 
 在Switch里面，除了可以有Route组件之外，还可以有Redirect组件，将Redirect组件放在最后，那么当没有path匹配到的时候，就会触发Redirect。这个在本项目中的AppContainer中有实际应用。
-```js
+``` js
 <Switch>
   <!-- moduleName为一级路由的pathname，根据RouterConfig[moduleName]遍历生成Route -->
   {

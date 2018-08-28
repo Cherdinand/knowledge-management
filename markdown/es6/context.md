@@ -2,7 +2,7 @@
 
 在一段js代码拿过来真正一句一句运行之前，浏览器已经做了一些“准备工作”，其中就包括对变量的声明，而不是赋值。变量赋值是在赋值语句执行的时候进行的。
 
-```js
+``` js
 console.log(a) // undefined
 var a = 10
 
@@ -23,7 +23,7 @@ a = 10
 
 这三种数据的准备情况我们称之为“执行上下文”或者“执行上下文环境”。
 
-```js
+``` js
 函数声明： 
 console.log(fn)  // function fn(){}
 function fn(){}  // 直接赋值
@@ -55,7 +55,7 @@ const fn = function(){} // 表达式存在变量提升
 
 作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。
 
-```js
+``` js
 这个例子证明了自由变量的值要到定义这个函数的那个作用域中取。
 var a = 10; 
 function fn(){
@@ -111,7 +111,7 @@ _构造函数_
 
 所谓构造函数就是用来new对象的函数。函数名首字母规定要大写，如Object，Function，Array等。
 
-```js
+``` js
 function Animal(species){
   this.species = species;
 }
@@ -130,7 +130,7 @@ Animal("Cat")  // window 在全局调用函数，this指向window
 
 _函数作为对象的一个属性_
 
-```js
+``` js
 const cat = {
   miao: function(){
     console.log(this)
@@ -148,7 +148,7 @@ _call & apply_
 
 使用call或者apply来绑定this，则函数内的this指向apply的第一个参数（这个参数是一个对象）。
 
-```js
+``` js
 function aoxis(){
   console.log(this.x, this.y)
 }
@@ -159,7 +159,7 @@ aoxis.apply({x: 11, y: 22})  // 11 22
 
 apply的一个巧妙的用处,可以将一个数组默认的转换为一个参数列表([param1,param2,param3] 转换为 param1,param2,param3)，借助apply的这点特性,所以就有了以下高效率的方法:  
 
-```js
+``` js
 function aoxis(...arr){
   console.log(arr)
 }
@@ -176,7 +176,7 @@ console.log(Math.max.apply(null,arr)) // 324
 
 1. 函数作为返回值
 
-```js
+``` js
 function father(){
   const variable = "xinxin";
   
@@ -191,7 +191,7 @@ fn() // xinxin
 
 2. 函数作为参数被传递
 
-```js
+``` js
 function father(){
   const variable = "xinxin";
   

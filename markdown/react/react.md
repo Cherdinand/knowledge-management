@@ -12,17 +12,17 @@ React.PureComponent会在React.Component的基础上添加一个shouldComponentU
 
 `以下所有例子都是基于组件是PureComponent的前提之下。如果有以下的使用情况，会浪费PureComponent可以优化渲染的功能。`
 
-```js
+``` js
 //在onHover属性上传了一个匿名函数，导致每次当前组件re-render的时候，都会传进一个新的函数对象给FruitCard，导致FruitCard触发re-render，尽管此时FruitCard并不需要re-render。
 <FruitCard title="Banana Card" onHover={() => { console.log('Hover =>') }} /> 
 ```
 
-```js
+``` js
 // 像这种如果每次传进一个新数组，即使是空数组，也会触发Entity的re-render，尽管此时并不需要re-render
 <Entity values={this.props.values || []}/> 
 ```
 
-```js
+``` js
 // 在render里派生数据topTen并作为props，总会触发A的re-render，使PureComponent的作用失效。
 render() {
   const { posts } = this.props

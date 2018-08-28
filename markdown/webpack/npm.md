@@ -1,6 +1,6 @@
 1. 发scope包默认情况下是private的，如果要发到public可以加上 --access=public
 
-```js
+``` js
 yarn publish --access=public
 ```
 
@@ -18,7 +18,8 @@ npm由三个部分组成：
 
 ### npm脚本
 定义在package.json里面的scripts字段。scripts字段里面的每一个属性对应一段脚本。
-```js
+
+``` js
 {
   scripts: {
     "dev": "webpack-dev-server --mode=development"
@@ -38,13 +39,13 @@ npm 脚本的原理非常简单。`每当执行npm run，就会自动新建一�
 
 如果是并行执行（即同时的平行执行），可以使用&符号。
 
-```js
+``` js
 $ npm run script1.js & npm run script2.js
 ```
 
 如果是继发执行（即只有前一个任务成功，才执行下一个任务），可以使用&&符号。
 
-```js
+``` js
 $ npm run script1.js && npm run script2.js
 ```
 
@@ -52,7 +53,7 @@ $ npm run script1.js && npm run script2.js
 
 npm 脚本有pre和post两个钩子。举例来说，build脚本命令的钩子就是prebuild和postbuild。
 
-```js
+``` js
 "prebuild": "echo I run before the build script",
 "build": "cross-env NODE_ENV=production webpack",
 "postbuild": "echo I run after the build script"
@@ -60,7 +61,7 @@ npm 脚本有pre和post两个钩子。举例来说，build脚本命令的钩子�
 
 用户执行npm run build的时候，会自动按照下面的顺序执行。
 
-```js
+``` js
 npm run prebuild && npm run build && npm run postbuild
 ```
 
@@ -72,7 +73,7 @@ _npm run_
 
 _npm link_ 
 
-```js
+``` js
 npm link Cherdinand-Cli  // 创建一个软链接
 ```
 
@@ -84,7 +85,7 @@ npm link Cherdinand-Cli  // 创建一个软链接
 
 _npm unlink_
 
-```js
+``` js
 npm unlink Cherdinand-Cli  // 删除一个软链接
 ```
 
@@ -98,7 +99,7 @@ _npm info_
 
 可以打印出指定包的具体信息。
 
-```js
+``` js
 npm info react
 ```
 
@@ -140,7 +141,7 @@ _bin_
 
 模块安装的时候，若是全局安装，则npm会为bin中配置的文件在npm的全局模块安装文件夹node_modules的.bin目录下创建一个软连接；若是局部安装，则会在项目内的./node_modules/.bin/目录下创建一个软链接。
 
-```js
+``` js
 {
   "bin": {
     "e-cli": "./bin/index.js"  
@@ -154,14 +155,14 @@ _engines_
 
 engines字段指明了该模块运行的平台。
 
-```js
+``` js
 比如 Node 的某个版本或者浏览器。
 { 
   "engines" : { "node" : ">=0.10.3 <0.12" } 
 }
 ```
 
-```js
+``` js
 该字段也可以指定适用的npm版本。
 { 
   "engines" : { "npm" : "~1.0.20" }

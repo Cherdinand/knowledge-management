@@ -9,6 +9,8 @@ import {
   NpmMeta,
   YuanLiMd,
   YuanLiMeta,
+  PluginMd,
+  PluginMeta,
 } from 'markdown/webpack';
 
 /***
@@ -28,11 +30,6 @@ export default {
     anchors: PathMeta.anchors,
     redirectTo: true,
   },{
-    path: 'loader',
-    menuName: "Loader",
-    anchors: LoaderMeta.anchors,
-    component: LoaderMd,
-  },{
     path: 'hmr',
     menuName: "Hmr",
     anchors: HmrMeta.anchors,
@@ -47,5 +44,15 @@ export default {
     menuName: "原理",
     anchors: YuanLiMeta.anchors,
     component: YuanLiMd,
+  },{
+    path: 'loader',
+    menuName: "Loader",
+    anchors: LoaderMeta.anchors,
+    component: LoaderMd,
+  },{
+    path: 'plugin',
+    menuName: "Plugin",
+    anchors: PluginMeta.anchors,
+    component: PluginMd,
   }],
 };

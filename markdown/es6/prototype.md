@@ -2,7 +2,7 @@
 
 Instanceof的判断规则是：对于A instanceof B来说，沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
 
-```js
+``` js
 通常对于值类型的使用typeof，引用类型的使用instanceof。下面是几个特殊用例：
 typeof function(){}   // 'function'
 typeof [1,2,3]        // 'object'
@@ -43,7 +43,7 @@ b instanceof Object  // true
 
 ![原型链](prototype.png)
 
-```js
+``` js
 Function函数是被自身创建的。即：
 Function.__proto__  ===  Function.prototype
 
@@ -58,7 +58,7 @@ Function.prototype.__proto__  ===  Object.prototype
 而Object.prototype.__proto__  ===  null。
 ```
 
-```js
+``` js
 function A(){
   this.name = "xinxin";
 }
@@ -73,7 +73,7 @@ A.prototype.__proto__  ===  Object.prototype
 ```
 
 `访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着__proto__这条链向上找，这就是原型链。`下面是原型链的举例：
-```js
+``` js
 class Animal {
   constructor(species){
     this.species = species

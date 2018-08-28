@@ -22,7 +22,7 @@ Device Pixel Ratio。设备像素比DPR是默认缩放为100%的情况下，设�
 
 _公式演算：_
 
-```js
+``` js
 DPR = 设备像素 / CSS像素   (某一方向上)
 
 举例iphone6： 2 = 750 / 375

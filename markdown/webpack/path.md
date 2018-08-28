@@ -21,7 +21,7 @@ context是webpack编译时的基础目录，entry、html入口、loader解析时
 
 ### entry
 基本准则：`一个入口一个html页面`。SPA: one entry point, MPA: multiple entry points.
-```js
+``` js
 entry: './src/index.js'  // SPA 单页面应用
 
 // MPA  多页面应用
@@ -43,7 +43,7 @@ _path_
 
 除了常规的配置方式，还可以在path中用使用 [hash] 模板，比如配置：
 
-```js
+``` js
 output: {
     path: path.resolve('./dist/[hash:8]/'),
     filename: '[name].js'
@@ -63,7 +63,7 @@ _publicPath_
 > **静态资源最终访问路径 = output.publicPath + 资源loader或插件等配置路径**
 
 举例说明：
-```js
+``` js
 output.publicPath = '/static/'
 
 // 图片 url-loader 配置

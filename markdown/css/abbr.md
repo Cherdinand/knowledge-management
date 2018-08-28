@@ -22,7 +22,7 @@ CSS3
 
 8. background-clip 背景的绘制区域。
 
-```js
+``` js
 background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];
 
 background: `#F8F3E8 url("${introduce && introduce.adBackUrl}") left top / 100% 550px no-repeat`,

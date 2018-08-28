@@ -10,7 +10,7 @@ loader就是一个export出来的function，这个函数接受的参数是源文
 
 1. 获得loader的options
 
-```js
+``` js
 const loaderUtils =require (’ loader-utils ’);
 module.exports = function(source){
   const options = loaderUtils.getOptions(this);  
@@ -20,7 +20,7 @@ module.exports = function(source){
 
 2. 返回除了转换后的内容之外的其他数据
 
-```js
+``` js
 module. exports = function (source) {
   // 通过this.callback 告诉Webpack 返回的结果
   this.callback(null, source, sourceMaps);
@@ -48,7 +48,7 @@ module.exports = function(content) {
 
 如果我们想不让webpack缓存该loader处理的结果，可以这么做：
 
-```js
+``` js
 module.exports = function(source) {
   // 关闭该Loader 的缓存功能
   this. cacheable(false);
@@ -103,7 +103,7 @@ module.exports = function(source) {
 `loader 可以被链式调用意味着不一定要输出 JavaScript。只要下一个 loader 可以处理这个输出，这个 loader 就可以返回任意类型的模块。`
 
 如果一个 loader 使用外部资源（例如，从文件系统读取），必须声明它。这些信息用于使缓存 loaders 无效，以及在观察模式(watch mode)下重编译。下面是一个简单示例，说明如何使用 addDependency 方法实现上述声明：  
-```js 
+``` js 
 import path from 'path';
 
 export default function(source) {
@@ -139,7 +139,7 @@ export default function(source) {
 
 这是webpack的一个配置项，用来告诉webpack如何寻找loader。默认情况下会在node_modules里寻找，我们可以在需要用到自己编写的loader的项目的根目录创建一个loaders文件夹，用来防止loader。然后在resolveLoader中添加此文件夹的路径。
 
-```js
+``` js
 module .exports = {
   resolveLoader:{
     // 去哪些目录下寻找Loader ，有先后顺序之分。Webpack 会先去node_modules 项目下寻找Loader ，如果找不到，则再去./loaders/目录下寻找。

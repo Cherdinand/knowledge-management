@@ -48,7 +48,7 @@ _display: table_
 
 如果让你在各个列表项li添加一个下底线，之前我都是向所有的li添加一个border-bottom，然后再把最后一个li的border-bottom设为none；但是现在我们可以如下设置：
 
-```js
+``` js
 <ul>
   <li className={styles.lii}>1</li>
   <li className={styles.lii}>2</li>
@@ -62,7 +62,7 @@ _display: table_
 
 _UI伪类_
 
-```js
+``` js
 a:hover {}
 a:active {}
 a:link {}
@@ -72,7 +72,7 @@ input:focus {}
 
 _结构化伪类_
 
-```js
+``` js
 a:nth-child(2) {}  // 匹配其父元素下面的第二个元素且第二个标签类型为a元素的元素（必须是父元素下的第二个元素）
 a:first-child {}
 a:last-child {}
@@ -83,7 +83,7 @@ a:last-of-type {}
 
 _伪元素_
 
-```js
+``` js
 a:before {}
 a:after {}
 ```
