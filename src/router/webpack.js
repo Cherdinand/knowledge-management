@@ -1,8 +1,17 @@
-import Path, { PathMeta } from 'markdown/webpack/path.md';
-
-import LoaderMd, { LoaderMeta } from 'markdown/webpack/loader.md';
-
-import HmrMd, { HmrMeta } from 'markdown/webpack/hmr.md';
+import {
+  Path,
+  PathMeta,
+  LoaderMd,
+  LoaderMeta,
+  HmrMd,
+  HmrMeta,
+  NpmMd,
+  NpmMeta,
+  YuanLiMd,
+  YuanLiMeta,
+  PluginMd,
+  PluginMeta,
+} from 'markdown/webpack';
 
 /***
  * path          匹配的路由
@@ -21,14 +30,29 @@ export default {
     anchors: PathMeta.anchors,
     redirectTo: true,
   },{
+    path: 'hmr',
+    menuName: "Hmr",
+    anchors: HmrMeta.anchors,
+    component: HmrMd,
+  },{
+    path: 'npm',
+    menuName: "Npm",
+    anchors: NpmMeta.anchors,
+    component: NpmMd,
+  },{
+    path: 'yuanli',
+    menuName: "原理",
+    anchors: YuanLiMeta.anchors,
+    component: YuanLiMd,
+  },{
     path: 'loader',
     menuName: "Loader",
     anchors: LoaderMeta.anchors,
     component: LoaderMd,
   },{
-    path: 'hmr',
-    menuName: "Hmr",
-    anchors: HmrMeta.anchors,
-    component: HmrMd,
+    path: 'plugin',
+    menuName: "Plugin",
+    anchors: PluginMeta.anchors,
+    component: PluginMd,
   }],
 };

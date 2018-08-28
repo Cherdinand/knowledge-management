@@ -1,5 +1,15 @@
-import FlexMd, { FlexMeta } from 'markdown/css/flex.md';
 import Flex from 'components/Flex';
+
+import {
+  FlexMd,
+  FlexMeta,
+  RemMd,
+  RemMeta,
+  AbbrMd,
+  AbbrMeta,
+  CssMd,
+  CssMeta,
+} from 'markdown/css';
 
 /***
  * path          匹配的路由
@@ -12,11 +22,26 @@ import Flex from 'components/Flex';
 
 export default {
   css: [{
+    path: 'css',
+    menuName: "Css",
+    anchors: CssMeta.anchors,
+    component: CssMd,
+    redirectTo: true,
+  },{
     path: 'flex',
     menuName: "Flex",
     anchors: FlexMeta.anchors,
     container: Flex,
     component: FlexMd,
-    redirectTo: true,
+  },{
+    path: 'rem',
+    menuName: "Rem",
+    anchors: RemMeta.anchors,
+    component: RemMd,
+  },{
+    path: 'abbr',
+    menuName: "Abbr",
+    anchors: AbbrMeta.anchors,
+    component: AbbrMd,
   }],
 };

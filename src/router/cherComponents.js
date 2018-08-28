@@ -1,4 +1,5 @@
 import ProgressBar from 'cherComponents/ProgressBar';
+import ReactDnd from 'cherComponents/ReactDnd';
 
 /***
  * path          匹配的路由
@@ -15,5 +16,9 @@ export default {
     menuName: "ProgressBar",
     container: ProgressBar,
     redirectTo: true,
+  }, {
+    path: 'react-dnd',
+    menuName: "ReactDnd",
+    container: ReactDnd,
   }],
 };

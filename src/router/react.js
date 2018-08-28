@@ -1,5 +1,13 @@
-import ReactRouter4Md, { ReactRouter4Meta } from 'markdown/react/react-router4.md';
-import ContextMd, { ContextMeta } from 'markdown/react/context.md';
+import {
+  ReactRouter4Md,
+  ReactRouter4Meta,
+  ContextMd,
+  ContextMeta,
+  ReactReduxMd,
+  ReactReduxMeta,
+  ReactMd,
+  ReactMeta,
+} from 'markdown/react';
 
 /***
  * path          匹配的路由
@@ -22,5 +30,15 @@ export default {
     menuName: "Context",
     anchors: ContextMeta.anchors,
     component: ContextMd,
+  },{
+    path: 'react-redux-book',
+    menuName: "深入浅出React和Redux",
+    anchors: ReactReduxMeta.anchors,
+    component: ReactReduxMd,
+  },{
+    path: 'react1',
+    menuName: "React",
+    anchors: ReactMeta.anchors,
+    component: ReactMd,
   }],
 };

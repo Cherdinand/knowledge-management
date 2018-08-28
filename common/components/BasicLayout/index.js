@@ -9,7 +9,7 @@ import Logo from './images/logo.png';
 import { RouterConfig } from 'router';
 
 import styles from './index.scss';
-import { H3, InlineCode, Blockquote, Em } from "../../../src/ui/index";
+import { H3, InlineCode, Blockquote, Em, Img, A } from "../../../src/ui/index";
 
 export default class BasicLayout extends Component {
   render() {
@@ -18,6 +18,7 @@ export default class BasicLayout extends Component {
     
     return (
       <div className={styles.container}>
+        
         <div className={styles.sidebar}>
           <div className={styles.sideHeader}>
             <img className={styles.img} src={Logo} alt=""/>
@@ -27,6 +28,7 @@ export default class BasicLayout extends Component {
           <SideMenu
             moduleRouterConfig={RouterConfig[moduleName]}
           />
+          
         </div>
         
         <div className={styles.content}>
@@ -45,7 +47,9 @@ export default class BasicLayout extends Component {
                           h3: H3,
                           blockquote: Blockquote,
                           em: Em,
-                          inlineCode: InlineCode
+                          img: Img,
+                          a: A,
+                          inlineCode: InlineCode,
                         }}
                       />
                     );

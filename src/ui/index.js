@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from 'antd';
 import classnames from 'classnames';
+import ImageZoom from 'react-medium-image-zoom';
 
 import styles from './index.scss';
 
@@ -19,9 +20,26 @@ const Blockquote = props => {
   const type = props.children[1].props.children;
   
   return (
-    <blockquote className={classnames(styles.tips, {[styles.info]: type === "info", [styles.warning]: type === "warning"})} {...props} />
+    <blockquote className={styles.tips} type={type} {...props} />
   )
 };
+
+const Img = props => {
+  const { src, alt, title } = props;
+  
+  return (
+    <ImageZoom
+      image={{
+        src: `/assets/images/${src}`,
+        alt,
+        className: 'img',
+        style: { width: title }
+      }}
+    />
+  )
+};
+
+const A = ({href, children}) => <a href={href} style={{fontSize: 16}}>{children}<Icon type="export" /></a>;
 
 const Em = props => <em className={styles.em} {...props} />;
 
@@ -30,4 +48,6 @@ export {
   InlineCode,
   Blockquote,
   Em,
+  Img,
+  A,
 }

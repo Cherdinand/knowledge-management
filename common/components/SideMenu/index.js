@@ -10,12 +10,14 @@ const { SubMenu, Item } = Menu;
 export default class SideMenu extends Component {
   changeRoute = ({key}) => {
     const { location: { pathname }, match: { params: { moduleName }} } = this.props;
+    
+    console.log(pathname, moduleName, key)
 
     // attention 如果pathname中有key字段，说明就在当前路由，不需要跳转，所以return
     if(pathname.indexOf(key) !== -1){
       return;
     }
-
+    
     this.props.history.push(`/${moduleName}/${key}`);
   };
 
@@ -31,7 +33,7 @@ export default class SideMenu extends Component {
         selectedKeys={selectedKeys}
         mode="inline"
         theme="dark"
-        // inlineCollapsed 菜单是否收起呈缩略图，可以后面加此功能
+        // inlineCollapsed // 菜单是否收起呈缩略图，可以后面加此功能
       >
         {
           moduleRouterConfig.map((route) => {

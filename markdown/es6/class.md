@@ -209,7 +209,7 @@ let b = new B();
 ```
 上面代码中，super.x赋值为3，这时等同于对this.x赋值为3。而当读取super.x的时候，读的是A.prototype.x，所以返回undefined。
 
-### prototype & proto
+### prototype & \_\_proto\_\_
 ``` js
 class B {
     static fk(){
@@ -231,9 +231,11 @@ console.log(Z.__proto__ === B.prototype)  //构造函数B的 .prototype 是实�
 ### new() 三步
 ``` js 
 var B = new A(); 
-var B={};  
-B.__proto__ = A.prototype; 
-A.call(B);  
+
+new()三步
+var B={};    // 创建一个空对象，并且将this变量引用该对象，属性和方法被加入到空对象中
+B.__proto__ = A.prototype;  // 同时还继承了该构造函数的原型
+A.call(B);     // 返回新创建的对象，并将实例对象指向新创建的对象
 ```
 
 export const ClassMeta = {

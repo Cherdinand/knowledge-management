@@ -1,5 +1,5 @@
 ### knowledge-management
-a static web site using markdown... NEW
+a static web site using markdown...
 
 ### 使用规范
 
@@ -17,8 +17,7 @@ a static web site using markdown... NEW
  
  **str**   => em             use for emphysis in info or warning
  
- import location from '../images/location.png';
- <img src={location} alt="location" title="location拆解图"/>   直接使用img标签在md中插入图片
+ ![看不见的客人](InvisibleGuest.png "500px")  图片使用react-medium-image-zoom进行放大观看处理
 ```
 
 ### 目录结构

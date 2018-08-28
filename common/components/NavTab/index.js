@@ -8,9 +8,35 @@ import styles from './index.scss';
 
 const { TabPane } = Tabs;
 
+const tabs = [{
+  tab: "ES6", key: "es6",
+},{
+  tab: "Css", key: "css",
+},{
+  tab: "React", key: "react",
+},{
+  tab: "Webpack", key: "webpack",
+},{
+  tab: "Others", key: "others",
+},{
+  tab: "CherComponents", key: "cherComponents",
+},{
+  tab: "Framework", key: "framework",
+},{
+  tab: "Movies", key: "movies",
+}];
+
 @withRouter
 export default class NavTab extends Component {
-
+  state = {
+    roleType: ""
+  }
+  
+  componentDidMount(){
+    // todo 获取localstorage中的roleType
+    // this.setState({ roleType })
+  }
+  
   handleClick = (key) => {
     this.props.history.push(`/${key}`);
   };
@@ -26,14 +52,11 @@ export default class NavTab extends Component {
           size="large"
           onTabClick={this.handleClick}
         >
-          <TabPane tab="ES6" key="es6" />
-          <TabPane tab="Css" key="css" />
-          <TabPane tab="React" key="react" />
-          <TabPane tab="Webpack" key="webpack" />
-          <TabPane tab="Others" key="others" />
-          <TabPane tab="CherComponents" key="cherComponents" />
-          <TabPane tab="Framework" key="framework" />
-          <TabPane tab="Movies" key="movies" />
+          {
+            tabs.map(item => {
+              return <TabPane tab={item.tab} key={item.key}/>
+            })
+          }
         </Tabs>
       </div>
     )

@@ -1,9 +1,5 @@
-import compilation from 'markdown/images/compilation.png';
-import hot from 'markdown/images/hot.png';
-import websocket from 'markdown/images/websocket.png';
-
 ### 版本
-```js
+``` js
 "webpack": "~4.6.0",
 "webpack-dev-server": "^3.1.4",
 "react-hot-loader": "^4.2.0",
@@ -22,7 +18,7 @@ import websocket from 'markdown/images/websocket.png';
 
 2、Mark your root component as hot-exported:
 
-```js
+``` js
 import { hot } from 'react-hot-loader'
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
@@ -56,7 +52,7 @@ export default class App extends Component {
 
 3、Run Webpack with Hot Module Replacement:
 
-```js
+``` js
 // webpack.confi.js
 
 devServer: {
@@ -69,7 +65,7 @@ plugins: [
 
 or 
 
-```js
+``` js
 // package.json
 
 "scripts": {
@@ -105,14 +101,16 @@ _previousHash_
 _websocket_
 
 webpack-dev-server通过websocket与浏览器间通信。
-<img src={websocket} alt="websocket" title="websocket"/>
+
+![websocket](websocket.png)
 
 _浏览器通过ws中获取的hash值来加载对应的变更文件_
-<img src={hot} alt="hot" title="hot"/>
+
+![hot](hot.png)
 
 _webpack编译过程_
-<img src={compilation} alt="compilation" title="compilation"/>
 
+![compilation](compilation.png)
 
 export const HmrMeta = {
   anchors: [

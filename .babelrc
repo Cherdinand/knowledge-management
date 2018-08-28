@@ -1,14 +1,13 @@
 {
   "presets": [
     "es2015",
-    "react"
+    "react",
+    "stage-0"
   ],
   "plugins": [
     "syntax-dynamic-import",  // import()
-    "transform-decorators-legacy",  // decorator
-    "transform-class-properties",  // 类属性简便写法
-    "transform-object-rest-spread",  // 支持... rest spread 运算符
     "react-hot-loader/babel",  // 添加react HMR
+    "transform-decorators-legacy",  // decorator
     [
       "import",
       {
