@@ -3,7 +3,7 @@ a static web site using markdown...
 
 ### 使用规范
 
-```js
+``` js
  ### str    => h3 => anchor  use for title
  _str_      => em            use for sub title
  `str`      => inlineCode    use for emphysis

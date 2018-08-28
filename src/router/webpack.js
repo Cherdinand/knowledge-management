@@ -24,6 +24,21 @@ import {
 
 export default {
   webpack: [{
+    path: 'yuanli',
+    menuName: "原理",
+    anchors: YuanLiMeta.anchors,
+    component: YuanLiMd,
+  },{
+    path: 'loader',
+    menuName: "Loader",
+    anchors: LoaderMeta.anchors,
+    component: LoaderMd,
+  },{
+    path: 'plugin',
+    menuName: "Plugin",
+    anchors: PluginMeta.anchors,
+    component: PluginMd,
+  },{
     path: 'path',
     menuName: "Path",
     component: Path,
@@ -39,20 +54,5 @@ export default {
     menuName: "Npm",
     anchors: NpmMeta.anchors,
     component: NpmMd,
-  },{
-    path: 'yuanli',
-    menuName: "原理",
-    anchors: YuanLiMeta.anchors,
-    component: YuanLiMd,
-  },{
-    path: 'loader',
-    menuName: "Loader",
-    anchors: LoaderMeta.anchors,
-    component: LoaderMd,
-  },{
-    path: 'plugin',
-    menuName: "Plugin",
-    anchors: PluginMeta.anchors,
-    component: PluginMd,
   }],
 };
