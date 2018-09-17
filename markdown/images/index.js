@@ -33,3 +33,4 @@ export Xihongshishoufu from './movies/Xihongshishoufu.png';
 export Kuaibawogedaizou from './movies/Kuaibawogedaizou.png';
 export Xinwulongyuan from './movies/Xinwulongyuan.png';
 export Jinbidao from './movies/Jinbidao.png';
+export ButterflyEffect from './movies/ButterflyEffect.png';
