@@ -24,6 +24,8 @@ const tabs = [{
   tab: "Framework", key: "framework",
 },{
   tab: "Movies", key: "movies",
+},{
+  tab: "Read", key: "read",
 }];
 
 @withRouter
