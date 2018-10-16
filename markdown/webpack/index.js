@@ -4,3 +4,4 @@ export HmrMd, { HmrMeta } from './hmr.md';
 export NpmMd, { NpmMeta } from './npm.md';
 export YuanLiMd, { YuanLiMeta } from './yuanli.md';
 export PluginMd, { PluginMeta } from './plugin.md';
+export StorybookMd, { StorybookMeta } from './storybook.md';

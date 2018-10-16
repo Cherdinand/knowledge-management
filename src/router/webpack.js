@@ -11,6 +11,8 @@ import {
   YuanLiMeta,
   PluginMd,
   PluginMeta,
+  StorybookMd,
+  StorybookMeta,
 } from 'markdown/webpack';
 
 /***
@@ -54,5 +56,10 @@ export default {
     menuName: "Npm",
     anchors: NpmMeta.anchors,
     component: NpmMd,
+  },{
+    path: 'storybook',
+    menuName: "Storybook",
+    anchors: StorybookMeta.anchors,
+    component: StorybookMd,
   }],
 };
