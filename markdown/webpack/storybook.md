@@ -36,9 +36,21 @@ _babel_
 
 但是将.babelrc放在e-widge目录下（也就是package.json）就可以生效的原因上面有说。
 
+### 在html的head中插入标签
+
+有些时候，我们需要在html的\<head\>中插入标签，例如当我们需要使用web font 或者加一些script的时候。
+
+`前提：iframe元素内是一个完整的html。`
+
+这里有两种情况：
+
+1. 在.storybook目录下添加manager-head.html，这样可以把标签插入到整个storybook的html的head中。
+1. 在.storybook目录下添加preview-head.html，这样可以把标签插入到storybook的预览区的iframe中的html的head中。
+
 export const StorybookMeta = {
   anchors: [
     'storybook',
     'storybook使用注意事项',
+    '在html的head中插入标签',
   ]
 }
