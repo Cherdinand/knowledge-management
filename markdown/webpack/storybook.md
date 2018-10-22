@@ -30,7 +30,16 @@ _babel_
 
 `webpack会深度遍历项目中的文件夹，当检测到.js文件的时候会使用babel-loader对.js文件内容进行转换，而这个时候会检索到当前需要转译的.js文件所属的repository下的.babelrc配置（也就是说会如果当前.js文件所属的目录下存在.babelrc文件，babel-loader会读到它，但并不使用它，然后往上级找.babelrc文件，直到找到项目根目录，也就是有package.json的目录下的.babelrc文件，然后读取它并使用它作为babel配置，并停止继续往上寻找.babelrc文件。）`
 
-按照上面的说法，就能理解为什么当我在storybook中的webpack配置中将babel-loader应用到node-modules的时候，会报某些babel plugin没有安装的错，因为node-modules里面的某些repository里有独立的.babelrc配置，所以babel-loader使用了repository里私有的babel配置。
+按照上面的说法，就能理解为什么当我在storybook中的webpack配置中将babel-loader应用到node-modules的时候，会报某些babel plugin没有安装的错，因为node-modules里面的某些repository里有独立的.babelrc配置，所以babel-loader停止往上级寻找.babelrc并使用了repository里私有的babel配置。
+
+```js
+webpack配置：
+{
+    test: /\.(js|jsx)$/,
+    use: "babel-loader",
+    include: /e-component/
+}
+```
 
 然后另外一个问题，为什么将.babelrc文件放在.storybook中读到了但没有生效的问题？我也解释不了。。。
 
