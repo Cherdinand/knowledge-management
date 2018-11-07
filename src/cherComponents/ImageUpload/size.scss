@@ -1,0 +1,26 @@
+$LargeImgWidth: 150px;
+$LargeImgHeight: 150px;
+$LargePlus: 28px;
+
+$MiddleImgWidth: 120px;
+$MiddleImgHeight: 120px;
+$MiddlePlus: 24px;
+
+$SmallImgWidth: 90px;
+$SmallImgHeight: 90px;
+$SmallPlus: 20px;
+
+@mixin LargeSize {
+  width: $LargeImgWidth;
+  height: $LargeImgHeight;
+}
+
+@mixin MiddleSize {
+  width: $MiddleImgWidth;
+  height: $MiddleImgHeight;
+}
+
+@mixin SmallSize {
+  width: $SmallImgWidth;
+  height: $SmallImgHeight;
+}

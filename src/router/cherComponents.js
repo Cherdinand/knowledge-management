@@ -1,5 +1,6 @@
 import ProgressBar from 'cherComponents/ProgressBar';
 import ReactDnd from 'cherComponents/ReactDnd';
+import ImageUpload from 'cherComponents/ImageUpload';
 
 /***
  * path          匹配的路由
@@ -20,5 +21,9 @@ export default {
     path: 'react-dnd',
     menuName: "ReactDnd",
     container: ReactDnd,
+  }, {
+    path: 'image-upload',
+    menuName: "ImageUpload",
+    container: ImageUpload,
   }],
 };

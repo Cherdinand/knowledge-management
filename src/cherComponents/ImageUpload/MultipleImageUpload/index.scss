@@ -1,0 +1,107 @@
+@import "../size.scss";
+
+.uploader {
+  background: #fff;
+  outline: none;
+  display: block;
+  border-radius: 6px;
+  cursor: pointer;
+
+  :global {
+    .ant-upload-list-item .ant-upload-list-item-info {
+      width: 100%;
+      height: 100%;
+      span {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .ant-upload,
+    .ant-upload.ant-upload-select-picture-card > .ant-upload {
+      display: inline-block;
+      padding: 0;
+    }
+  }
+
+  .uploaderTrigger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    color: #999;
+    background: none;
+  }
+}
+
+.smallUploader {
+  height: $SmallImgHeight;
+  :global {
+    .ant-upload-list-item {
+      @include SmallSize;
+      .ant-upload-list-item-uploading-text {
+        @include SmallSize;
+      }
+    }
+
+    .ant-upload,
+    .ant-upload.ant-upload-select-picture-card > .ant-upload {
+      @include SmallSize;
+    }
+  }
+
+  .uploaderTrigger {
+    @include SmallSize;
+  }
+  .uploaderTrigger{
+    font-size: $SmallPlus;
+  }
+}
+
+.middleUploader {
+  height: $MiddleImgHeight;
+  :global {
+    .ant-upload-list-item {
+      @include MiddleSize;
+      .ant-upload-list-item-uploading-text {
+        @include MiddleSize;
+      }
+    }
+
+    .ant-upload,
+    .ant-upload.ant-upload-select-picture-card > .ant-upload {
+      @include MiddleSize;
+    }
+  }
+
+  .uploaderTrigger {
+    @include MiddleSize;
+  }
+
+  .uploaderTrigger{
+    font-size: $MiddlePlus;
+  }
+}
+
+.largeUploader {
+  height: $LargeImgHeight;
+  :global {
+    .ant-upload-list-item {
+      @include LargeSize;
+      .ant-upload-list-item-uploading-text {
+        @include LargeSize;
+      }
+    }
+
+    .ant-upload,
+    .ant-upload.ant-upload-select-picture-card > .ant-upload {
+      @include LargeSize;
+    }
+  }
+
+  .uploaderTrigger {
+    @include LargeSize;
+  }
+  .uploaderTrigger{
+    font-size: $LargePlus;
+  }
+}
