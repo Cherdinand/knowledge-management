@@ -12,10 +12,12 @@ import styles from './index.scss';
 * props 其余props参考antd upload
 * */
 
-// 这个组件的原理是通过调用antd的Upload组件，利用其提供的beforeUpload钩子，在图片upload之前，
-// 调用H5的FileReader获取到图片的base64码
-// 接着将base64码给到canvas从而new一个canvas，然后通过canvas对图片大小，体积等进行控制，从而达到控制用户上传图片体积太大的问题。
-// 最后又通过canvas的api将修改后的图片重新变为base64码，通过callback传回到beforeUpload中上传到action提交地址中
+/*
+* 这个组件的原理是通过调用antd的Upload组件，利用其提供的beforeUpload钩子，在图片upload之前，
+* 调用H5的FileReader获取到图片的base64码
+* 接着将base64码给到canvas从而new一个canvas，然后通过canvas对图片大小，体积等进行控制，从而达到控制用户上传图片体积太大的问题。
+* 最后又通过canvas的api将修改后的图片重新变为base64码，通过callback传回到beforeUpload中上传到action提交地址中
+*/
 
 
 // 限制图片宽高最大为1600，当宽高超过1600的时候进行等比缩小
