@@ -4,10 +4,10 @@
 子组件使用。当需要在当前组件使用从上级组件传入的context的属性时，需要为用到的属性声明数据类型。
 
 ### childContextTypes
-声明传递给子组件的属性的数据类型。
+父组件使用。声明传递给子组件的属性的数据类型。
 
 ### getChildContext
-getChildContext可以指定传递给子组件的属性。
+父组件使用。getChildContext可以指定传递给子组件的属性。
 
 和访问context的属性是需要通过contextTypes指定可访问的元素一样。getChildContext 指定的传递给子组件的属性需要先通过childContextTypes来指定，不然会产生错误。
 
