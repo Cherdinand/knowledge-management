@@ -9,6 +9,8 @@ import {
   AbbrMeta,
   CssMd,
   CssMeta,
+  FloatMd,
+  FloatMeta,
 } from 'markdown/css';
 
 /***
@@ -33,6 +35,11 @@ export default {
     anchors: FlexMeta.anchors,
     container: Flex,
     component: FlexMd,
+  },{
+    path: 'float',
+    menuName: "Float",
+    anchors: FloatMeta.anchors,
+    component: FloatMd,
   },{
     path: 'rem',
     menuName: "Rem",
