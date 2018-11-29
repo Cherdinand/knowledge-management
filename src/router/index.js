@@ -7,6 +7,7 @@ import CherComponentsRouter from './cherComponents';
 import WebpackRouter from './webpack';
 import MoviesRouter from './movies';
 import ReadRouter from './read';
+import GamesRouter from './games';
 
 export const RouterConfig = {
   ...Es6Router,
@@ -18,4 +19,5 @@ export const RouterConfig = {
   ...FrameworkRouter,
   ...MoviesRouter,
   ...ReadRouter,
+  ...GamesRouter,
 };
