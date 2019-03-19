@@ -1,12 +1,8 @@
 import {
-  _201805Md,
-  _201805Meta,
-  _201806Md,
-  _201806Meta,
-  _201808Md,
-  _201808Meta,
-  _201809Md,
-  _201809Meta,
+  _2018Md,
+  _2018Meta,
+  _2019Md,
+  _2019Meta,
 } from 'markdown/movies';
 
 /***
@@ -20,25 +16,16 @@ import {
 
 export default {
   movies: [{
-    path: '2018-05',
-    menuName: "2018-05",
-    component: _201805Md,
-    anchors: _201805Meta.anchors,
+    path: '2018',
+    menuName: "2018",
+    component: _2018Md,
+    anchors: _2018Meta.anchors,
     redirectTo: true,
   }, {
-    path: '2018-06',
-    menuName: "2018-06",
-    component: _201806Md,
-    anchors: _201806Meta.anchors,
-  }, {
-    path: '2018-08',
-    menuName: "2018-08",
-    component: _201808Md,
-    anchors: _201808Meta.anchors,
-  }, {
-    path: '2018-09',
-    menuName: "2018-09",
-    component: _201809Md,
-    anchors: _201809Meta.anchors,
+    path: '2019',
+    menuName: "2019",
+    component: _2019Md,
+    anchors: _2019Meta.anchors,
+    redirectTo: true,
   }],
 };
