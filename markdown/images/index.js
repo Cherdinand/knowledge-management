@@ -37,3 +37,4 @@ export ButterflyEffect from './movies/ButterflyEffect.png';
 export KongBuYouLun from './movies/KongBuYouLun.png';
 export HaiShiShenLou from './movies/HaiShiShenLou.png';
 export YuanDaiMa from './movies/YuanDaiMa.png';
+export BiBeiShangGengBeiShangDeGuShi from './movies/BiBeiShangGengBeiShangDeGuShi.png';

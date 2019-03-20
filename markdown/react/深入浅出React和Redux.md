@@ -1,4 +1,4 @@
-```angular2html
+``` js
 // todo JSX是在哪里被解析成DOM tree的？ ReactDOM.render()?
 ```
 
