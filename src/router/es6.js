@@ -13,6 +13,8 @@ import {
   PrototypeMeta,
   ContextMd,
   ContextMeta,
+  FunctionMd,
+  FunctionMeta,
 } from 'markdown/es6';
 
 /***
@@ -26,12 +28,17 @@ import {
 
 export default {
   es6: [{
+    path: 'function',
+    menuName: "Function",
+    anchors: FunctionMeta.anchors,
+    component: FunctionMd,
+    redirectTo: true,
+  },{
     path: 'async',
     menuName: "Async",
     anchors: AsyncMeta.anchors,
-    container: Async,
     component: AsyncMd,
-    redirectTo: true,
+    container: Async,
   },{
     path: 'class',
     menuName: "Class",
