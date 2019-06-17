@@ -149,7 +149,7 @@ _bin_
 }
 ```
 
-上面代码指定，e-cli 命令对应的可执行文件为 bin 子目录下的 index.js。Npm会寻找这个文件，在node_modules/.bin/目录下建立符号链接。在上面的例子中，index.js会建立符号链接npm_modules/.bin/e-cli。由于node_modules/.bin/目录会在运行时加入系统的PATH变量，因此在运行npm时，就可以不带路径，直接通过命令来调用这些脚本。
+上面代码指定，e-cli 命令对应的可执行文件为 bin 子目录下的 index.tsx。Npm会寻找这个文件，在node_modules/.bin/目录下建立符号链接。在上面的例子中，index.js会建立符号链接npm_modules/.bin/e-cli。由于node_modules/.bin/目录会在运行时加入系统的PATH变量，因此在运行npm时，就可以不带路径，直接通过命令来调用这些脚本。
 
 _engines_
 

@@ -11,12 +11,12 @@
   }
 }
 
-blockquote[type="info"] {
+blockquote[data-type="info"] {
   color: #83AFE5;
   background-color: #DCF2FD;
 }
 
-blockquote[type="warning"] {
+blockquote[data-type="warning"] {
   background-color: #fbedb7;
   color: #6A7D89;
 }

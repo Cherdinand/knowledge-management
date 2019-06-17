@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'eval-source-map',
   context: process.cwd(),  // 设置入口文件的上下文为D:\knowledge-management，默认值为package.json文件所在目录
   
-  entry: ['babel-polyfill', './src/index.js'], // 相对于context设置的目录查找
+  entry: ['babel-polyfill', './src/index.tsx'], // 相对于context设置的目录查找
   
   output: {
     path: path.resolve('./dist/assets/'),  // 所有打包后的静态资源资源放在哪个目录下
@@ -31,15 +31,15 @@ module.exports = {
   
   resolve: {
     alias: {
-      common: path.resolve(__dirname, 'common'),
-      components: path.resolve(__dirname, 'src/components'),
-      cherComponents: path.resolve(__dirname, 'src/cherComponents'),
-      router: path.resolve(__dirname, 'src/router'),
-      utils: path.resolve(__dirname, 'src/utils'),
-      markdown: path.resolve(__dirname, 'markdown'), // 给一个路径使用别名代替，这样在引用的时候就可以省略../  如import Class from 'markdown/class';
+      "@/src/router": path.resolve(__dirname, 'src/router'),
+      "@/src/components": path.resolve(__dirname, 'src/components'),
+      "@/src/cherComponents": path.resolve(__dirname, 'src/cherComponents'),
+      "@/src/utils": path.resolve(__dirname, 'src/utils'),
+      "@/markdown": path.resolve(__dirname, 'markdown'), // 给一个路径使用别名代替，这样在引用的时候就可以省略../  如import Class from '@/markdown/class';
+      "@/common": path.resolve(__dirname, 'common'),
     },
     
-    extensions: [".js", ".json", ".jsx", ".css", ".md"],
+    extensions: [".js", ".json", ".jsx", ".ts", ".tsx", ".css", ".md"],
   },
   
   module: {
@@ -74,6 +74,21 @@ module.exports = {
           javascriptEnabled: true
         }
       }]
+    }, {
+      test: /\.ts(x?)$/,
+      use: [{
+        loader: "babel-loader",
+      }, {
+        loader: "ts-loader",
+        options: {
+          transpileOnly: true
+        }
+      }],
+      exclude: /node_modules/
+    }, {
+      enforce: "pre",
+      test: /\.js$/,
+      loader: "source-map-loader"
     }, {
       test: /\.(js|jsx)$/,
       use: 'babel-loader',

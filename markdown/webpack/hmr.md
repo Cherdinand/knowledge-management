@@ -23,8 +23,8 @@ import { hot } from 'react-hot-loader'
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import Home from 'common/components/Home';
-import BasicLayout from "common/components/BasicLayout";
+import Home from '@/common/components/Home';
+import BasicLayout from "@/common/components/BasicLayout";
 
 @hot(module)
 export default class App extends Component {
