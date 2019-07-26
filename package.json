@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
     "clean": "rimraf dist",
-    "build": "yarn clean & webpack --config=webpack.config.js",
+    "build": "yarn clean & webpack",
     "cli": "c-cli --dev"
   },
   "dependencies": {

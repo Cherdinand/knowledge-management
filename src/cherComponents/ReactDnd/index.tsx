@@ -18,13 +18,13 @@ export default class ReactDnd extends Component {
   state = {
     knightPosition: [random(1,8),random(1,8)]
   }
-  
+
   handleState = (position: number[]) => {
     this.setState({
       knightPosition: position
     })
   }
-  
+
   renderMessage = () => {
     return (
       <div>
@@ -37,7 +37,7 @@ export default class ReactDnd extends Component {
       </div>
     )
   };
-  
+
   render() {
     const { knightPosition } = this.state;
 

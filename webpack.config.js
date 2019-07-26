@@ -42,13 +42,17 @@ module.exports = {
     extensions: [".js", ".json", ".jsx", ".ts", ".tsx", ".css", ".md"],
   },
   
+  optimization: {
+    minimize: false  // 禁止production模式下的TerserPlugin压缩默认开启
+  },
+  
   module: {
     rules: [{
       test: /\.scss$/,  // 项目中使用的css预处理语言
       use: [{
         loader: "style-loader"
       }, {
-        loader: "css-loader",
+        loader: "css\-loader",
         options: {
           modules: true, // 对sass文件开启css modules
           localIdentName: '[local]__[hash:base64:8]',
