@@ -5,6 +5,12 @@ import {
   _201806Meta,
   _201808Md,
   _201808Meta,
+  gitMd,
+  gitMeta,
+  xiaochengxuMd,
+  xiaochengxuMeta,
+  taroMd,
+  taroMeta,
 } from '@/markdown/others/index';
 
 /***
@@ -33,6 +39,21 @@ export default {
     menuName: "2018-08",
     component: _201808Md,
     anchors: _201808Meta.anchors,
+  },{
+    path: 'git',
+    menuName: "git",
+    component: gitMd,
+    anchors: gitMeta.anchors,
+  },{
+    path: 'xiaochengxu',
+    menuName: "小程序",
+    component: xiaochengxuMd,
+    anchors: xiaochengxuMeta.anchors,
+  },{
+    path: 'taro',
+    menuName: "Taro",
+    component: taroMd,
+    anchors: taroMeta.anchors,
   }],
 };
 
