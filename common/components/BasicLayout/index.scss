@@ -9,6 +9,16 @@
   height: 100%;
   width: 256px;
   background: #001529;
+
+  .menu {
+    height: calc(100% - 64px);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   .sideHeader {
     height: 64px;
     line-height: 64px;

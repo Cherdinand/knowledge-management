@@ -24,7 +24,9 @@ const BasicLayout: React.SFC<RouteComponentProps<{ moduleName: string }>> = prop
           <span className={styles.title}>Cherdinand</span>
         </div>
 
-        <SideMenu moduleRouterConfig={RouterConfig[moduleName]}/>
+        <div className={styles.menu}>
+          <SideMenu moduleRouterConfig={RouterConfig[moduleName]}/>
+        </div>
       </div>
 
       <div className={styles.content}>

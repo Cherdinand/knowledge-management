@@ -11,6 +11,8 @@ import {
   xiaochengxuMeta,
   taroMd,
   taroMeta,
+  httpMd,
+  httpMeta,
 } from '@/markdown/others/index';
 
 /***
@@ -41,7 +43,7 @@ export default {
     anchors: _201808Meta.anchors,
   },{
     path: 'git',
-    menuName: "git",
+    menuName: "Git",
     component: gitMd,
     anchors: gitMeta.anchors,
   },{
@@ -54,6 +56,11 @@ export default {
     menuName: "Taro",
     component: taroMd,
     anchors: taroMeta.anchors,
+  },{
+    path: 'http',
+    menuName: "Http",
+    component: httpMd,
+    anchors: httpMeta.anchors,
   }],
 };
 
