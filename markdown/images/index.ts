@@ -15,6 +15,7 @@ export { default as CssWithHtml } from './CssWithHtml.png';
 export { default as StyleSource } from './StyleSource.png';
 export { default as UserStyle } from './UserStyle.png';
 export { default as Tongxinmoxing } from './Tongxinmoxing.png';
+export { default as WangLuoFenCengMoXing } from './WangLuoFenCengMoXing.png';
 
 // jpg
 export { default as CnpmPrivate } from './CnpmPrivate.jpg';
