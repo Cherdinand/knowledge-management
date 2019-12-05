@@ -16,6 +16,8 @@ export { default as StyleSource } from './StyleSource.png';
 export { default as UserStyle } from './UserStyle.png';
 export { default as Tongxinmoxing } from './Tongxinmoxing.png';
 export { default as WangLuoFenCengMoXing } from './WangLuoFenCengMoXing.png';
+export { default as DaiLi } from './DaiLi.png';
+export { default as XieYi } from './XieYi.png';
 
 // jpg
 export { default as CnpmPrivate } from './CnpmPrivate.jpg';
