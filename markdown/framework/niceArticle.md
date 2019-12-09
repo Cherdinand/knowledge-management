@@ -122,7 +122,7 @@ _选择五：前端——高级前端——其他行业，创业等等_
   
 ### 前端技术框架图  
 
-![frame](frame.jpg)
+![frame](Frame.jpg)
   
 export const NiceArticleMeta = {
   anchors: [

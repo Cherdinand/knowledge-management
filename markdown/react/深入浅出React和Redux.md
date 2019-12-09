@@ -76,13 +76,13 @@ _componentDidUpdate(`prevProps, prevState`)_
 
 _MVC_
 
-![MVC框架](mvc.png)
+![MVC框架](Mvc.png)
 
 MVC最大的问题就是无法禁绝View和Model之间的直接对话。
 
 _Flux_
 
-![Flux的单向数据流](flux.png)
+![Flux的单向数据流](Flux.png)
 
 Flux 的基本原则是“单向数据流”。
 
@@ -435,7 +435,7 @@ _中间件middleware_
 
 3. 中间件有一个统一的接口。所以中间件才可以组合使用。
 
-![middleware](middleware.png)
+![middleware](Middleware.png)
 
 ``` js
 一个中间件函数：

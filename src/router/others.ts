@@ -13,6 +13,8 @@ import {
   taroMeta,
   httpMd,
   httpMeta,
+  cacheMd,
+  cacheMeta,
 } from '@/markdown/others/index';
 
 /***
@@ -61,6 +63,11 @@ export default {
     menuName: "Http",
     component: httpMd,
     anchors: httpMeta.anchors,
+  },{
+    path: 'cache',
+    menuName: "Cache",
+    component: cacheMd,
+    anchors: cacheMeta.anchors,
   }],
 };
 

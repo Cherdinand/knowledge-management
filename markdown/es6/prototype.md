@@ -41,7 +41,7 @@ b instanceof Object  // true
 
 1. proto是每个对象都具有的一个属性，这个指向了它的构造函数的原型（prototype），是它的引用（我们称这个属性为链接），而且每个prototype都有proto属性，因此本身也包含了指向其原型的链接，由此形成了一条链，我们称为原型链。
 
-![原型链](prototype.png)
+![原型链](Prototype.png)
 
 ``` js
 Function函数是被自身创建的。即：
@@ -108,7 +108,7 @@ Object.prototype.__proto__ === null
 Cat.__proto__ === Animal
 ```
 
-![原型链](prototype2.png "600px")
+![原型链](Prototype2.png "600px")
 
 [javascript 类属性、类方法、类实例、实例属性、实例方法、prototype、proto测试与小结](http://www.cnblogs.com/mrsunny/archive/2011/05/09/2041185.html)
 

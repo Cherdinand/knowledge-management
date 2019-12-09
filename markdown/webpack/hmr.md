@@ -102,15 +102,15 @@ _websocket_
 
 webpack-dev-server通过websocket与浏览器间通信。
 
-![websocket](websocket.png)
+![websocket](Websocket.png)
 
 _浏览器通过ws中获取的hash值来加载对应的变更文件_
 
-![hot](hot.png)
+![hot](Hot.png)
 
 _webpack编译过程_
 
-![compilation](compilation.png)
+![compilation](Compilation.png)
 
 export const HmrMeta = {
   anchors: [
