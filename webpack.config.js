@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve('./dist/assets/'),  // 所有打包后的静态资源资源放在哪个目录下
     filename: 'js/[name].js',             // js 打包后js的文件放在哪个目录下面  [name].js 打包后的js文件的文件名
-    // chunkFilename: ""
+    chunkFilename: '[name].bundle.js',
     publicPath: "/assets/",              // 此选项指定浏览器中引用的输出目录的公用URL。
   },
   

@@ -18,6 +18,9 @@ export { default as Tongxinmoxing } from './Tongxinmoxing.png';
 export { default as WangLuoFenCengMoXing } from './WangLuoFenCengMoXing.png';
 export { default as DaiLi } from './DaiLi.png';
 export { default as XieYi } from './XieYi.png';
+export { default as LiuLanQiHuanCunJiZhi } from './LiuLanQiHuanCunJiZhi.png';
+export { default as CacheControl } from './CacheControl.png';
+export { default as DeferAsync } from './DeferAsync.png';
 
 // jpg
 export { default as CnpmPrivate } from './CnpmPrivate.jpg';
