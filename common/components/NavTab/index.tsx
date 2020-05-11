@@ -9,6 +9,8 @@ import styles from './index.scss';
 const { TabPane } = Tabs;
 
 const tabs = [{
+  tab: "ES5", key: "es5",
+},{
   tab: "ES6", key: "es6",
 },{
   tab: "Css", key: "css",

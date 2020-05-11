@@ -27,7 +27,7 @@ Point === Point.prototype.constructor // true
  
 静态方法可以与非静态方法重名。 
  
-父类的静态方法，可以被子类继承。 
+`父类的静态方法，可以被子类继承。 `
  
 静态方法也是可以从super对象上调用的。`个人剖析：因为super对象指向父类.prototype.constructor，而 类 === 类.prototype.constructor，所以super对象相当于父类，自然可以调用父类的静态方法` 
  
@@ -210,6 +210,10 @@ let b = new B();
 上面代码中，super.x赋值为3，这时等同于对this.x赋值为3。而当读取super.x的时候，读的是A.prototype.x，所以返回undefined。
 
 ### prototype & \_\_proto\_\_
+
+1. `子类的__proto__属性，表示构造函数的继承，总是指向父类。`
+1. `子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。`
+
 ``` js
 class B {
     static fk(){
@@ -228,14 +232,21 @@ const Z = new B();
 console.log(Z.__proto__ === B.prototype)  //构造函数B的 .prototype 是实例Z的 .__proto__ 
 ```
   
-### new() 三步
+### new()
+
+1. 一个全新的对象会凭空创建（就是被构建）。
+1. 这个新构建的对象会被接入原形链。
+1. 这个新构建的对象被设置为函数调用的 this 绑定。
+1. 除非函数返回一个它自己的其他 对象，否则这个被 new 调用的函数将 自动 返回这个新构建的对象。
+
 ``` js 
 var B = new A(); 
 
-new()三步
-var B={};    // 创建一个空对象，并且将this变量引用该对象，属性和方法被加入到空对象中
-B.__proto__ = A.prototype;  // 同时还继承了该构造函数的原型
-A.call(B);     // 返回新创建的对象，并将实例对象指向新创建的对象
+new()步骤
+var C = {};    // 创建一个空对象（为了形象我们在这把它称为C），并且将this变量引用该对象，属性和方法被加入到空对象中
+C.__proto__ = A.prototype;  // 同时还继承了该构造函数的原型
+A.call(C);     // 返回新创建的对象，并将实例对象指向新创建的对象
+var B = C;     // 将创建的对象返回给B。
 ```
 
 export const ClassMeta = {
@@ -247,6 +258,6 @@ export const ClassMeta = {
     'super作为函数时',
     'super作为对象时',
     'prototype & proto',
-    'new() 三步',
+    'new()',
   ]
 }

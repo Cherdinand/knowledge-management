@@ -1,1 +1,1 @@
-export { deafault as CivilizationMd, CivilizationMeta } from './civilization.md';
+export { default as CivilizationMd, CivilizationMeta } from './civilization.md';

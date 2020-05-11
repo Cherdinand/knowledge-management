@@ -1,6 +1,5 @@
 import Async from '@/src/components/Async';
 import Decorator from '@/src/components/Decorator';
-import Prototype from '@/src/components/Prototype';
 
 import {
   DecoratorMd,
@@ -9,12 +8,18 @@ import {
   AsyncMeta,
   ClassMd,
   ClassMeta,
-  PrototypeMd,
-  PrototypeMeta,
   ContextMd,
   ContextMeta,
   FunctionMd,
   FunctionMeta,
+  PromiseMd,
+  PromiseMeta,
+  SymbolMd,
+  SymbolMeta,
+  IteratorMd,
+  IteratorMeta,
+  SetMapMd,
+  SetMapMeta,
 } from '@/markdown/es6';
 
 /***
@@ -34,16 +39,20 @@ export default {
     component: FunctionMd,
     redirectTo: true,
   },{
-    path: 'async',
-    menuName: "Async",
-    anchors: AsyncMeta.anchors,
-    component: AsyncMd,
-    container: Async,
-  },{
     path: 'class',
     menuName: "Class",
     anchors: ClassMeta.anchors,
     component: ClassMd,
+  },{
+    path: 'context',
+    menuName: "Context",
+    anchors: ContextMeta.anchors,
+    component: ContextMd,
+  },{
+    path: 'promise',
+    menuName: "Promise",
+    anchors: PromiseMeta.anchors,
+    component: PromiseMd,
   },{
     path: 'decorator',
     menuName: "Decorator",
@@ -51,15 +60,25 @@ export default {
     container: Decorator,
     component: DecoratorMd,
   },{
-    path: 'prototype',
-    menuName: "Prototype",
-    anchors: PrototypeMeta.anchors,
-    container: Prototype,
-    component: PrototypeMd,
+    path: 'async',
+    menuName: "Async",
+    anchors: AsyncMeta.anchors,
+    component: AsyncMd,
+    container: Async,
   },{
-    path: 'context',
-    menuName: "Context",
-    anchors: ContextMeta.anchors,
-    component: ContextMd,
+    path: 'symbol',
+    menuName: "Symbol",
+    anchors: SymbolMeta.anchors,
+    component: SymbolMd,
+  },{
+    path: 'iterator',
+    menuName: "Iterator",
+    anchors: IteratorMeta.anchors,
+    component: IteratorMd,
+  },{
+    path: 'setmap',
+    menuName: "SetMap",
+    anchors: SetMapMeta.anchors,
+    component: SetMapMd,
   }]
 };

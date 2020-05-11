@@ -13,7 +13,7 @@ export default class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' render={() => {
-            return <Redirect to="es6" />
+            return <Redirect to="es5" />
           }}/>
           {/*<Route exact path='/' component={Home}/>*/}
           <Route path="/:moduleName" component={BasicLayout} />
