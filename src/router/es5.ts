@@ -5,6 +5,8 @@ import {
   PrototypeMeta,
   ScopeAndThisMd,
   ScopeAndThisMeta,
+  TypeTransferMd,
+  TypeTransferMeta,
 } from '@/markdown/es5';
 
 /***
@@ -29,5 +31,10 @@ export default {
     menuName: "ScopeThis",
     anchors: ScopeAndThisMeta.anchors,
     component: ScopeAndThisMd,
+  },{
+    path: 'typeTransfer',
+    menuName: "TypeTransfer",
+    anchors: TypeTransferMeta.anchors,
+    component: TypeTransferMd,
   },]
 };

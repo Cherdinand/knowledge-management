@@ -6,7 +6,7 @@
 
 `JavaScript是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。`
 
-```js
+``` js
 ng      babel或typescript转译为es5                      V8引擎
 react  ------------------------------------------> es5代码  -----------------> 浏览器可以识别并执行的代码
 vue
@@ -28,7 +28,7 @@ vue
 
 而LHS的查询方式在意的则是变量本身是否存在，对变量所存的确切的值无所谓。
 
-```js
+``` js
 const a = function(s){
   const b = s;
   console.log(b)
@@ -53,7 +53,7 @@ a(2)
 
 如果在进行LHS查询的时候，找到了全局作用域都还没找到变量的话。在非严格模式下，LHS查询会在全局作用域中创建一个同名的新变量。而在严格模式下，就不会在全局作用域中创建一个同名的新变量，也就是找不到变量，所以也会抛出一个ReferenceError。`这是因为在严格模式下不允许自动/隐含的全局变量创建。`
 
-```js
+``` js
 function foo(a) {
 	console.log( a + b ); // 'a + b'中使用RHS在作用域中查询变量b的时候，找到了全局作用域也找不到变量b，这时会抛出ReferenceError
 	b = a;  // 由于前一句报错， 所以这句并不会运行。奇怪的点是这样在foo作用域中并没有变量b的提前声明。
@@ -62,7 +62,7 @@ function foo(a) {
 foo( 2 );
 ```
 
-```js
+``` js
 function foo(a) {
 	console.log( a + b ); // 'a + b'中使用RHS在作用域中查询变量b的时候，在foo作用域中找到了变量b，但是由于还没赋值，所以值是undefined
 	var b = a;  // 这样就会在foo作用域中有提前声明，但是还没赋值。
@@ -71,7 +71,7 @@ function foo(a) {
 foo( 2 );
 ```
 
-```js
+``` js
 function foo(a) {
 	b = a;  // b在执行LHS查询时直到全局作用域都没有发现变量b，于是在全局作用域中创建了变量b并把a的值赋给变量b
 }
@@ -81,7 +81,7 @@ foo( 2 );
 console.log(b)  // 2  于是在全局作用域中能访问到变量b的值为2
 ```
 
-```js
+``` js
 function foo(a) {
 	var b = a;  // 在foo作用域中声明并创建新变量b，然后使用LHS查询到变量b，并将a的值赋给b。
 }
@@ -117,7 +117,7 @@ JavaScript中使用的作用域模型是词法作用域。
 
 `而在动态作用域中一个变量所处的作用域是由变量被使用的位置决定的。`
 
-```js
+``` js
 var c = 3;
 
 function a(){
@@ -142,7 +142,7 @@ function b(){
 
 然而，在es6中的箭头函数，就可以将this的绑定机制回到类似于词法作用域的机制。`当使用箭头函数的时候，箭头函数中的this从自己的作用域链的上一层继承this。`
 
-```js
+``` js
 const name = 'chenkang';
 
 const a = {

@@ -32,7 +32,7 @@ _babel_
 
 按照上面的说法，就能理解为什么当我在storybook中的webpack配置中将babel-loader应用到node-modules的时候，会报某些babel plugin没有安装的错，因为node-modules里面的某些repository里有独立的.babelrc配置，所以babel-loader停止往上级寻找.babelrc并使用了repository里私有的babel配置。
 
-```js
+``` js
 webpack配置：
 {
     test: /\.(js|jsx)$/,

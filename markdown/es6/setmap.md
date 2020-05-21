@@ -8,7 +8,7 @@ _Set结构不会添加重复的值_
 
 由于这一个特性，且已知数组和字符串都具有Iterator接口。所以我们可以通过Set结构来完成数组和字符串的去重。
 
-```js
+``` js
 const arr = [12,12,21,3,432,3,54]
 console.log([...new Set(arr)])  // [12,21,3,432,54]
 
@@ -18,7 +18,7 @@ console.log([...new Set(str)].join('')) // abcd
 
 _Set 实例的属性和方法_
 
-```js
+``` js
 Set.prototype.size：返回Set实例的成员总数。
 
 // 四种操作方法
@@ -34,7 +34,7 @@ Set.prototype.entries()：返回键值对的遍历器对象，注意是对象，
 Set.prototype.forEach()：使用回调函数遍历每个成员
 ```
 
-```js
+``` js
 // 由于 Set 结构没有键名，只有键值（或者说键名和键值是同一个值），所以keys方法和values方法的行为完全一致。
 
 const s = new Set(['yellow','yellow','red','green'])
@@ -60,7 +60,7 @@ for(let i of s.entries()){
 
 用一句话概括上面那句话就是：`Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应。`
 
-```js
+``` js
 const m = new Map([
   [Symbol.for('a'), 'a'],  // 使用Symbol当做键名
   [{name: 'xinxin'}, 'xinxin']  // 使用对象当做键名
@@ -71,7 +71,7 @@ console.log(m.has(Symbol.for('a')))  // true
 
 _Map构造函数接受数组作为参数，实际上执行的是下面的算法_
 
-```js
+``` js
 const map = new Map([
   ['name', '张三'],
   ['title', 'Author']
@@ -95,7 +95,7 @@ _注意事项_
 
 `只有对同一个对象的引用，Map 结构才将其视为同一个键。这一点要非常小心。`
 
-```js
+``` js
 // 表面是针对同一个键['a']，但实际上这是两个不同的数组实例，内存地址是不一样的，因此get方法无法读取该键，返回undefined。
 const map = new Map();
 
@@ -105,7 +105,7 @@ map.get(['a']) // undefined
 
 _Map 实例的属性和方法_
 
-```js
+``` js
 Map.prototype.size：返回Map实例的成员总数。
 
 // 四种操作方法

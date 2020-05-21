@@ -18,7 +18,7 @@ _Symbol.for_
 
 `除了第一次会创建一个新的Symbol并注册到全局。接下来的都不会创建，但会返回找到的Symbol值`
 
-```js
+``` js
 const a = Symbol.for('aaaa');  // 创建一个描述为aaaa的Symbol值并注册到全局
 
 const b = Symbol.for('aaaa');  // 在全局找到名为aaaa的Symbol值并返回
@@ -30,7 +30,7 @@ _Symbol.keyFor_
 
 接收一个Symbol值，返回一个`经过Symbol.for注册`的Symbol类型值的描述
 
-```js
+``` js
 
 const a = Symbol.for('aaaaa')
 
@@ -59,7 +59,7 @@ _消除魔术字符串_
 
 而由于Symbol值是独一无二的，所以在这里我们可以利用Symbol值来处理。
 
-```js
+``` js
 由于这种场景里我们shapeType.triangle的值只要是唯一的就可以了，所以可以用Symbol来做。
 const shapeType = {
   triangle: Symbol(),
@@ -83,7 +83,7 @@ _模仿私有方法_
 
 由于以 Symbol 值作为键名，不会被常规方法遍历得到。我们可以利用这个特性，为对象定义一些非私有的、但又希望只用于内部的属性或方法。
 
-```js
+``` js
 let size = Symbol('size');
 
 class Collection {

@@ -1,6 +1,6 @@
 ### parseInt
 
-```js
+``` js
 parseInt(s: string, radix?: number): number  // 以radix进制处理字符串s，并转化为十进制的number返回
 
 // 如果字符串s的第一个字符不是数字字符或者负号，则返回NAN。但是要注意的是，如果指定的radix是十六进制，那么A-F相当于数字字符。
@@ -16,7 +16,7 @@ parseInt("1010222", 2) // 10 二进制处理完“1010”字符串，将字符�
 
 ### parseFloat
 
-```js
+``` js
 parseFloat(s: string): number  // 获取字符串s中的浮点数值并返回
 
 // 第一个小数点有效，之后的无效
@@ -28,13 +28,13 @@ parseFloat("413.4326.214") // 413.4326
 
 _toString_
 
-```js
+``` js
 [1,2,3,4].toString() // 1,2,3,4
 ```
 
 _push & pop_
 
-```js
+``` js
 const arr = [111,222,333]
 
 arr.push(555) // 4 将所给参数插入到数组的末尾并返回push之后数组的长度arr.length
@@ -44,7 +44,7 @@ arr.pop()  // 333 将数组中的最后一项移除并返回
 
 _shift & unshift_
 
-```js
+``` js
 const arr = [111,222,333]
 
 arr.shift() // 111 将数组中的第一项移除并返回
@@ -53,13 +53,13 @@ arr.unshift("555")  // 4 将所给参数插入到数组的开头并返回unshift
 
 _reverse_
 
-```js
+``` js
 [1,2,3,4].reverse() // [4,3,2,1] 将数组进行逆向排序
 ```
 
 _sort_
 
-```js
+``` js
 Array.sort(( (a,b): number )?: Function) // 可接收一个函数参数，通常会使用函数参数，因为在不添加函数参数的时候会由于其内部处理导致bug
 
 // 如果 number 小于 0 ，那么 a 会被排列到 b 之前；
@@ -73,13 +73,13 @@ Array.sort(( (a,b): number )?: Function) // 可接收一个函数参数，通常
 
 _concat_
 
-```js
+``` js
 [1,3].concat([4,5, [2]])  // [1,3,4,5,2]  创建一个新的数组副本进行数组的合并并返回合并后的数组，不影响原数组
 ```
 
 _slice_
 
-```js
+``` js
 Array.slice(start: number, end?: number): Array  // start => 起始位置， end => 结束位置 返回切割后的新数组 [start, end)
 
 [111,222,333,444].slice(1) // [222,333,444] 只传一个参数时从起始位置切到数组末尾
@@ -88,7 +88,7 @@ Array.slice(start: number, end?: number): Array  // start => 起始位置， end
 
 _splice_
 
-```js
+``` js
 Array.splice(start: number, deleteCount?: number, ...items): Array  // 返回被删除的项组成的数组
 
 // 删除
@@ -105,7 +105,7 @@ Array.splice(start: number, deleteCount?: number, ...items): Array  // 返回被
 
 _indexOf & lastIndexOf_
 
-```js
+``` js
 Array.indexOf(item, start?: number): number // item：要查找的项， start: 从哪个坐标开始查找 如果数组中找不到要找的item则返回-1，否则返回其对应的坐标
 Array.lastIndexOf(item, start?: number): number
 
@@ -117,7 +117,7 @@ Array.lastIndexOf(item, start?: number): number
 
 _every & some_
 
-```js
+``` js
 Array.every(filterFunction: Function): boolean // 如果数组中的每一项都能让filterFunction返回true，则返回true
 Array.some(filterFunction: Function): boolean  // 如果数组中的某一项能让filterFunction返回true，则返回true
 
@@ -129,7 +129,7 @@ arr.some((item) => { return item < 2 })  // true
 
 _filter & map & forEach_
 
-```js
+``` js
 Array.forEach(bianliFunction: Function)        // 对数组中的每一项使用bianliFunction，无返回值
 Array.map(bianliFunction: Function): Array     // 对数组中的每一项使用bianliFunction，并返回经过bianliFunction处理之后的值组成的数组。生成新数组，不改变原数组
 Array.filter(bianliFunction: Function): Array  // 对数组中的每一项使用bianliFunction，并返回能让bianliFunction返回true的item组成的数组。生成新数组，不改变原数组
@@ -140,7 +140,7 @@ Array.filter(bianliFunction: Function): Array  // 对数组中的每一项使用
 
 _reduce & reduceRight_
 
-```js
+``` js
 Array.reduce(hebingFunction: Function, initailValue)       // initailValue => 想要生成的新对象的数据形态；从数组左边开始调用hebingFunction，生成新数组，不改变原数组
 Array.reduceRight(hebingFunction: Function, initailValue)  // initailValue => 想要生成的新对象的数据形态；从数组右边开始调用hebingFunction，生成新数组，不改变原数组
 
@@ -161,7 +161,7 @@ function hebingFunction(result, currentValue, initailValue)
 
 _Date.now_
 
-```js
+``` js
 Date.now() === (new Date()).getTime()  // 能直接获取到当前时间的毫秒数
 ```
 
@@ -177,13 +177,13 @@ Date.now() === (new Date()).getTime()  // 能直接获取到当前时间的毫�
 
 _exec_
 
-```js
+``` js
 reg.exec(str: string)
 ```
 
 _test_
 
-```js
+``` js
 reg.test(str: string): boolean
 ```
 
@@ -191,7 +191,7 @@ reg.test(str: string): boolean
 
  _charAt_
  
- ```js
+ ``` js
 String.charAt(index: number): string // 接收一个index坐标，查询字符串在该坐标下的字符并返回该字符 
 
 "asdf".charAt(1) // "s"
@@ -199,7 +199,7 @@ String.charAt(index: number): string // 接收一个index坐标，查询字符�
  
  _charCodeAt_
 
- ```js
+ ``` js
 String.charCodeAt(index: number): number // 接收一个index坐标，查询字符串在该坐标下的字符的字符编码并返回该字符编码 
 
 "asdf".charCodeAt(1) // 115 字符s的字符编码
@@ -207,7 +207,7 @@ String.charCodeAt(index: number): number // 接收一个index坐标，查询字�
 
  _concat_
 
-```js
+``` js
 String.concat(...str: string): string // 合并一个或多个字符串
 
 "asdf".concat("zxcv", "b", "n") // "asdfzxcvbn"
@@ -215,7 +215,7 @@ String.concat(...str: string): string // 合并一个或多个字符串
 
 _slice & substr & substring_
 
-```js
+``` js
 String的这三个函数的start参数都是表示从哪个坐标开始切字符串，而slice和substring的第二个参数end表示的切割结束的坐标，而且是左闭右开区间；而substr的第二个参数end表示的是数量，表示切割多少个字符，并且是左闭右闭区间
 
 String.slice(start: number, end: number): string      // [string, end)  左闭右开区间
@@ -229,7 +229,7 @@ String.substring(start: number, end: number): string  // [string, end)  左闭�
 
 _indexOf & lastIndexOf_
 
-```js
+``` js
 zifuchuan.indexof(str: string): number      // 从zifuchuan左边开始查找给定字符串是否存在，如果存在则返回其在zifuchuan中的坐标，如果不存在则返回-1
 zifuchuan.lastIndexof(str: string): number  // 从zifuchuan右边开始查找给定字符串是否存在，如果存在则返回其在zifuchuan中的坐标，如果不存在则返回-1
 
@@ -250,7 +250,7 @@ _toLowerCase & toLocaleLowerCase & toUpperCase & toLocaleUpperCase_
 
 _encodeURI & encodeURIComponent & decodeURI & decodeURIComponent_
 
-```js
+``` js
 
 encodeURI("https://www.google.com/search?q=jwt&rlz=1C1GCEU_zh-CNHK819HK819&oq=jwt&aqs=chrome..69i57j0l5")
 // https://www.google.com/search?q=jwt&rlz=1C1GCEU_zh-CNHK819HK819&oq=jwt&aqs=chrome..69i57j0l5 
@@ -263,7 +263,7 @@ encodeURIComponent("https://www.google.com/search?q=jwt&rlz=1C1GCEU_zh-CNHK819HK
 
 _ceil & floor & round_
 
-```js
+``` js
 Math.ceil(num: number): number   // 向上舍入为最接近的整数
 Math.floor(num: number): number  // 向下舍入为最接近的整数
 Math.round(num: number): number  // 按四舍五入舍入为最接近的整数
@@ -275,7 +275,7 @@ Math.round(25.5)  // 26
 
 _random_
 
-```js
+``` js
 Math.random(): number // 随机生成一个（0,1）的小数
 
 // 获取一个[min, max]的随机数的函数
@@ -288,7 +288,7 @@ function getRandomNumber(min, max){
 
 _defineProperty & defineProperties_
 
-```js
+``` js
 Object.defineProperty(obj: object, prop: string, descriptorObj: object)  // 定义一个对象中某个属性的描述对象
 Object.defineProperties(obj: object, propsObj: object)                   // 定义一个对象中多个属性的描述对象
 
@@ -326,7 +326,7 @@ Object.defineProperties(o, {
 
 _getOwnPropertyDesctiptor & getOwnPropertyDesctiptors_
 
-```js
+``` js
 Object.getOwnPropertyDesctiptor(obj: object, prop: string): object  // 获取一个对象中某个属性的描述对象
 Object.getOwnPropertyDesctiptors(obj: object): object               // 获取一个对象中所有属性的描述对象
 
@@ -340,7 +340,7 @@ Object.getOwnPropertyDesctiptors(o)
 
 _isPrototypeOf & getPrototypeOf_
 
-```js
+``` js
 prototypeObj.isPrototypeOf(objectInstance)  // 原型对象prototypeObj在不在objectInstance的原型链上
 
 Object.getPrototypeOf(instance) // 获取某个实例instance的构造函数的原型对象
@@ -373,13 +373,13 @@ Object.prototype.isPrototypeOf(Animal)  // true  构造函数Function实际上�
 
 _hasOwnProperty_
 
-```js
+``` js
 A.hasOwnProperty(prop: string)  // A是否在自己的实例对象而非原型对象上有prop属性
 ```
 
 ### node节点
 
-```js
+``` js
 node = {
   // 每一个node节点都具备的常用属性
   nodeType    // 节点类型
@@ -420,7 +420,7 @@ node = {
 
 ### document
 
-```js
+``` js
 document = {
   documentElement  // 指向html的引用
   body             // 指向body的引用 

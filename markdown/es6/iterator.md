@@ -18,7 +18,7 @@ Iterator 的遍历过程是这样的。
 
 每一次调用next方法，都会返回数据结构的当前成员的信息。具体来说，就是返回一个包含value和done两个属性的对象。其中，value属性是当前成员的值，done属性是一个布尔值，表示遍历是否结束。
 
-```js
+``` js
 // 遍历器接口（Iterable） === Iterator函数
 interface Iterable {
   [Symbol.iterator]() : Iterator,
@@ -52,7 +52,7 @@ interface IterationResult {
 
 通常情况下，我们也只会对对象添加Iterator接口。
 
-```js
+``` js
 const obj = {
     name: 'xinxin',
     age: 11,

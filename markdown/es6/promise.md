@@ -6,7 +6,7 @@ _立即执行_
 
 `Promise中的语句在Promise创建的时候就会立即被执行。`而then方法中指定的回调函数将会在所有同步任务执行完才会执行。
 
-```js
+``` js
 let promise = new Promise(function(resolve, reject) {
   console.log('Promise');
   resolve();
@@ -25,7 +25,7 @@ console.log('Hi!');
 
 _连环返回异步操作时的状态具有传递性_
 
-```js
+``` js
 const p1 = new Promise(function (resolve, reject) {
   setTimeout(() => reject(new Error('fail')), 3000)
 })
@@ -41,7 +41,7 @@ p2.then(result => console.log(result))
 
 _链式then中返回异步操作时的状态同样具有传递性_
 
-```js
+``` js
 const p1 = new Promise(function(resolve, reject) {
   setTimeout(() => resolve("succeed"), 3000);
 });
@@ -67,7 +67,7 @@ p1.then(result => {
 
 `finally方法总是会返回原来的值。`
 
-```js
+``` js
 // resolve 的值是 undefined
 Promise.resolve(2).then(() => {}, () => {}).then((r) => {console.log(r)})  // undefined
 

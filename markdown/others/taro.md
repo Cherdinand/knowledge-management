@@ -48,7 +48,7 @@ _this.$scope_
 
 14、 在微信小程序中从调用 Taro.navigateTo、Taro.redirectTo 或 Taro.switchTab 后，到页面触发 componentWillMount 会有一定延时。因此一些网络请求可以提前到发起跳转前一刻去请求。而Taro 提供的 componentWillPreload 钩子就是可以给我们用来预加载作小程序性能优化的。
 
-```js
+``` js
 // 跳转后的页面
 class Index extends Component {
   componentWillPreload (params) {
@@ -73,7 +73,7 @@ class Index extends Component {
 15、 Component is not found in path "xxx/xxx/xxx" 解决办法：
 
 
-```js
+``` js
 1、检查有没有编译报错
 
 2、检查编译后的文件是否正确
@@ -89,7 +89,7 @@ _枚举条件渲染_
 
 有时渲染的条件非常多，不管是 if-else 还是 switch-case 来做条件渲染都会显得太麻烦。这时我们可以使用「表驱动法」：枚举渲染。
 
-```js
+``` js
 function Loading (props) {
   const { loadingText, LOADING_STATUS, loadingStatus, onRetry } = props
   return (

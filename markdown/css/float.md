@@ -21,7 +21,7 @@ _td标签（display:table-cell）_
 
 ### table可用的垂直居中方式
 
-```js
+``` js
 .father {
   width: 100%;
   height: 100%;
