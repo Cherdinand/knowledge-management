@@ -21,6 +21,7 @@ export { default as XieYi } from './XieYi.png';
 export { default as LiuLanQiHuanCunJiZhi } from './LiuLanQiHuanCunJiZhi.png';
 export { default as CacheControl } from './CacheControl.png';
 export { default as DeferAsync } from './DeferAsync.png';
+export { default as EventLoop } from './EventLoop.png';
 
 // jpg
 export { default as CnpmPrivate } from './CnpmPrivate.jpg';

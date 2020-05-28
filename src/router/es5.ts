@@ -7,6 +7,8 @@ import {
   ScopeAndThisMeta,
   TypeTransferMd,
   TypeTransferMeta,
+  EventLoopMd,
+  EventLoopMeta,
 } from '@/markdown/es5';
 
 /***
@@ -36,5 +38,10 @@ export default {
     menuName: "TypeTransfer",
     anchors: TypeTransferMeta.anchors,
     component: TypeTransferMd,
+  },{
+    path: 'eventLoop',
+    menuName: "EventLoop",
+    anchors: EventLoopMeta.anchors,
+    component: EventLoopMd,
   },]
 };
