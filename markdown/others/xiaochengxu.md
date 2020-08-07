@@ -60,7 +60,8 @@ _渲染层和逻辑层_
 
 ### Useful Tutorial
 
-[小程序官网](https://developers.weixin.qq.com/miniprogram/dev/framework/)
+[小程序开发指南](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=0006a2289c8bb0bb0086ee8c056c0a)
+[微信小程序技术原理分析](https://zhaomenghuan.js.org/blog/wechat-miniprogram-principle-analysis.html)
 
 export const xiaochengxuMeta = {
   anchors: [

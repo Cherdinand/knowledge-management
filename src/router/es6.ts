@@ -20,6 +20,10 @@ import {
   IteratorMeta,
   SetMapMd,
   SetMapMeta,
+  GrammarMd,
+  GrammarMeta,
+  GeneratorMd,
+  GeneratorMeta,
 } from '@/markdown/es6';
 
 /***
@@ -75,6 +79,16 @@ export default {
     menuName: "Iterator",
     anchors: IteratorMeta.anchors,
     component: IteratorMd,
+  },{
+    path: 'generator',
+    menuName: "Generator",
+    anchors: GeneratorMeta.anchors,
+    component: GeneratorMd,
+  },{
+    path: 'grammar',
+    menuName: "Grammar",
+    anchors: GrammarMeta.anchors,
+    component: GrammarMd,
   },{
     path: 'setmap',
     menuName: "SetMap",

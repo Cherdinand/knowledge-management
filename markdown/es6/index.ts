@@ -7,3 +7,5 @@ export { default as PromiseMd, PromiseMeta } from './promise.md';
 export { default as SymbolMd, SymbolMeta } from './symbol.md';
 export { default as IteratorMd, IteratorMeta } from './iterator.md';
 export { default as SetMapMd, SetMapMeta } from './setmap.md';
+export { default as GrammarMd, GrammarMeta } from './grammar.md';
+export { default as GeneratorMd, GeneratorMeta } from './generator.md';

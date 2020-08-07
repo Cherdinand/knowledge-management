@@ -1,3 +1,7 @@
+### 迭代器
+
+`迭代器（iterator） 是一种结构化的模式，用于从一个信息源中以一次一个的方式抽取信息。`
+
 ### 概念
 
 JavaScript 原有的表示“集合”的数据结构，主要是数组（Array）和对象（Object），ES6 又添加了Map和Set。这样就有了四种数据集合，用户还可以组合使用它们，定义自己的数据结构，比如数组的成员是Map，Map的成员是对象。`这样就需要一种统一的接口机制（遍历器Iterator），来处理所有不同的数据结构。`
@@ -24,9 +28,13 @@ interface Iterable {
   [Symbol.iterator]() : Iterator,
 }
 
-// 指针对象（Iterator）
+// 指针对象（Iterator）  
+// 一个迭代器的next方法能够可选地接受一个或多个参数。大多数内建的迭代器不会实施这种能力，虽然一个Generator的迭代器绝对会这么做。
+// 一个迭代器的return、throw方法在大多数内建的迭代器上都没有被实现，是可选的方法。但是，它们在Generator的上下文环境中很有用。
 interface Iterator {
-  next(value?: any) : IterationResult,
+  next(value?: any) : IterationResult,    
+  return()？: 停止迭代并返回IteratorResult   向迭代器发送一个隐含的完成信号，暗示着迭代器的完全停止。可以用于通知生产者（应答next(..)调用的迭代器）去实施一些可能的清理作业，比如释放/关闭网络，数据库，或者文件引用资源。
+  throw()？: 通知错误并返回IteratorResult    向迭代器发送一个异常/错误信号，
 }
 
 // next方法返回值
@@ -86,10 +94,34 @@ for (var value of obj) {
 }
 ```
 
+### for...of...的等价物
+
+``` js
+const m = new Map([
+    [Symbol('xinxin'), 'xinxin']，
+    [Symbol('ck'), 'ck']，
+])
+
+const iterator = m.entries();
+
+for(let i of iterator){
+    console.log(i)
+}
+
+========================
+
+for(let i, res; (res = iterator.next()) && !res.done;){
+    i = res.value;
+    console.log(i)
+}
+```
+
 export const IteratorMeta = {
   anchors: [
+    '迭代器',
     '概念',
     '原生具备 Iterator 接口的数据结构',
     '自定义Iterator函数',
+    'for...of...的等价物',
   ]
 }

@@ -52,7 +52,8 @@ if(~a.indexOf(x)){  // 只有返回值是 -1 的时候，表达式返回值为fa
 +null  // 0  注意null转换为number的时候转换为0
 +undefined  // NaN
 +{}   // NaN
-+[]   // 0
++""   // 0
++[]   // 0   1、 调用[].valueOf() ==> +[]  2、调用[].toString() ==> +""  3、调用Number("")  ==> 0 
 ```
 
 ### ||和&&操作符
@@ -160,6 +161,14 @@ _valueOf与toString_
 `在数值运算里，会优先调用valueOf()，在字符串运算里，会优先调用toString()。`
 
 `在有运算操作符的情况下，valueOf的优先级高于toString。`
+
+需要注意的是，这两个方法在不同使用场景会有不同的优先级：
+
+正常情况下，优先调用toString
+
+有运算操作符的情况下valueOf的优先级高于toString
+
+`当调用valueOf方法无法运算后还是会再调用toString方法`
 
 ``` js
 let e2 = {

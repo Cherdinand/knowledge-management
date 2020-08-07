@@ -7,14 +7,14 @@ export default class AsyncAwait extends Component {
       console.log('r', r);
     });
   }
-  
+
   async hiking(){
     console.log(1)
     await this.animation(); // 2、否则这里会一直处于等待状态
     console.log(4);
     return 'result';
   }
-  
+
   async animation(){
     console.log(2);
     await new Promise((resolve, reject) => {
@@ -24,7 +24,7 @@ export default class AsyncAwait extends Component {
       },1000,'resolve')
     });
   }
-  
+
   render() {
     return (
       <div>

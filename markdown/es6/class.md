@@ -109,7 +109,7 @@ class A {
  
 class B extends A { 
     constructor(x,y){ 
-        super(x,y) // 调用A.constructor并且绑定this为B，也就是A.prototype.constructor.call(this)。 
+        super(x,y) // 调用A.prototype.constructor并且绑定this为B，也就是A.prototype.constructor.call(this)。 
         console.log(this,this.z)  // super过后，this => B, this.z => 3 
     } 
 } 
@@ -211,25 +211,43 @@ let b = new B();
 
 ### prototype & \_\_proto\_\_
 
-1. `子类的__proto__属性，表示构造函数的继承，总是指向父类。`
-1. `子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。`
+1. static静态属性是依附在类上的，可以通过类本身调用，但是却不能通过实例调用。因为实例的原型链与类的原型链实际上是在一个双重/平行链条上。
+1. `子类的__proto__属性，表示构造函数的继承，总是指向父类,也就是子类.__proto__ === 父类。而子类的prototype作为一个实例对象，才是指向父类的prototype，也就是子类.prototype.__proto === 父类.prototype。`
+1. `实例是不会有prototype属性的。而 实例.__proto__ === 构造类.prototype`
 
 ``` js
-class B {
-    static fk(){
-        super.ff(); 
-    }
-    love(){
-        super.say();
-    }
+一定要认清类和实例对象之间的prototype和__proto__的概念。
+类.prototype === 类的原型对象
+子类.__proto__ === 父类
+实例对象.__proto__ === 构造类.prototype  // 且实例对象都不带prototype属性
+
+class Foo {
+	static cool() { console.log( "cool" ); }
+	wow() { console.log( "wow" ); }
 }
 
-const Z = new B();
+class Bar extends Foo {
+	static awesome() {
+		super.cool();
+		console.log( "awesome" );
+	}
+	neat() {
+		super.wow();
+		console.log( "neat" );
+	}
+}
 
-//官方定义：prototype用在构造函数上，__proto__用在实例对象上。
-//实例的__proto__指向构造函数的prototype
+Foo.cool();					// "cool"
+Bar.cool();					// "cool"
+Bar.awesome();				// "cool"
+							// "awesome"
 
-console.log(Z.__proto__ === B.prototype)  //构造函数B的 .prototype 是实例Z的 .__proto__ 
+var b = new Bar();
+b.neat();					// "wow"
+							// "neat"
+
+b.awesome;					// undefined ,在实例的原型链中是不能找到awesome函数的，但我们可以通过 b.__proto__.constructor.awesome() 找到awesome函数。 b.__proto__.constructor.awesome === Bar.awesome
+b.cool;						// undefined
 ```
   
 ### new()
