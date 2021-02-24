@@ -7,6 +7,8 @@ import {
   ReactReduxMeta,
   ReactMd,
   ReactMeta,
+  DiffMd,
+  DiffMeta,
 } from '@/markdown/react/index';
 
 /***
@@ -25,20 +27,25 @@ export default {
     anchors: ReactRouter4Meta.anchors,
     component: ReactRouter4Md,
     redirectTo: true,
-  },{
+  }, {
     path: 'context',
     menuName: "Context",
     anchors: ContextMeta.anchors,
     component: ContextMd,
-  },{
+  }, {
     path: 'react-redux-book',
     menuName: "深入浅出React和Redux",
     anchors: ReactReduxMeta.anchors,
     component: ReactReduxMd,
-  },{
+  }, {
     path: 'react1',
     menuName: "React",
     anchors: ReactMeta.anchors,
     component: ReactMd,
+  }, {
+    path: 'diff',
+    menuName: "Diff",
+    anchors: DiffMeta.anchors,
+    component: DiffMd,
   }],
 };
