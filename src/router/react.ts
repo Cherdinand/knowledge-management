@@ -5,10 +5,12 @@ import {
   ContextMeta,
   ReactReduxMd,
   ReactReduxMeta,
-  ReactMd,
-  ReactMeta,
+  ApiMd,
+  ApiMeta,
   DiffMd,
   DiffMeta,
+  RefMd,
+  RefMeta,
 } from '@/markdown/react/index';
 
 /***
@@ -38,14 +40,19 @@ export default {
     anchors: ReactReduxMeta.anchors,
     component: ReactReduxMd,
   }, {
-    path: 'react1',
-    menuName: "React",
-    anchors: ReactMeta.anchors,
-    component: ReactMd,
+    path: 'api',
+    menuName: "Api",
+    anchors: ApiMeta.anchors,
+    component: ApiMd,
   }, {
     path: 'diff',
     menuName: "Diff",
     anchors: DiffMeta.anchors,
     component: DiffMd,
+  }, {
+    path: 'ref',
+    menuName: "Ref",
+    anchors: RefMeta.anchors,
+    component: RefMd,
   }],
 };

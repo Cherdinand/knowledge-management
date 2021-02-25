@@ -31,13 +31,30 @@ render() {
 }
 ```
 
-
 > info
 
 > 建议只对展示组件使用PureComponent。
 
-export const ReactMeta = {
+### React.lazy
+
+React.lazy 函数配合Suspend组件能做到动态加载组件。
+
+`基本原理是webpack 检测到 import() 语法会自动代码分割。`
+
+``` js
+const OtherComponent = React.lazy(() => import(/* webpackChunkName: "OtherComponent" */'./OtherComponent'));
+const OtherComponentTwo = React.lazy(() => import(/* webpackChunkName: "OtherComponentTwo" */'./OtherComponentTwo'));
+
+<Suspense fallback={<div>抱歉，请耐心等待 Loading...</div>} >
+  <OtherComponent />
+  <OtherComponentTwo />
+</Suspense>
+```
+
+
+export const ApiMeta = {
   anchors: [
     'React.PureComponent',
+    'React.lazy',
   ]
 }
