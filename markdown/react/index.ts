@@ -4,3 +4,4 @@ export { default as ReactReduxMd, ReactReduxMeta } from "./深入浅出React和R
 export { default as ApiMd, ApiMeta } from "./api.md";
 export { default as DiffMd, DiffMeta } from "./diff.md";
 export { default as RefMd, RefMeta } from "./ref.md";
+export { default as ProfilerMd, ProfilerMeta } from "./profiler.md";

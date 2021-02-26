@@ -11,6 +11,8 @@ import {
   DiffMeta,
   RefMd,
   RefMeta,
+  ProfilerMd,
+  ProfilerMeta,
 } from '@/markdown/react/index';
 
 /***
@@ -54,5 +56,10 @@ export default {
     menuName: "Ref",
     anchors: RefMeta.anchors,
     component: RefMd,
+  }, {
+    path: 'profiler',
+    menuName: "Profiler",
+    anchors: ProfilerMeta.anchors,
+    component: ProfilerMd,
   }],
 };

@@ -33,7 +33,62 @@ render() {
 
 > info
 
-> 建议只对展示组件使用PureComponent。
+> 建议只对UI组件使用PureComponent。
+
+### React.memo
+
+React.memo 与 React.PureComponent 都是通过浅对比来进行性能优化的。
+
+`区别在于 React.memo 是一个方法，而React.PureComponent是一个继承类。且 React.memo 只对 props 进行浅对比，而React.PureComponent 对 props 和state 进行浅对比。`
+
+``` js
+
+const items = new Array(10000).fill(1);
+
+// React.memo 函数带两个参数，第二个参数是一个对比函数，类似于shouldComponentUpdate，只是当两比较值不相等的时候返回false，相等的时候返回true
+// 传入第二个参数可以针对特定的某个 props 进行浅比较
+const Block = React.memo(
+  (props) => {
+    console.log("render");
+
+    return `${props.keys}_${props.num}_${props.otherKeys}`;
+  },
+  (prevProps, nextProps) => {
+    if (prevProps.otherKeys !== nextProps.otherKeys) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+);
+
+export default function App() {
+  const [keys, setKeys] = useState("app");
+  const [otherKeys, setOtherKeys] = useState("hapi");
+
+  function handleClick1() {
+    setKeys("APP");
+  }
+
+  function handleClick2() {
+    setOtherKeys("HAPI");
+  }
+
+  return (
+    <div>
+      <div onClick={handleClick1}>keys</div>
+      <div onClick={handleClick2}>otherKeys</div>
+      {items.map((item, index) => {
+        return (
+          <div key={index}>
+            <Block num={index} keys={keys} otherKeys={otherKeys} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+```
 
 ### React.lazy
 
@@ -51,10 +106,19 @@ const OtherComponentTwo = React.lazy(() => import(/* webpackChunkName: "OtherCom
 </Suspense>
 ```
 
+### ReactDOM.createPortal
+
+`Portal 可以将子节点渲染到存在于父组件以外的 DOM 节点。适合用于当需要子组件能够在视觉上“跳出”其容器时，例如，对话框、悬浮卡以及提示框。`
+
+``` js
+ReactDOM.createPortal(child, container); // 第一个参数是任何react子元素，container是一个DOM容器元素实例
+```
 
 export const ApiMeta = {
   anchors: [
     'React.PureComponent',
+    'React.Memo',
     'React.lazy',
+    'ReactDOM.createPortal',
   ]
 }
