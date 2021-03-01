@@ -117,7 +117,7 @@ ReactDOM.createPortal(child, container); // 第一个参数是任何react子元�
 export const ApiMeta = {
   anchors: [
     'React.PureComponent',
-    'React.Memo',
+    'React.memo',
     'React.lazy',
     'ReactDOM.createPortal',
   ]
