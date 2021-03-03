@@ -32,7 +32,9 @@ export default function App() {
 
 _React.forwardRef_
 
-这个方法对高阶组件（也被称为 HOC）特别有用。其他情况下不要使用，直接通过props传递。
+这个方法对高阶组件（也被称为 HOC）特别有用。其他情况下不要使用，直接通过props传递。`经过试验，这个方法貌似吊用没有。`
+
+`ref属性不能用在函数组件上，因为函数组件没有实例。`
 
 `前面知道了ref属性不可以直接当做props传递，而React.forwardRef可以帮助我们将ref进行传递，这样就可以在父组件中获取到子孙组件中的DOM实例。`
 
@@ -60,9 +62,3 @@ function logProps(Component) {
   });
 }
 ```
-
-export const RefMeta = {
-  anchors: [
-    'api',
-  ]
-}

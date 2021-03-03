@@ -39,7 +39,7 @@ render() {
 
 React.memo 与 React.PureComponent 都是通过浅对比来进行性能优化的。
 
-`区别在于 React.memo 是一个方法，而React.PureComponent是一个继承类。且 React.memo 只对 props 进行浅对比，而React.PureComponent 对 props 和state 进行浅对比。`
+`区别在于 React.memo 是一个高阶组件，而React.PureComponent是一个继承类。且 React.memo 只对 props 进行浅对比，而React.PureComponent 对 props 和state 进行浅对比。`
 
 ``` js
 
@@ -100,10 +100,10 @@ React.lazy 函数配合Suspend组件能做到动态加载组件。
 const OtherComponent = React.lazy(() => import(/* webpackChunkName: "OtherComponent" */'./OtherComponent'));
 const OtherComponentTwo = React.lazy(() => import(/* webpackChunkName: "OtherComponentTwo" */'./OtherComponentTwo'));
 
-<Suspense fallback={<div>抱歉，请耐心等待 Loading...</div>} >
+<React.Suspense fallback={<div>抱歉，请耐心等待 Loading...</div>} >
   <OtherComponent />
   <OtherComponentTwo />
-</Suspense>
+</React.Suspense>
 ```
 
 ### ReactDOM.createPortal
@@ -114,11 +114,46 @@ const OtherComponentTwo = React.lazy(() => import(/* webpackChunkName: "OtherCom
 ReactDOM.createPortal(child, container); // 第一个参数是任何react子元素，container是一个DOM容器元素实例
 ```
 
+### React.createElement和React.cloneElement
+
+``` js
+React.createElement(
+  type,  // 可以是标签名字符串（如 'div' 或 'span'），也可以是 React 组件 类型 （class 组件或函数组件），或是 React fragment 类型。
+  [props],
+  [...children]
+)
+
+React.cloneElement(
+  element, // 是一个React元素
+  [props],
+  [...children]
+)
+
+React元素指的是将jsx赋值给变量如 Component = <div>111</div>, 那这个Component就是一个React元素
+```
+
+### React.isValidElement
+
+验证对象是否为 React 元素，返回值为 true 或 false。
+
+``` js
+const Component = <div>111</div>
+
+console.log(React.isValidElement(Component))
+```
+
+
+
+
+
+
 export const ApiMeta = {
   anchors: [
     'React.PureComponent',
     'React.memo',
     'React.lazy',
     'ReactDOM.createPortal',
+    'React.createElement和React.cloneElement',
+    'ReactDOM.isValidElement',
   ]
 }
