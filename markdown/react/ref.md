@@ -62,3 +62,9 @@ function logProps(Component) {
   });
 }
 ```
+
+export const RefMeta = {
+  anchors: [
+    'api',
+  ]
+}
