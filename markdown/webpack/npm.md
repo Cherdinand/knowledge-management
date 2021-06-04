@@ -103,6 +103,15 @@ _npm info_
 npm info react
 ```
 
+_npm bin_
+
+可以显示npm的bin文件夹的位置
+
+``` js
+npm bin // D:\program\knowledge-management\node_modules\.bin
+npm bin -g // C:\Users\HeZhi\AppData\Roaming\npm
+```
+
 ### commander.js
 
 > info
