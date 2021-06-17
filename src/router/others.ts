@@ -13,6 +13,8 @@ import {
   browserCacheMeta,
   browserRenderMd,
   browserRenderMeta,
+  englishMd,
+  englishMeta,
 } from '@/markdown/others/index';
 
 /***
@@ -61,6 +63,11 @@ export default {
     menuName: "BrowserRender",
     component: browserRenderMd,
     anchors: browserRenderMeta.anchors,
+  },{
+    path: 'english',
+    menuName: "English",
+    component: englishMd,
+    anchors: englishMeta.anchors,
   }],
 };
 

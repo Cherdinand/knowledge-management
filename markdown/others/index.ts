@@ -5,3 +5,4 @@ export { default as taroMd, taroMeta } from './taro.md';
 export { default as httpMd, httpMeta } from './http.md';
 export { default as browserCacheMd, browserCacheMeta } from './browser-cache.md';
 export { default as browserRenderMd, browserRenderMeta } from './browser-render.md';
+export { default as englishMd, englishMeta } from './english.md';

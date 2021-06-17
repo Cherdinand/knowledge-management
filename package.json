@@ -1,8 +1,20 @@
 {
-  "name": "km",
+  "name": "cherdinand",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Cherdinand",
+    "email": "736119088@qq.com"
+  },
   "license": "MIT",
+  "homepage": "https://github.com/Cherdinand/knowledge-management",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cherdinand/knowledge-management"
+  },
+  "bugs": {
+    "url": "https://github.com/Cherdinand/knowledge-management/issues"
+  },
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
     "clean": "rimraf dist",
@@ -10,7 +22,6 @@
     "cli": "c-cli --dev"
   },
   "dependencies": {
-    "@types/react-hot-loader": "^4.1.0",
     "antd": "^3.20.0",
     "classnames": "^2.2.5",
     "less": "^3.0.4",
@@ -33,6 +44,7 @@
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
+    "@types/react-hot-loader": "^4.1.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-import": "^1.7.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
