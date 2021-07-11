@@ -9,12 +9,6 @@ _带consumer_
 // 默认值"fucking left"，当组件所处的tree中没有找到provider的时候这个默认值才会生效
 const LeftContext = React.createContext("fucking left");
 
-class Block extends React.Component {
-  render() {
-    return <Left />;
-  }
-}
-
 class Left extends React.Component {
   render() {
     return (
@@ -29,7 +23,7 @@ export default function App() {
   return (
     // Provider只有一个value参数。多个 Provider 也可以嵌套使用，里层的会覆盖外层的数据。
     <LeftContext.Provider value={"aaaa"}>
-      <Block />
+      <Left />
     </LeftContext.Provider>
   );
 }

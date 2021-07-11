@@ -13,6 +13,8 @@ import {
   RefMeta,
   ProfilerMd,
   ProfilerMeta,
+  PerformanceOptimizationMd,
+  PerformanceOptimizationMeta,
 } from '@/markdown/react/index';
 
 /***
@@ -61,5 +63,10 @@ export default {
     menuName: "Profiler",
     anchors: ProfilerMeta.anchors,
     component: ProfilerMd,
+  }, {
+    path: 'performance-optimization',
+    menuName: "React性能优化",
+    anchors: PerformanceOptimizationMeta.anchors,
+    component: PerformanceOptimizationMd,
   }],
 };

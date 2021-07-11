@@ -27,6 +27,7 @@ export { default as EventLoop } from './EventLoop.png';
 export { default as CnpmPrivate } from './CnpmPrivate.jpg';
 export { default as MiddlewareAction } from './MiddlewareAction.jpg';
 export { default as Frame } from './Frame.jpg';
+export { default as CssPerformance } from './CssPerformance.jpg';
 
 // movies
 export { default as SuperBody } from './movies/SuperBody.jpg';

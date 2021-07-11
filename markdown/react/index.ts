@@ -5,3 +5,4 @@ export { default as ApiMd, ApiMeta } from "./api.md";
 export { default as DiffMd, DiffMeta } from "./diff.md";
 export { default as RefMd, RefMeta } from "./ref.md";
 export { default as ProfilerMd, ProfilerMeta } from "./profiler.md";
+export { default as PerformanceOptimizationMd, PerformanceOptimizationMeta } from "./React性能优化.md";
