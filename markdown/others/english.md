@@ -32,7 +32,7 @@ vice versa  反之亦然
 
 已知浏览器一秒60帧， 1000ms/60 = 16ms。
 
-__requestIdleCallback__
+_requestIdleCallback_
 
 这个函数可以使浏览器在有空的时候执行我们的回调，这个回调会传入一个参数，表示浏览器有多少时间供我们执行任务。
 
@@ -55,14 +55,13 @@ timeout参数，假设为100ms，如果超过这个timeout后，回调还没被�
 1. Low 这些任务可以延后，但是最终也需要执行
 1. Idle 可以被无限期延后
 
-__浏览器在一帧（16ms）内要做什么事情__
+_浏览器在一帧（16ms）内要做什么事情_
 
 1. 处理用户输入事件
 1. js的执行
 1. requestAnimation 调用
 1. 布局 layout
 1. 绘制 paint
-
 
 
 
