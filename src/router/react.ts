@@ -15,6 +15,8 @@ import {
   ProfilerMeta,
   PerformanceOptimizationMd,
   PerformanceOptimizationMeta,
+  FiberMd,
+  FiberMeta,
 } from '@/markdown/react/index';
 
 /***
@@ -68,5 +70,10 @@ export default {
     menuName: "React性能优化",
     anchors: PerformanceOptimizationMeta.anchors,
     component: PerformanceOptimizationMd,
+  }, {
+    path: 'fiber',
+    menuName: "Fiber",
+    anchors: FiberMeta.anchors,
+    component: FiberMd,
   }],
 };
