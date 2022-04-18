@@ -7,4 +7,3 @@ export { default as RefMd, RefMeta } from "./ref.md";
 export { default as ProfilerMd, ProfilerMeta } from "./profiler.md";
 export { default as PerformanceOptimizationMd, PerformanceOptimizationMeta } from "./React性能优化.md";
 export { default as FiberMd, FiberMeta } from "./fiber.md";
-export { default as ConcurrentMd, ConcurrentMeta } from "./concurrent.md";

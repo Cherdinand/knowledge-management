@@ -22,6 +22,8 @@ export { default as LiuLanQiHuanCunJiZhi } from './LiuLanQiHuanCunJiZhi.png';
 export { default as CacheControl } from './CacheControl.png';
 export { default as DeferAsync } from './DeferAsync.png';
 export { default as EventLoop } from './EventLoop.png';
+export { default as Ip } from './Ip.png';
+export { default as IpMac } from './IpMac.png';
 
 // jpg
 export { default as CnpmPrivate } from './CnpmPrivate.jpg';

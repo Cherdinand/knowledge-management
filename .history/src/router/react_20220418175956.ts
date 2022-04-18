@@ -79,8 +79,8 @@ export default {
     component: FiberMd,
   }, {
     path: 'concurrent',
-    menuName: "Concurrent",
+    menuName: "concurrent",
     anchors: ConcurrentMeta.anchors,
-    component: ConcurrentMd,
+    component: FiberMd,
   }],
 };

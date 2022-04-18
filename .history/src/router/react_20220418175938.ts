@@ -17,7 +17,7 @@ import {
   PerformanceOptimizationMeta,
   FiberMd,
   FiberMeta,
-  ConcurrentMd,
+  FiberMd,
   ConcurrentMeta,
 } from '@/markdown/react/index';
 
@@ -77,10 +77,5 @@ export default {
     menuName: "Fiber",
     anchors: FiberMeta.anchors,
     component: FiberMd,
-  }, {
-    path: 'concurrent',
-    menuName: "Concurrent",
-    anchors: ConcurrentMeta.anchors,
-    component: ConcurrentMd,
   }],
 };
