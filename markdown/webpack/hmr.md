@@ -1,3 +1,11 @@
+> info
+
+> module 指在模块化编程中我们把应用程序分割成的独立功能的代码模块。
+
+> chunk 指模块间按照引用关系组合成的代码块，一个 chunk 中可以包含多个 module。
+
+> chunk group 指通过配置入口点（entry point）区分的块组，一个 chunk group 中可包含一到多个 chunk。
+
 ### 版本
 ``` js
 "webpack": "~4.6.0",

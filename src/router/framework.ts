@@ -1,4 +1,11 @@
-import { NiceArticleMd, NiceArticleMeta } from '@/markdown/framework/index';
+import { 
+  NiceArticleMd,
+  NiceArticleMeta,
+  DevelopmentMd,
+  DevelopmentMeta,
+  EngineeringMd, 
+  EngineeringMeta 
+} from '@/markdown/framework/index';
 
 /***
  * path          匹配的路由
@@ -16,5 +23,15 @@ export default {
     component: NiceArticleMd,
     anchors: NiceArticleMeta.anchors,
     redirectTo: true,
+  }, {
+    path: 'engineering',
+    menuName: "Engineering",
+    component: EngineeringMd,
+    anchors: EngineeringMeta.anchors,
+  }, {
+    path: 'development',
+    menuName: "Development",
+    component: DevelopmentMd,
+    anchors: DevelopmentMeta.anchors,
   }],
 };
