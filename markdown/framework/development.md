@@ -69,6 +69,10 @@ _关键字_
 
 `cheap` 传true的时候生成的 sourceMap 只包含行信息不包含列信息，这样在开发模式下代码报错的时候可以定位到行而定位不到列。但通常我们也无需定位到列，所以开发模式传true可以加快构建速度。也是必选。
 
+### mock
+
+
+
 ### keyword
 
 1. babel-loader缓存优化
@@ -79,6 +83,7 @@ export const DevelopmentMeta = {
     '开发效率',
     '浏览器的热更新',
     'sourceMap',
+    'mock',
     'keyword',
   ]
 }

@@ -67,6 +67,60 @@ npm run prebuild && npm run build && npm run postbuild
 
 ### npm命令
 
+_npm install_ 
+
+1. `npm安装时会按照项目被依赖的次数作为权重，将依赖提升。`
+1. `由于 node_modules 不能有效地处理重复的包，所以两个名称相同但是不同版本的包时不能在一个目录下共存的。`
+
+``` js
+# ① 假设项目依赖a,b,c三个模块, 依赖树为:
+#  +- a
+#    +- react@15
+#  +- b
+#    +- react@16
+#  +- c
+#    +- react@16
+# yarn安装时会按照项目被依赖的次数作为权重, 将依赖提升(hoisting),
+# 安装后的node_modules结构为:
+  .
+  └── node_modules
+      ├── a
+      │   ├── index.js
+      │   ├── node_modules
+      │   │   └── react  # @15
+      │   └── package.json
+      ├── b
+      │   ├── index.js
+      │   └── package.json
+      ├── c
+      │   ├── index.js
+      │   └── package.json
+      └── react  # @16 被依赖了两次, 所以进行提升
+
+# ② 现在假设在①的基础上, 根项目依赖了react@15, 对于项目自己的依赖肯定是要放在node_modules根目录的,
+# 由于一个目录下不能存在同名目录, 所以react@16没有的提升机会. 
+# 安装后node_moduels结构为
+  .
+  └── node_modules
+      ├── a
+      │   ├── index.js
+      │   └── package.json # react@15 提升
+      ├── b
+      │   ├── index.js
+      │   ├── node_modules
+      │   │   └── react  # @16
+      │   └── package.json
+      ├── c
+      │   ├── index.js
+      │   ├── node_modules
+      │   │   └── react  # @16
+      │   └── package.json
+      └── react  # @15
+# 上面的结果可以看出, react@16出现了重复
+
+```
+
+
 _npm run_ 
 
 每次启动npm run都会创建一个Shell，执行指定的命令，并临时将node_modules/.bin加入PATH变量，这意味着本地模块可以直接运行scripts字段里面的命令。`其实在.bin目录下的每个cmd文件内部都有链接指向对应的包。`
