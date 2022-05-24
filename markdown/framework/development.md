@@ -71,7 +71,45 @@ _关键字_
 
 ### mock
 
+### 预处理语言
 
+使用预处理语言，我们可以在开发的时候用精简的语法糖去完成复杂的内容。例如less ==> css 相当于从 es6 ==> js。然后在编译的时候再使用对应的预处理器（less-loader、babel-loader）去转译代码。
+
+预处理语言有css的（Sass、Less、Stylus），html的（Pug）。但是通常我们只使用css的。
+
+_Sass/Less/Stylus的区别_
+
+在实现的功能方面：这三种 CSS 的预处理语言都实现了变量（Variables）、嵌套（Nesting）、混合 （Mixins）、运算（Operators）、父选择器引用（Parent Reference）、扩展（Extend）和大量内建函数（Build-in Functions）。但是与另外两种语言相比，Less 缺少自定义函数的功能（可以使用 Mixins 结合 Guard 实现类似效果），而 Stylus 提供了超过 60 个内建函数，更有利于编写复杂的计算函数。
+
+在语法方面：Sass 支持 .scss 与 .sass 两种文件格式。差异点是 .scss 在语法上更接近 CSS，需要括号、分号等标识符，而 Sass 相比之下，在语法上做了简化，去掉了 CSS 规则的括号分号等 （增加对应标识符会导致报错） 。Less 的整体语法更接近 .scss。Stylus 则同时支持类似 .sass 的精简语法和普通 CSS 语法。语法细节上也各不相同。
+
+``` js
+//scss
+$red: '#900';
+
+div {
+  color: $red;
+}
+
+//sass
+$red: '#900'
+
+div
+  color: $red
+
+//less
+@green: '#090';
+
+div {
+  color: @green;
+}
+
+//stylus
+$blue = '#009'
+
+div
+  color: $blue
+```
 
 ### keyword
 
