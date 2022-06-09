@@ -30,6 +30,7 @@ export { default as CnpmPrivate } from './CnpmPrivate.jpg';
 export { default as MiddlewareAction } from './MiddlewareAction.jpg';
 export { default as Frame } from './Frame.jpg';
 export { default as CssPerformance } from './CssPerformance.jpg';
+export { default as NodeModuleHell } from './NodeModuleHell.jpg';
 
 // movies
 export { default as SuperBody } from './movies/SuperBody.jpg';

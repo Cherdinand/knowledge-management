@@ -67,60 +67,6 @@ npm run prebuild && npm run build && npm run postbuild
 
 ### npm命令
 
-_npm install_ 
-
-1. `npm安装时会按照项目被依赖的次数作为权重，将依赖提升。`
-1. `由于 node_modules 不能有效地处理重复的包，所以两个名称相同但是不同版本的包时不能在一个目录下共存的。`
-
-``` js
-# ① 假设项目依赖a,b,c三个模块, 依赖树为:
-#  +- a
-#    +- react@15
-#  +- b
-#    +- react@16
-#  +- c
-#    +- react@16
-# yarn安装时会按照项目被依赖的次数作为权重, 将依赖提升(hoisting),
-# 安装后的node_modules结构为:
-  .
-  └── node_modules
-      ├── a
-      │   ├── index.js
-      │   ├── node_modules
-      │   │   └── react  # @15
-      │   └── package.json
-      ├── b
-      │   ├── index.js
-      │   └── package.json
-      ├── c
-      │   ├── index.js
-      │   └── package.json
-      └── react  # @16 被依赖了两次, 所以进行提升
-
-# ② 现在假设在①的基础上, 根项目依赖了react@15, 对于项目自己的依赖肯定是要放在node_modules根目录的,
-# 由于一个目录下不能存在同名目录, 所以react@16没有的提升机会. 
-# 安装后node_moduels结构为
-  .
-  └── node_modules
-      ├── a
-      │   ├── index.js
-      │   └── package.json # react@15 提升
-      ├── b
-      │   ├── index.js
-      │   ├── node_modules
-      │   │   └── react  # @16
-      │   └── package.json
-      ├── c
-      │   ├── index.js
-      │   ├── node_modules
-      │   │   └── react  # @16
-      │   └── package.json
-      └── react  # @15
-# 上面的结果可以看出, react@16出现了重复
-
-```
-
-
 _npm run_ 
 
 每次启动npm run都会创建一个Shell，执行指定的命令，并临时将node_modules/.bin加入PATH变量，这意味着本地模块可以直接运行scripts字段里面的命令。`其实在.bin目录下的每个cmd文件内部都有链接指向对应的包。`
@@ -165,6 +111,86 @@ _npm bin_
 npm bin // D:\program\knowledge-management\node_modules\.bin
 npm bin -g // C:\Users\HeZhi\AppData\Roaming\npm
 ```
+
+### npm与yarn
+
+_著名的 node modules hell_
+
+![node_module地狱](NodeModuleHell.jpg "600px")
+
+`npm 的一个饱受诟病的问题是本地依赖管理算法的复杂性以及随之而来的性能、冗余、冲突等问题。`
+
+1. `npm安装时会按照项目被依赖的次数作为权重，将依赖提升。`
+1. `由于 node_modules 不能有效地处理重复的包，所以两个名称相同但是不同版本的包时不能在一个目录下共存的。`
+
+``` js
+# ① 假设项目依赖a,b,c三个模块, 依赖树为:
+#  +- a
+#    +- react@15
+#  +- b
+#    +- react@16
+#  +- c
+#    +- react@16
+# npm安装时会按照项目被依赖的次数作为权重, 将依赖提升(hoisting),
+# 安装后的node_modules结构为:
+  .
+  └── node_modules
+      ├── a
+      │   ├── index.js
+      │   ├── node_modules
+      │   │   └── react  # @15
+      │   └── package.json
+      ├── b
+      │   ├── index.js
+      │   └── package.json
+      ├── c
+      │   ├── index.js
+      │   └── package.json
+      └── react  # @16 被依赖了两次, 所以进行提升
+
+# ② 现在假设在①的基础上, 根项目依赖了react@15, 对于项目自己的依赖肯定是要放在node_modules根目录的,
+# 由于一个目录下不能存在同名目录, 所以react@16没有的提升机会. 
+# 安装后node_moduels结构为
+  .
+  └── node_modules
+      ├── a
+      │   ├── index.js
+      │   └── package.json # react@15 提升
+      ├── b
+      │   ├── index.js
+      │   ├── node_modules
+      │   │   └── react  # @16
+      │   └── package.json
+      ├── c
+      │   ├── index.js
+      │   ├── node_modules
+      │   │   └── react  # @16
+      │   └── package.json
+      └── react  # @15
+# 上面的结果可以看出, react@16出现了重复
+```
+
+_yarn_
+
+和 npm 相比，Yarn 的主要优点有：
+
+1. 安装速度：由于 Yarn 在安装依赖时采用的是并行操作，以及它在缓存依赖包时相比 npm 缓存的数据更完整，因此它在初次与重复安装依赖时，普遍都会比 npm 更快。
+1. 稳定性：npm 5 引入的 package-lock 文件，在每次执行 npm install 时仍然会检查更新符合语义规则的依赖包版本，而 yarn.lock 则会严格保证版本的稳定性（尽管，yarn.lock 不能保证 node_modules 的拓扑稳定性）。
+1. Plug'n'Play（PnP）：Yarn 2.0 发布了 PnP的功能（在更早期的 1.12 版本中就已实现）。PnP 方案具有提升项目安装与解析依赖的速度，以及多项目共享缓存（与普通缓存相比，免去了读写 node_modules 的大量 I/O 操作)，节省占用空间等优势。
+
+_Plug'n'Play（PnP）_
+
+按照普通的流程, npm / yarn 会生成一个 node_modules 目录, 然后 Node 按照它的模块查找规则在 node_modules 目录中查找.但实际上 Node 并不知道这个模块是什么, 它在 node_modules 查找, 没找到就在父目录的 node_modules 查找, 以此类推。这个效率是非常低下的。
+
+`但是 Yarn 作为一个包管理器, 它知道你的项目的依赖树. 那能不能让 Yarn 告诉 Node? 让它直接到某个目录去加载模块.这样即可以提高 Node 模块的查找效率, 也可以减少 node_modules 文件的拷贝. 这就是Plug'n'Play的基本原理.`
+
+使用 pnp 机制的以下优点:
+
+1. 摆脱 node_modules.
+1. 时间上: 相比较在热缓存(hot cache)环境下运行yarn install节省 70%的时间 
+1. 空间上: pnp 模式下, 所有 npm 模块都会存放在全局的缓存目录下, 依赖树扁平化, 避免拷贝和重复
+1. 提高模块加载效率. Node 为了查找模块, 需要调用大量的 stat 和 readdir 系统调用. pnp 通过 Yarn 获取或者模块信息, 直接定位模块.
+1. 不再受限于 node_modules 同名模块不同版本不能在同一目录
 
 ### commander.js
 
@@ -248,6 +274,7 @@ export const NpmMeta = {
     'npm脚本执行顺序',
     'npm钩子',
     'npm命令',
+    'npm与yarn',
     'commander.js',
     'package.json',
   ]
