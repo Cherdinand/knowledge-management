@@ -4,7 +4,9 @@ import {
   DevelopmentMd,
   DevelopmentMeta,
   EngineeringMd, 
-  EngineeringMeta 
+  EngineeringMeta, 
+  BuildMd, 
+  BuildMeta 
 } from '@/markdown/framework/index';
 
 /***
@@ -33,5 +35,10 @@ export default {
     menuName: "Development",
     component: DevelopmentMd,
     anchors: DevelopmentMeta.anchors,
+  }, {
+    path: 'build',
+    menuName: "Build",
+    component: BuildMd,
+    anchors: BuildMeta.anchors,
   }],
 };
