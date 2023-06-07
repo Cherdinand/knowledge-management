@@ -10,11 +10,13 @@ import { RcFormMd, RcFormMeta } from '@/markdown/read/index';
  ***/
 
 export default {
-  read: [{
-    path: 'rc-form',
-    menuName: "RcForm",
-    component: RcFormMd,
-    anchors: RcFormMeta.anchors,
-    redirectTo: true,
-  }],
+  read: [
+    {
+      path: 'rc-form',
+      menuName: 'RcForm',
+      component: RcFormMd,
+      anchors: RcFormMeta.anchors,
+      redirectTo: true,
+    },
+  ],
 };

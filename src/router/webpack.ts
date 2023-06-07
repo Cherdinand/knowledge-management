@@ -25,41 +25,49 @@ import {
  ***/
 
 export default {
-  webpack: [{
-    path: 'yuanli',
-    menuName: "原理",
-    anchors: YuanLiMeta.anchors,
-    component: YuanLiMd,
-  },{
-    path: 'loader',
-    menuName: "Loader",
-    anchors: LoaderMeta.anchors,
-    component: LoaderMd,
-  },{
-    path: 'plugin',
-    menuName: "Plugin",
-    anchors: PluginMeta.anchors,
-    component: PluginMd,
-  },{
-    path: 'path',
-    menuName: "Path",
-    component: Path,
-    anchors: PathMeta.anchors,
-    redirectTo: true,
-  },{
-    path: 'hmr',
-    menuName: "Hmr",
-    anchors: HmrMeta.anchors,
-    component: HmrMd,
-  },{
-    path: 'npm',
-    menuName: "Npm",
-    anchors: NpmMeta.anchors,
-    component: NpmMd,
-  },{
-    path: 'storybook',
-    menuName: "Storybook",
-    anchors: StorybookMeta.anchors,
-    component: StorybookMd,
-  }],
+  webpack: [
+    {
+      path: 'yuanli',
+      menuName: '原理',
+      anchors: YuanLiMeta.anchors,
+      component: YuanLiMd,
+    },
+    {
+      path: 'loader',
+      menuName: 'Loader',
+      anchors: LoaderMeta.anchors,
+      component: LoaderMd,
+    },
+    {
+      path: 'plugin',
+      menuName: 'Plugin',
+      anchors: PluginMeta.anchors,
+      component: PluginMd,
+    },
+    {
+      path: 'path',
+      menuName: 'Path',
+      component: Path,
+      anchors: PathMeta.anchors,
+      redirectTo: true,
+    },
+    {
+      path: 'hmr',
+      menuName: 'Hmr',
+      anchors: HmrMeta.anchors,
+      component: HmrMd,
+    },
+    {
+      path: 'npm',
+      menuName: 'Npm',
+      anchors: NpmMeta.anchors,
+      component: NpmMd,
+    },
+    {
+      path: 'storybook',
+      menuName: 'Storybook',
+      anchors: StorybookMeta.anchors,
+      component: StorybookMd,
+    },
+  ],
 };

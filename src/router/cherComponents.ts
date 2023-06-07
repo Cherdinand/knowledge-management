@@ -12,18 +12,22 @@ import ImageUpload from '@/src/cherComponents/ImageUpload';
  ***/
 
 export default {
-  cherComponents: [{
-    path: 'progress-bar',
-    menuName: "ProgressBar",
-    container: ProgressBar,
-    redirectTo: true,
-  }, {
-    path: 'react-dnd',
-    menuName: "ReactDnd",
-    container: ReactDnd,
-  }, {
-    path: 'image-upload',
-    menuName: "ImageUpload",
-    container: ImageUpload,
-  }],
+  cherComponents: [
+    {
+      path: 'progress-bar',
+      menuName: 'ProgressBar',
+      container: ProgressBar,
+      redirectTo: true,
+    },
+    {
+      path: 'react-dnd',
+      menuName: 'ReactDnd',
+      container: ReactDnd,
+    },
+    {
+      path: 'image-upload',
+      menuName: 'ImageUpload',
+      container: ImageUpload,
+    },
+  ],
 };

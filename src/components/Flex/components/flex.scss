@@ -10,19 +10,19 @@
     box-sizing: border-box;
     background: #e4d1b9;
     color: #fff;
-    &:nth-of-type(1){
+    &:nth-of-type(1) {
       height: 100px;
     }
-    &:nth-of-type(2){
+    &:nth-of-type(2) {
       height: 50px;
     }
-    &:nth-of-type(3){
+    &:nth-of-type(3) {
       height: 70px;
     }
-    &:nth-of-type(4){
+    &:nth-of-type(4) {
       height: 30px;
     }
-    &:nth-of-type(5){
+    &:nth-of-type(5) {
       height: 80px;
     }
   }
@@ -37,13 +37,13 @@
     margin: 0 10px;
     box-sizing: border-box;
     background: #e4d1b9;
-    &:nth-of-type(1){
+    &:nth-of-type(1) {
       width: 200px;
     }
-    &:nth-of-type(2){
+    &:nth-of-type(2) {
       width: 150px;
     }
-    &:nth-of-type(3){
+    &:nth-of-type(3) {
       width: 100px;
     }
   }

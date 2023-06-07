@@ -10,11 +10,13 @@ import { CivilizationMd, CivilizationMeta } from '@/markdown/games/index';
  ***/
 
 export default {
-  games: [{
-    path: 'civilization',
-    menuName: "Civilization",
-    component: CivilizationMd,
-    anchors: CivilizationMeta.anchors,
-    redirectTo: true,
-  }],
+  games: [
+    {
+      path: 'civilization',
+      menuName: 'Civilization',
+      component: CivilizationMd,
+      anchors: CivilizationMeta.anchors,
+      redirectTo: true,
+    },
+  ],
 };

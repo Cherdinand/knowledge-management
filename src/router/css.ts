@@ -23,32 +23,38 @@ import {
  ***/
 
 export default {
-  css: [{
-    path: 'css',
-    menuName: "Css",
-    anchors: CssMeta.anchors,
-    component: CssMd,
-    redirectTo: true,
-  },{
-    path: 'flex',
-    menuName: "Flex",
-    anchors: FlexMeta.anchors,
-    container: Flex,
-    component: FlexMd,
-  },{
-    path: 'float',
-    menuName: "Float",
-    anchors: FloatMeta.anchors,
-    component: FloatMd,
-  },{
-    path: 'rem',
-    menuName: "Rem",
-    anchors: RemMeta.anchors,
-    component: RemMd,
-  },{
-    path: 'abbr',
-    menuName: "Abbr",
-    anchors: AbbrMeta.anchors,
-    component: AbbrMd,
-  }],
+  css: [
+    {
+      path: 'css',
+      menuName: 'Css',
+      anchors: CssMeta.anchors,
+      component: CssMd,
+      redirectTo: true,
+    },
+    {
+      path: 'flex',
+      menuName: 'Flex',
+      anchors: FlexMeta.anchors,
+      container: Flex,
+      component: FlexMd,
+    },
+    {
+      path: 'float',
+      menuName: 'Float',
+      anchors: FloatMeta.anchors,
+      component: FloatMd,
+    },
+    {
+      path: 'rem',
+      menuName: 'Rem',
+      anchors: RemMeta.anchors,
+      component: RemMd,
+    },
+    {
+      path: 'abbr',
+      menuName: 'Abbr',
+      anchors: AbbrMeta.anchors,
+      component: AbbrMd,
+    },
+  ],
 };

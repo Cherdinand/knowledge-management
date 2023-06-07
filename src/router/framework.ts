@@ -1,12 +1,12 @@
-import { 
+import {
   NiceArticleMd,
   NiceArticleMeta,
   DevelopmentMd,
   DevelopmentMeta,
-  EngineeringMd, 
-  EngineeringMeta, 
-  BuildMd, 
-  BuildMeta 
+  EngineeringMd,
+  EngineeringMeta,
+  BuildMd,
+  BuildMeta,
 } from '@/markdown/framework/index';
 
 /***
@@ -19,26 +19,31 @@ import {
  ***/
 
 export default {
-  framework: [{
-    path: 'nice-article',
-    menuName: "NiceArticle",
-    component: NiceArticleMd,
-    anchors: NiceArticleMeta.anchors,
-    redirectTo: true,
-  }, {
-    path: 'engineering',
-    menuName: "Engineering",
-    component: EngineeringMd,
-    anchors: EngineeringMeta.anchors,
-  }, {
-    path: 'development',
-    menuName: "Development",
-    component: DevelopmentMd,
-    anchors: DevelopmentMeta.anchors,
-  }, {
-    path: 'build',
-    menuName: "Build",
-    component: BuildMd,
-    anchors: BuildMeta.anchors,
-  }],
+  framework: [
+    {
+      path: 'nice-article',
+      menuName: 'NiceArticle',
+      component: NiceArticleMd,
+      anchors: NiceArticleMeta.anchors,
+      redirectTo: true,
+    },
+    {
+      path: 'engineering',
+      menuName: 'Engineering',
+      component: EngineeringMd,
+      anchors: EngineeringMeta.anchors,
+    },
+    {
+      path: 'development',
+      menuName: 'Development',
+      component: DevelopmentMd,
+      anchors: DevelopmentMeta.anchors,
+    },
+    {
+      path: 'build',
+      menuName: 'Build',
+      component: BuildMd,
+      anchors: BuildMeta.anchors,
+    },
+  ],
 };

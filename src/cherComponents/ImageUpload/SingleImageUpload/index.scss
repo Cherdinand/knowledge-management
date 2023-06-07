@@ -1,4 +1,4 @@
-@import "../size.scss";
+@import '../size.scss';
 
 .uploader {
   background: #fff;
@@ -30,7 +30,7 @@
     }
   }
 
-  .uploaderTrigger{
+  .uploaderTrigger {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,8 @@
     background: none;
   }
 
-  .uploaderTrigger, .avatar {
+  .uploaderTrigger,
+  .avatar {
     width: 100%;
     height: 100%;
   }
@@ -60,7 +61,7 @@
     }
   }
 
-  .uploaderTrigger{
+  .uploaderTrigger {
     font-size: $SmallPlus;
   }
 }
@@ -80,8 +81,7 @@
     }
   }
 
-
-  .uploaderTrigger{
+  .uploaderTrigger {
     font-size: $MiddlePlus;
   }
 }
@@ -101,7 +101,7 @@
     }
   }
 
-  .uploaderTrigger{
+  .uploaderTrigger {
     font-size: $LargePlus;
   }
 }

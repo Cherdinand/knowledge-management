@@ -1,4 +1,4 @@
-@import "../size.scss";
+@import '../size.scss';
 
 .uploader {
   background: #fff;
@@ -23,7 +23,7 @@
     }
   }
 
-  .uploaderTrigger{
+  .uploaderTrigger {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
   .uploaderTrigger {
     @include SmallSize;
   }
-  .uploaderTrigger{
+  .uploaderTrigger {
     font-size: $SmallPlus;
   }
 }
@@ -77,7 +77,7 @@
     @include MiddleSize;
   }
 
-  .uploaderTrigger{
+  .uploaderTrigger {
     font-size: $MiddlePlus;
   }
 }
@@ -101,7 +101,7 @@
   .uploaderTrigger {
     @include LargeSize;
   }
-  .uploaderTrigger{
+  .uploaderTrigger {
     font-size: $LargePlus;
   }
 }

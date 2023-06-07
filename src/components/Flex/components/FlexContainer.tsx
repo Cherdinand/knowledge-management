@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './flex.scss';
 
 type Props = {
-  outerStyles: React.CSSProperties
-}
+  outerStyles: React.CSSProperties;
+};
 
 export default class FlexContainer extends Component<Props> {
   render() {
@@ -16,6 +16,6 @@ export default class FlexContainer extends Component<Props> {
         <div className={styles.containerInner}></div>
         <div className={styles.containerInner}></div>
       </div>
-    )
+    );
   }
 }

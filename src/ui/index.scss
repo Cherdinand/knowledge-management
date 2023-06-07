@@ -6,24 +6,24 @@
     margin-top: 0;
   }
 
-  p:first-child{
+  p:first-child {
     display: none;
   }
 }
 
-blockquote[data-type="info"] {
-  color: #83AFE5;
-  background-color: #DCF2FD;
+blockquote[data-type='info'] {
+  color: #83afe5;
+  background-color: #dcf2fd;
 }
 
-blockquote[data-type="warning"] {
+blockquote[data-type='warning'] {
   background-color: #fbedb7;
-  color: #6A7D89;
+  color: #6a7d89;
 }
 
 .inlineCode {
   border: none;
-  color: #DF8C8C;
+  color: #df8c8c;
   background-color: #fff;
   white-space: pre-wrap;
 }
@@ -74,5 +74,4 @@ blockquote[data-type="warning"] {
       transform: rotate(225deg);
     }
   }
-
 }

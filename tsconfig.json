@@ -1,37 +1,32 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",   // 所有的绝对路径被默认为相对于baseUrl
-    "rootDir": "./",   // 告诉ts哪里的东西需要编译
-    "outDir": "dist",  // 告诉ts编译出来的东西放在哪里
-    "module": "esnext",    // ts编译后生成的模块形式
-    "target": "esnext",    // ts编译后生成 .js 文件版本
-    "lib": ["es6", "dom", "esnext"],  // ts编译时引入的 ES 功能库，即ts默认的type库，无需手动引入即可用
+    "baseUrl": "./", // 所有的绝对路径被默认为相对于baseUrl
+    "rootDir": "./", // 告诉ts哪里的东西需要编译
+    "outDir": "dist", // 告诉ts编译出来的东西放在哪里
+    "module": "esnext", // ts编译后生成的模块形式
+    "target": "esnext", // ts编译后生成 .js 文件版本
+    "lib": ["es6", "dom", "esnext"], // ts编译时引入的 ES 功能库，即ts默认的type库，无需手动引入即可用
     "sourceMap": true,
     "types": ["react-router-dom"],
-    "allowJs": true,    // 允许编译 JS 文件
+    "allowJs": true, // 允许编译 JS 文件
     "jsx": "preserve",
-    "moduleResolution": "node",  // 决定了module怎么被解析
+    "moduleResolution": "node", // 决定了module怎么被解析
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,  // 函数不能没有返回值
+    "noImplicitReturns": true, // 函数不能没有返回值
     "noImplicitThis": true,
     "noImplicitAny": true,
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "experimentalDecorators": true,   // 允许typescript编译decorator
+    "experimentalDecorators": true, // 允许typescript编译decorator
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "paths": {  // 相当于webpack的resolve.alias
-      "@/*": ["*"]  // 这个路径是相对于baseUrl
+    "paths": {
+      // 相当于webpack的resolve.alias
+      "@/*": ["*"] // 这个路径是相对于baseUrl
     }
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "scripts",
-    "jest",
-    "*.js"
-  ]
+  "exclude": ["node_modules", "dist", "scripts", "jest", "*.js"]
 }
 
 //{

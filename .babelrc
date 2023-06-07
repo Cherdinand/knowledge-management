@@ -1,19 +1,15 @@
 {
-  "presets": [
-    "es2015",
-    "react",
-    "stage-0"
-  ],
+  "presets": ["es2015", "react", "stage-0"],
   "plugins": [
-    "syntax-dynamic-import",  // import()
-    "react-hot-loader/babel",  // 添加react HMR
-    "transform-decorators-legacy",  // decorator
+    "syntax-dynamic-import", // import()
+    "react-hot-loader/babel", // 添加react HMR
+    "transform-decorators-legacy", // decorator
     [
       "import",
       {
         "libraryName": "antd",
         "libraryDirectory": "es",
-        "style": true  // 导入css源文件并在编译期间完成优化。可以显着减少包的大小，这取决于您对库的使用情况。
+        "style": true // 导入css源文件并在编译期间完成优化。可以显着减少包的大小，这取决于您对库的使用情况。
       }
     ]
   ]

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from "@/common/components/App/index";
+import App from '@/common/components/App/index';
 
 // @tsignore: never use
 // 将所有图片的引用放在入口文件中，省去每次都要import的麻烦。 todo 以后看是否要按需加载
@@ -12,7 +12,4 @@ console.log('——————————————————————�
 
 import './markdown.scss';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

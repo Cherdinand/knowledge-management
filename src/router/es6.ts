@@ -36,63 +36,75 @@ import {
  ***/
 
 export default {
-  es6: [{
-    path: 'function',
-    menuName: "Function",
-    anchors: FunctionMeta.anchors,
-    component: FunctionMd,
-    redirectTo: true,
-  },{
-    path: 'class',
-    menuName: "Class",
-    anchors: ClassMeta.anchors,
-    component: ClassMd,
-  },{
-    path: 'context',
-    menuName: "Context",
-    anchors: ContextMeta.anchors,
-    component: ContextMd,
-  },{
-    path: 'promise',
-    menuName: "Promise",
-    anchors: PromiseMeta.anchors,
-    component: PromiseMd,
-  },{
-    path: 'decorator',
-    menuName: "Decorator",
-    anchors: DecoratorMeta.anchors,
-    container: Decorator,
-    component: DecoratorMd,
-  },{
-    path: 'async',
-    menuName: "Async",
-    anchors: AsyncMeta.anchors,
-    component: AsyncMd,
-    container: Async,
-  },{
-    path: 'symbol',
-    menuName: "Symbol",
-    anchors: SymbolMeta.anchors,
-    component: SymbolMd,
-  },{
-    path: 'iterator',
-    menuName: "Iterator",
-    anchors: IteratorMeta.anchors,
-    component: IteratorMd,
-  },{
-    path: 'generator',
-    menuName: "Generator",
-    anchors: GeneratorMeta.anchors,
-    component: GeneratorMd,
-  },{
-    path: 'grammar',
-    menuName: "Grammar",
-    anchors: GrammarMeta.anchors,
-    component: GrammarMd,
-  },{
-    path: 'setmap',
-    menuName: "SetMap",
-    anchors: SetMapMeta.anchors,
-    component: SetMapMd,
-  }]
+  es6: [
+    {
+      path: 'function',
+      menuName: 'Function',
+      anchors: FunctionMeta.anchors,
+      component: FunctionMd,
+      redirectTo: true,
+    },
+    {
+      path: 'class',
+      menuName: 'Class',
+      anchors: ClassMeta.anchors,
+      component: ClassMd,
+    },
+    {
+      path: 'context',
+      menuName: 'Context',
+      anchors: ContextMeta.anchors,
+      component: ContextMd,
+    },
+    {
+      path: 'promise',
+      menuName: 'Promise',
+      anchors: PromiseMeta.anchors,
+      component: PromiseMd,
+    },
+    {
+      path: 'decorator',
+      menuName: 'Decorator',
+      anchors: DecoratorMeta.anchors,
+      container: Decorator,
+      component: DecoratorMd,
+    },
+    {
+      path: 'async',
+      menuName: 'Async',
+      anchors: AsyncMeta.anchors,
+      component: AsyncMd,
+      container: Async,
+    },
+    {
+      path: 'symbol',
+      menuName: 'Symbol',
+      anchors: SymbolMeta.anchors,
+      component: SymbolMd,
+    },
+    {
+      path: 'iterator',
+      menuName: 'Iterator',
+      anchors: IteratorMeta.anchors,
+      component: IteratorMd,
+    },
+    {
+      path: 'generator',
+      menuName: 'Generator',
+      anchors: GeneratorMeta.anchors,
+      component: GeneratorMd,
+    },
+    {
+      path: 'grammar',
+      menuName: 'Grammar',
+      anchors: GrammarMeta.anchors,
+      component: GrammarMd,
+    },
+    {
+      path: 'setmap',
+      menuName: 'SetMap',
+      anchors: SetMapMeta.anchors,
+      component: SetMapMd,
+    },
+  ],
 };

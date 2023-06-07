@@ -21,27 +21,32 @@ import {
  ***/
 
 export default {
-  es5: [{
-    path: 'prototype',
-    menuName: "Prototype",
-    anchors: PrototypeMeta.anchors,
-    container: Prototype,
-    component: PrototypeMd,
-    redirectTo: true
-  },{
-    path: 'scopethis',
-    menuName: "ScopeThis",
-    anchors: ScopeAndThisMeta.anchors,
-    component: ScopeAndThisMd,
-  },{
-    path: 'typeTransfer',
-    menuName: "TypeTransfer",
-    anchors: TypeTransferMeta.anchors,
-    component: TypeTransferMd,
-  },{
-    path: 'eventLoop',
-    menuName: "EventLoop",
-    anchors: EventLoopMeta.anchors,
-    component: EventLoopMd,
-  },]
+  es5: [
+    {
+      path: 'prototype',
+      menuName: 'Prototype',
+      anchors: PrototypeMeta.anchors,
+      container: Prototype,
+      component: PrototypeMd,
+      redirectTo: true,
+    },
+    {
+      path: 'scopethis',
+      menuName: 'ScopeThis',
+      anchors: ScopeAndThisMeta.anchors,
+      component: ScopeAndThisMd,
+    },
+    {
+      path: 'typeTransfer',
+      menuName: 'TypeTransfer',
+      anchors: TypeTransferMeta.anchors,
+      component: TypeTransferMd,
+    },
+    {
+      path: 'eventLoop',
+      menuName: 'EventLoop',
+      anchors: EventLoopMeta.anchors,
+      component: EventLoopMd,
+    },
+  ],
 };

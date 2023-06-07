@@ -79,7 +79,6 @@ export default {
 };
 `;
 
-
 // service页面模版
 const serviceTep = `import Request from '../../utils/request';
 
@@ -91,8 +90,6 @@ export const demo = (data) => {
   });
 };
 `;
-
-
 
 fs.mkdirSync(`./src/pages/${dirName}`); // mkdir $1
 process.chdir(`./src/pages/${dirName}`); // cd $1
