@@ -17,7 +17,7 @@ export default class CustomProgressBar extends Component<Props> {
 
   shape: Shape = null;
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     console.log('nextProps', nextProps);
     const { currentProgress, totalProgress } = nextProps;
 

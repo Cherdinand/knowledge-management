@@ -16,9 +16,9 @@ declare module '*.md';
 declare module 'classnames';
 declare module 'react-medium-image-zoom';
 declare module 'progressbar.js' {
-  const Path: any;
+  const Path: unknown;
 
   export type Shape = {
-    [key: string]: any;
+    [key: string]: unknown;
   } | null;
 }

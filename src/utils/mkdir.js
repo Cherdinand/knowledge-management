@@ -3,7 +3,9 @@
  * pages模版快速生成脚本,执行命令 npm run tep `文件名`
  */
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
+/* eslint-enable */
 
 const dirName = process.argv[2];
 

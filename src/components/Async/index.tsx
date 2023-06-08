@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import Alert from '@/common/components/Alert/index';
 
-export default class AsyncAwait extends Component {
-  componentWillMount() {
+type Props = {
+  children: ReactElement;
+};
+
+export default class AsyncAwait extends Component<Props> {
+  UNSAFE_componentWillMount() {
     this.hiking().then((r) => {
       console.log('r', r);
     });
@@ -19,9 +23,9 @@ export default class AsyncAwait extends Component {
     console.log(2);
     await new Promise((resolve, reject) => {
       setTimeout(
-        (arg) => {
+        (arg: unknown) => {
           console.log(3, arg);
-          resolve(); // 1、这里还必须要返回一个Promise的状态
+          resolve(arg); // 1、这里还必须要返回一个Promise的状态
         },
         1000,
         'resolve'

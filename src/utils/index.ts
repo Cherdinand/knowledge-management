@@ -1,6 +1,6 @@
 export const calcRowGroup = (arr: number[], sliceCount: number) => {
-  let grids: number[][] = [], // grids 二维数组
-    finalArr: number[][] = []; // finalArr 二维数组
+  const grids: number[][] = []; // grids 二维数组
+  let finalArr: number[][] = []; // finalArr 二维数组
 
   const len = arr.length / sliceCount;
 

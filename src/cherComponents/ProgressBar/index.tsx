@@ -4,6 +4,10 @@ import Alert from '@/common/components/Alert/index';
 import { Button } from 'antd';
 import { Options } from '@/types/cherComponents';
 
+type Props = {
+  a: string;
+};
+
 type State = {
   currentProgress: number;
   totalProgress: number;
@@ -12,7 +16,7 @@ type State = {
   containerStyle: React.CSSProperties;
 };
 
-export default class ProgressBar extends Component<{}, State> {
+export default class ProgressBar extends Component<Props, State> {
   state = {
     currentProgress: 10,
     totalProgress: 20,
@@ -66,7 +70,7 @@ export default class ProgressBar extends Component<{}, State> {
 
   animate = () => {
     this.setState({
-      currentProgress: ++this.state.currentProgress,
+      currentProgress: this.state.currentProgress + 1,
     });
   };
 

@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error', // 把prettier当成eslint的一个rules
     'react/react-in-jsx-scope': 'off', // 允许jsx文件中没有import React
+    'react/display-name': 'off', // 允许jsx文件中使用匿名函数
     '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
   },
   // extends可以使用别人配置好的rules

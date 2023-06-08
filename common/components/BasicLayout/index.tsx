@@ -16,6 +16,12 @@ const BasicLayout: React.SFC<RouteComponentProps<{ moduleName: string }>> = (pro
   const { match } = props;
   const { moduleName } = match.params;
 
+  const myName = 'Tom';
+
+  console.log(`My name is ${myNane}`);
+  console.log(`My name is ${myName.toStrng()}`);
+  console.log(`My name is ${myName}`);
+
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>

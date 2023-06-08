@@ -19,7 +19,7 @@ class SideMenu extends Component<Props, State> {
     selectedKeys: [],
   };
 
-  componentWillReceiveProps(np: Props) {
+  UNSAFE_componentWillReceiveProps(np: Props) {
     const {
       location: { pathname, hash },
     } = np;

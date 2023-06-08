@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactElement, CSSProperties } from 'react';
 import { Row, Col, Button } from 'antd';
 import FlexContainer from './components/FlexContainer';
 import FlexItems from './components/FlexItems';
@@ -18,12 +18,16 @@ const alignContentVals = [
 
 const flexVals = ['auto', 'none', '1'];
 
-type State = {
-  outerStyles: React.CSSProperties;
-  innerStyles: React.CSSProperties;
+type Props = {
+  children: ReactElement;
 };
 
-export default class Flex extends Component<{}, State> {
+type State = {
+  outerStyles: CSSProperties;
+  innerStyles: CSSProperties;
+};
+
+export default class Flex extends Component<Props, State> {
   state = {
     outerStyles: {
       justifyContent: 'flex-start',

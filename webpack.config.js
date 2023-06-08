@@ -144,7 +144,9 @@ module.exports = {
       extensions: ['js', 'jsx', 'tsx', 'ts'],
       fix: true,
       threads: 3,
-      emitError: false,
+      emitWarning: true,
+      failOnError: false,
+      failOnWarning: false,
     }),
     new HtmlWebpackPlugin({
       title: 'Knowledge Management',
