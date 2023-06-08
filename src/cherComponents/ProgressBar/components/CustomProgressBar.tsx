@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgressBar, { Shape } from 'progressbar.js';
+import ProgressBar from 'progressbar.js';
 import { Options } from '@/types/cherComponents';
 
 type Props = {
@@ -15,7 +15,7 @@ export default class CustomProgressBar extends Component<Props> {
     totalProgress: 20,
   };
 
-  shape: Shape = null;
+  shape: ProgressBar.Shape = null;
 
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
     console.log('nextProps', nextProps);

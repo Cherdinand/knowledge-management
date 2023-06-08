@@ -101,7 +101,7 @@ export default class Prototype extends Component {
     // @ts-ignore
     console.log(
       'Cat.prototype.__proto__ === Animal.prototype',
-      Cat.prototype.__proto__ === Animal.prototype
+      Cat.prototype.__proto__ === Animal.prototype,
     );
 
     // @ts-ignore
@@ -111,7 +111,7 @@ export default class Prototype extends Component {
   render() {
     return (
       <div>
-        <Alert message="结合Container的代码打开控制台看看输出！" type="warning" />
+        <Alert message='结合Container的代码打开控制台看看输出！' type='warning' />
         {this.props.children}
       </div>
     );

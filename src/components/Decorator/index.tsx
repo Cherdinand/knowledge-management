@@ -70,7 +70,7 @@ export default class Decorator extends Component {
   render() {
     return (
       <div>
-        <Alert message="结合Container的代码打开控制台看看输出！" type="warning" />
+        <Alert message='结合Container的代码打开控制台看看输出！' type='warning' />
         {this.props.children}
       </div>
     );

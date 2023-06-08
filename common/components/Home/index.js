@@ -118,7 +118,7 @@ export default class Home extends Component {
           retina_detect: true,
         }}
         className={styles.container}
-        height="100%"
+        height='100%'
         style={{
           background: '#F6F6F6',
         }}
